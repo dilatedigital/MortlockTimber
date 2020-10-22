@@ -3,6 +3,7 @@ import axios from "axios"
 
 import Helpers from "../helpers/helpers"
 import Loader from "../helpers/loader"
+import scrollTo from "gatsby-plugin-smoothscroll"
 
 class SampleRequest extends Component {
   constructor(props) {
@@ -191,6 +192,7 @@ class SampleRequest extends Component {
                   pageURL: this.props.location,
                 },
               })
+              scrollTo("#request-a-sample")
             }, 800)
 
             setTimeout(() => {
@@ -381,34 +383,7 @@ class SampleRequest extends Component {
                 </div>
               </div>
             </div>
-            <div className="col-sm-6">
-              <div className="form_group">
-                <label htmlFor="state">State *</label>
-                <div className="form_input">
-                  <select
-                    name="state"
-                    id="state"
-                    className="noEmpty"
-                    value={this.state.fields.state || ""}
-                    onChange={this.handleInputChange}
-                  >
-                    <option value="">- Select -</option>
-                    <option value="ACT">ACT</option>
-                    <option value="NSW">NSW</option>
-                    <option value="NT">NT</option>
-                    <option value="QLD">QLD</option>
-                    <option value="SA">SA</option>
-                    <option value="TAS">TAS</option>
-                    <option value="VIC">VIC</option>
-                    <option value="WA">WA</option>
-                    <option value="International">International</option>
-                  </select>
-                  {this.state.errors.state !== "" && (
-                    <span className="error">{this.state.errors.state}</span>
-                  )}
-                </div>
-              </div>
-            </div>
+
             <div className="col-sm-6">
               <div className="form_group">
                 <label htmlFor="postcode">Postcode *</label>
@@ -430,6 +405,34 @@ class SampleRequest extends Component {
               </div>
             </div>
           </div>
+
+          <div className="form_group">
+            <label htmlFor="state">State *</label>
+            <div className="form_input">
+              <select
+                name="state"
+                id="state"
+                className="noEmpty"
+                value={this.state.fields.state || ""}
+                onChange={this.handleInputChange}
+              >
+                <option value="">- Select -</option>
+                <option value="ACT">ACT</option>
+                <option value="NSW">NSW</option>
+                <option value="NT">NT</option>
+                <option value="QLD">QLD</option>
+                <option value="SA">SA</option>
+                <option value="TAS">TAS</option>
+                <option value="VIC">VIC</option>
+                <option value="WA">WA</option>
+                <option value="International">International</option>
+              </select>
+              {this.state.errors.state !== "" && (
+                <span className="error">{this.state.errors.state}</span>
+              )}
+            </div>
+          </div>
+
           <div className="form_group">
             <label htmlFor="projectsize">
               Project Size M2{" "}

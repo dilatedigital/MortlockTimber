@@ -3764,6 +3764,10 @@ ul.check__list {
         background: $primary-color;
         border-color: $primary-color;
         color: #fff;
+
+        mark {
+          color: #fff;
+        }
       }
     }
   }
