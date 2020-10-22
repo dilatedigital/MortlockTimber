@@ -1,6 +1,5 @@
 import React, { Component } from "react"
 import axios from "axios"
-import qs from "qs"
 
 import Helpers from "../helpers/helpers"
 import Loader from "../helpers/loader"
@@ -46,23 +45,21 @@ class SampleRequest extends Component {
       mainFormMsg: "",
       mainFormState: null,
       popupActive: false,
-      leadInfoSource: null
+      leadInfoSource: null,
     }
     this.handleInputChange = this.handleInputChange.bind(this)
-
-    
   }
 
   getLeadSource() {
-    const queryString = window.location.search;
+    const queryString = window.location.search
     const urlParams = new URLSearchParams(queryString)
 
-    if (urlParams.has('gclid')) {
-      this.setState({leadInfoSource: 'Google Ads'})
-    } else if (urlParams.has('utm_source')) {
-      this.setState({leadInfoSource: 'Facebook'})
+    if (urlParams.has("gclid")) {
+      this.setState({ leadInfoSource: "Google Ads" })
+    } else if (urlParams.has("utm_source")) {
+      this.setState({ leadInfoSource: "Facebook" })
     } else {
-      this.setState({leadInfoSource: 'Organic'})
+      this.setState({ leadInfoSource: "Organic" })
     }
   }
 
@@ -161,6 +158,10 @@ class SampleRequest extends Component {
       bodyFormData.append("leadsource", this.state.fields.leadsource)
       bodyFormData.append("pageURL", this.state.fields.pageURL)
       bodyFormData.append("interest", this.state.fields.interest)
+      bodyFormData.append(
+        "downloadpdf",
+        this.props.data.request_sample_brochure.link
+      )
 
       axios
         .post(formLink, bodyFormData, Helpers.config)
@@ -360,7 +361,7 @@ class SampleRequest extends Component {
             </div>
           </div>
           <div className="row">
-          <div className="col-sm-6">
+            <div className="col-sm-6">
               <div className="form_group">
                 <label htmlFor="suburb">Suburb *</label>
                 <div className="form_input">
