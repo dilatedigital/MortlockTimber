@@ -2,7 +2,6 @@ import React from "react"
 import scrollTo from "gatsby-plugin-smoothscroll"
 
 const GlobalSubNav = ({ ...props }) => {
-  console.log(props)
   return (
     <div className="subnav__holder">
       <div className="container">
