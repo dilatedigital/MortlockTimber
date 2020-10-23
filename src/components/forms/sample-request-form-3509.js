@@ -5,11 +5,11 @@ import Helpers from "../helpers/helpers"
 import Loader from "../helpers/loader"
 import scrollTo from "gatsby-plugin-smoothscroll"
 
-//add comment
-
 class SampleRequest extends Component {
   constructor(props) {
     super(props)
+
+    console.log(props)
 
     this.state = {
       fields: {
