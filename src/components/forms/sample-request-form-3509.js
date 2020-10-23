@@ -9,8 +9,6 @@ class SampleRequest extends Component {
   constructor(props) {
     super(props)
 
-    console.log(props)
-
     this.state = {
       fields: {
         firstname: "",
