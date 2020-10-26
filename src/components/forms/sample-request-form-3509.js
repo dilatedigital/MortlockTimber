@@ -5,8 +5,6 @@ import Helpers from "../helpers/helpers"
 import Loader from "../helpers/loader"
 import scrollTo from "gatsby-plugin-smoothscroll"
 
-//added comment
-
 class SampleRequest extends Component {
   constructor(props) {
     super(props)
