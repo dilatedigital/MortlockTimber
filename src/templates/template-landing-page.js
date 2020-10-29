@@ -377,12 +377,13 @@ class Page extends Component {
                   <div className="col-sm-6 col-md-4" key={index}>
                     <div className="articletext__box">
                       <div className="img__wrap">
+                        { product.using_image &&
                         <Img
                           fluid={
                             product.using_image.localFile.childImageSharp.fluid
                           }
                           alt="Mortlock Timber"
-                        />
+                        /> }}
                       </div>
                       <h3
                         dangerouslySetInnerHTML={{
