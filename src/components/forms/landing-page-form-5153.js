@@ -169,7 +169,7 @@ class LandingPageForm extends Component {
     const { submitActive } = this.state;
 
     return (
-      <form className={submitActive ? 'contact__form loading' : 'contact__form'} id="contact__form" type="POST" onSubmit={ this.handleSubmit } noValidate>
+      <form className={submitActive ? 'contact__form loading' : 'contact__form'} id="landing-page-contact-form" type="POST" onSubmit={ this.handleSubmit } noValidate>
         <div className="row">
           <div className="col-sm-6">
             <div className="form_group">
