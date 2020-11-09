@@ -15,6 +15,7 @@ import ProductFaq from "../components/productsingle/product-faq"
 import ProductSpecies from "../components/productsingle/product-species"
 import ProductInstallation from "../components/productsingle/product-installation"
 import BattenShapeAndSize from "../components/productsingle/product-battensize"
+import ProductVideo from "../components/productsingle/product-video"
 
 import RequestSample from "../components/global/global-request-sample"
 import PricingBlock from "../components/global/global-pricing-block"
@@ -60,6 +61,17 @@ class Page extends Component {
         .application_content,
       application_gallery_image: this.props.data.wordpressPage.acf
         .application_gallery_image,
+    }
+
+    //console.log(this.props)
+
+    const videoData = {
+      show_video: this.props.data.wordpressPage.acf.show_video,
+      video_heading: this.props.data.wordpressPage.acf.video_heading,
+      video_description: this.props.data.wordpressPage.acf.video_description,
+      video_info: this.props.data.wordpressPage.acf.video_info,
+      video_image: this.props.data.wordpressPage.acf.video_image,
+      video_iframe_code: this.props.data.wordpressPage.acf.video_iframe_code,
     }
 
     const timber_species = {
@@ -282,6 +294,10 @@ class Page extends Component {
         <div className="product__singlewrap">
           <ProductOverview id={submenus[0]} data={productOverview} />
           <ProductBenefit data={productBenefit} />
+          {this.props.data.wordpressPage.acf.show_video && (
+            <ProductVideo data={videoData} />
+          )}
+
           <ProductApplication data={productApplication} />
         </div>
         <div className="product__description" id={submenus[1]}>
@@ -293,8 +309,12 @@ class Page extends Component {
               <div className="general-heading">
                 <h2>Useful Info</h2>
               </div>
-              
-              <div className={`info__slider row center-xs text-center ${userLinks.length > 3 ? 'start-sm' : ''}`}>
+
+              <div
+                className={`info__slider row center-xs text-center ${
+                  userLinks.length > 3 ? "start-sm" : ""
+                }`}
+              >
                 {userLinks
                   ? userLinks.map((link, index) => (
                       <div
@@ -425,6 +445,23 @@ export const pageQuery = graphql`
           benefit_title
           benefit_description
         }
+        show_video
+        video_heading
+        video_iframe_code
+        video_description
+        video_image {
+          localFile {
+            childImageSharp {
+              fluid {
+                ...GatsbyImageSharpFluid_withWebp
+              }
+            }
+          }
+        }
+        video_info {
+          info_description
+          info_title
+        }
         application_content
         application_gallery_image {
           gallery_image {
@@ -538,7 +575,7 @@ export const pageQuery = graphql`
         request_sample_description
         request_sample_brochure {
           link
-        } 
+        }
       }
     }
   }
