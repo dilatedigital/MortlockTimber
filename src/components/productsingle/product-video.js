@@ -9,7 +9,7 @@ const ProductVideo = ({ data }) => {
     setPlayVideo(true)
   }
   return (
-    <div className="project__detail">
+    <div className="project__detail single__product_video">
       <div className="container">
         <div className="row">
           <div className="col-sm-4">
@@ -36,21 +36,25 @@ const ProductVideo = ({ data }) => {
             ) : null}
           </div>
         </div>
-        <div className="project_infos">
-          <div className="row">
-            <div
-              className="col-sm-4"
-              data-sal="slide-up"
-              data-sal-easing="ease"
-              data-sal-delay="5"
-            >
-              <span className="project__info">
-                <span className="title">{data.video_info.info_title}</span>
-                <span className="info">{data.video_info.info_description}</span>
-              </span>
+        {data.video_info.info_title && (
+          <div className="project_infos">
+            <div className="row">
+              <div
+                className="col-sm-4"
+                data-sal="slide-up"
+                data-sal-easing="ease"
+                data-sal-delay="5"
+              >
+                <span className="project__info">
+                  <span className="title">{data.video_info.info_title}</span>
+                  <span className="info">
+                    {data.video_info.info_description}
+                  </span>
+                </span>
+              </div>
             </div>
           </div>
-        </div>
+        )}
         <div
           className={
             playVideo ? "video__wrapper video--playing" : "video__wrapper"

@@ -4634,6 +4634,11 @@ ul.check__list {
   }
 }
 
+.single__product_video .video__wrapper {
+  margin-bottom: 0;
+  margin-top: 60px;
+}
+
 .spec__image {
   @include breakpoint("small") {
     margin-right: -250px;
