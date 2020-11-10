@@ -294,7 +294,7 @@ class Page extends Component {
         <div className="product__singlewrap">
           <ProductOverview id={submenus[0]} data={productOverview} />
           <ProductBenefit data={productBenefit} />
-          {this.props.data.wordpressPage.acf.show_video && (
+          {videoData.show_video && (
             <ProductVideo data={videoData} />
           )}
 
