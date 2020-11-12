@@ -6564,3 +6564,7 @@ form {
     display: none;
   }
 }
+
+form.loading .btn_wrap .button {
+  pointer-events: none!important;
+}
