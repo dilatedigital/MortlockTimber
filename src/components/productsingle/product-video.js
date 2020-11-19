@@ -12,7 +12,7 @@ const ProductVideo = ({ data }) => {
     <div className="project__detail single__product_video">
       <div className="container">
         <div className="row">
-          <div className="col-sm-4">
+          <div className="col-sm-12">
             {data.video_heading || data.video_heading === undefined ? (
               <h2
                 className="project_heading"
