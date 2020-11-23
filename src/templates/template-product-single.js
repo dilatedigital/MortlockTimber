@@ -16,6 +16,7 @@ import ProductSpecies from "../components/productsingle/product-species"
 import ProductInstallation from "../components/productsingle/product-installation"
 import BattenShapeAndSize from "../components/productsingle/product-battensize"
 import ProductVideo from "../components/productsingle/product-video"
+import GlobalNewsSlider from "../components/global-news-slider"
 
 import RequestSample from "../components/global/global-request-sample"
 import PricingBlock from "../components/global/global-pricing-block"
@@ -294,9 +295,7 @@ class Page extends Component {
         <div className="product__singlewrap">
           <ProductOverview id={submenus[0]} data={productOverview} />
           <ProductBenefit data={productBenefit} />
-          {videoData.show_video && (
-            <ProductVideo data={videoData} />
-          )}
+          {videoData.show_video && <ProductVideo data={videoData} />}
 
           <ProductApplication data={productApplication} />
         </div>
@@ -376,6 +375,12 @@ class Page extends Component {
         >
           Request Pricing
         </div>
+        {this.props.data.wordpressPage.acf.show_related_articles &&
+          this.props.data.allWordpressPost.edges.length && (
+            <GlobalNewsSlider
+              contentData={this.props.data.allWordpressPost.edges}
+            />
+          )}
       </Layout>
     )
   }
@@ -384,7 +389,7 @@ class Page extends Component {
 export default Page
 
 export const pageQuery = graphql`
-  query($id: String!) {
+  query($id: String!, $slug: String!) {
     wordpressPage(id: { eq: $id }) {
       wordpress_id
       yoast {
@@ -575,6 +580,31 @@ export const pageQuery = graphql`
         request_sample_description
         request_sample_brochure {
           link
+        }
+        show_related_articles
+      }
+    }
+    allWordpressPost(
+      filter: { categories: { elemMatch: { slug: { eq: $slug } } } }
+    ) {
+      edges {
+        node {
+          title
+          date(formatString: "DD MMMM YYYY")
+          content
+          wordpress_id
+          type
+          excerpt
+          path
+          featured_media {
+            localFile {
+              childImageSharp {
+                fluid(maxWidth: 500) {
+                  ...GatsbyImageSharpFluid_withWebp
+                }
+              }
+            }
+          }
         }
       }
     }

@@ -27,6 +27,7 @@ exports.createPages = async ({ graphql, actions }) => {
         edges {
           node {
             id
+            slug
             path
             status
             template
@@ -166,6 +167,7 @@ exports.createPages = async ({ graphql, actions }) => {
           component: slash(productSingleTemplate),
           context: {
             id: edge.node.id,
+            slug: edge.node.slug,
           },
         })
         break

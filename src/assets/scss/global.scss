@@ -2059,6 +2059,10 @@ ul.footer_menu {
   position: relative;
   padding: 30px 0;
 
+  .slick-track {
+    min-width: 1230px;
+  }
+
   @include breakpoint("medium") {
     padding: 60px 0;
   }
@@ -6566,5 +6570,5 @@ form {
 }
 
 form.loading .btn_wrap .button {
-  pointer-events: none!important;
+  pointer-events: none !important;
 }
