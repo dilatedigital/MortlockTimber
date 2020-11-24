@@ -43,7 +43,7 @@ const GlobalNewsSlider = ({ ...props }) => {
         data-sal-easing="ease"
         data-sal-delay="5"
       >
-        <h2>latest from us</h2>
+        <h2>{props.title ? props.title : "latest from us"}</h2>
         <Slider className="news__slider" ref={customSlider} {...sliderSettings}>
           {content.map(article => (
             <div className="slide" key={article.node.wordpress_id}>

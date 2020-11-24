@@ -65,6 +65,8 @@ class Page extends Component {
     }
 
     //console.log(this.props)
+    const relatedArticleSectionTitle = this.props.data.wordpressPage.acf
+      .related_article_section_title
 
     const videoData = {
       show_video: this.props.data.wordpressPage.acf.show_video,
@@ -379,6 +381,7 @@ class Page extends Component {
           this.props.data.allWordpressPost.edges.length && (
             <GlobalNewsSlider
               contentData={this.props.data.allWordpressPost.edges}
+              title={relatedArticleSectionTitle}
             />
           )}
       </Layout>
@@ -582,6 +585,7 @@ export const pageQuery = graphql`
           link
         }
         show_related_articles
+        related_article_section_title
       }
     }
     allWordpressPost(
