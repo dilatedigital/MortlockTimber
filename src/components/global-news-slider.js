@@ -61,9 +61,7 @@ const GlobalNewsSlider = ({ ...props }) => {
                   </Link>
                 </div>
                 <div className="article_text">
-                  <h3>
-                    <Link to={article.node.path}>{article.node.title}</Link>
-                  </h3>
+                  <h3><Link to={article.node.path} dangerouslySetInnerHTML={{ __html: article.node.title }} /></h3>
                   {(() => {
                     const regex = /(<([^>]+)>)/gi
                     var removeHTMLtags =
