@@ -28,6 +28,16 @@ class SampleRequest extends Component {
         interest: "Unsure",
         leadsource: "Website",
         pageURL: this.props.location,
+		external_referral_site: '',
+		landing_page: '',
+		pre_submission_page: '',
+		submission_page: '',
+		utm_source: '',
+		utm_medium: '',
+		utm_campaign: '',
+		utm_term: '',
+		utm_content: '',
+		gclid: ''
       },
       errors: {
         firstname: "",
@@ -42,6 +52,16 @@ class SampleRequest extends Component {
         projectsize: "",
         sampleoptions: "",
         message: "",
+		external_referral_site: '',
+		landing_page: '',
+		pre_submission_page: '',
+		submission_page: '',
+		utm_source: '',
+		utm_medium: '',
+		utm_campaign: '',
+		utm_term: '',
+		utm_content: '',
+		gclid: ''
       },
       passedValidation: false,
       submitActive: false,
@@ -161,10 +181,17 @@ class SampleRequest extends Component {
       bodyFormData.append("leadsource", this.state.fields.leadsource)
       bodyFormData.append("pageURL", this.state.fields.pageURL)
       bodyFormData.append("interest", this.state.fields.interest)
-      bodyFormData.append(
-        "downloadpdf",
-        this.props.data.request_sample_brochure.link
-      )
+      bodyFormData.append("downloadpdf", this.props.data.request_sample_brochure.link)
+      bodyFormData.append('external_referral_site', this.state.fields.external_referral_site)
+      bodyFormData.append('landing_page', this.state.fields.landing_page)
+      bodyFormData.append('pre_submission_page', this.state.fields.pre_submission_page)
+      bodyFormData.append('submission_page', this.state.fields.submission_page)
+      bodyFormData.append('utm_source', this.state.fields.utm_source)
+      bodyFormData.append('utm_medium', this.state.fields.utm_medium)
+      bodyFormData.append('utm_campaign', this.state.fields.utm_campaign)
+      bodyFormData.append('utm_term', this.state.fields.utm_term)
+      bodyFormData.append('utm_content', this.state.fields.utm_content)
+      bodyFormData.append('gclid', this.state.fields.gclid)
 
       axios
         .post(formLink, bodyFormData, Helpers.config)
@@ -192,6 +219,16 @@ class SampleRequest extends Component {
                   interest: "Unsure",
                   leadsource: "Website",
                   pageURL: this.props.location,
+				external_referral_site: '',
+				landing_page: '',
+				pre_submission_page: '',
+				submission_page: '',
+				utm_source: '',
+				utm_medium: '',
+				utm_campaign: '',
+				utm_term: '',
+				utm_content: '',
+				gclid: ''	
                 },
               })
               scrollTo("#request-a-sample")
@@ -217,7 +254,37 @@ class SampleRequest extends Component {
   }
 
   render() {
-    const { submitActive, popupActive } = this.state
+    const { submitActive, popupActive } = this.state;
+	var getUrlParameter = function getUrlParameter(sParam) {
+		var sPageURL = window.location.search.substring(1),
+			sURLVariables = sPageURL.split('&'),
+			sParameterName,
+			i;
+
+		for (i = 0; i < sURLVariables.length; i++) {
+			sParameterName = sURLVariables[i].split('=');
+
+			if (sParameterName[0] === sParam) {
+				return sParameterName[1] === undefined ? true : decodeURIComponent(sParameterName[1]);
+			}
+		}
+	};
+	
+	var pre_submission = function pre_submission() {
+		var pre_submission_page = '';
+		return pre_submission_page;
+	};	
+	
+	this.state.fields.external_referral_site = pre_submission();
+	this.state.fields.landing_page = pre_submission();
+	this.state.fields.pre_submission_page = pre_submission();
+	this.state.fields.submission_page = window.location.href;
+	this.state.fields.utm_source = getUrlParameter('utm_source');
+	this.state.fields.utm_medium = getUrlParameter('utm_medium');
+	this.state.fields.utm_campaign = getUrlParameter('utm_campaign');
+	this.state.fields.utm_term = getUrlParameter('utm_term');
+	this.state.fields.utm_content = getUrlParameter('utm_content');
+	this.state.fields.gclid = getUrlParameter('gclid');	
     if (popupActive) {
       return (
         <div className="formsub__popup">
@@ -517,6 +584,27 @@ class SampleRequest extends Component {
               />
             </div>
           </div>
+		<div style={{ display: `none` }}>
+	<input type="hidden" name="external_referral_site" value={ pre_submission() || ''} />
+
+	<input type="hidden" name="landing_page" value={ pre_submission() || ''} />
+
+	<input type="hidden" name="pre_submission_page" value={ pre_submission() || ''} />
+
+	<input type="hidden" name="submission_page" value={ window.location.href || ''} />
+
+	<input type="hidden" name="utm_source" value={ getUrlParameter('utm_source') || ''} />
+
+	<input type="hidden" name="utm_medium" value={ getUrlParameter('utm_medium') || ''} />
+
+	<input type="hidden" name="utm_campaign" value={ getUrlParameter('utm_campaign') || ''} />
+	 
+	<input type="hidden" name="utm_term" value={ getUrlParameter('utm_term') || ''} />
+	 
+	<input type="hidden" name="utm_content" value={ getUrlParameter('utm_content') || ''} />
+	 
+	<input type="hidden" name="gclid" value={ getUrlParameter('gclid') || ''} />
+</div>
           <div className="btn_wrap">
             <button className="button" type="submit">
               <span className="text">Submit</span>
