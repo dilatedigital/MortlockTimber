@@ -427,19 +427,19 @@ class ProductPricingForm extends Component {
 
 	<input type="hidden" name="pre_submission_page" value={ pre_submission() || ''} />
 
-	<input type="hidden" name="submission_page" value={ if (typeof window !== `undefined`){	window.location.href } || ''} />
+	<input type="hidden" name="submission_page" value={ typeof window !== `undefined` ?	window.location.href : ''} />
 
-	<input type="hidden" name="utm_source" value={ if (typeof window !== `undefined`){	getUrlParameter('utm_source') } || ''} />
+	<input type="hidden" name="utm_source" value={ typeof window !== `undefined` ?	getUrlParameter('utm_source') : ''} />
 
-	<input type="hidden" name="utm_medium" value={ if (typeof window !== `undefined`){	getUrlParameter('utm_medium') } || ''} />
+	<input type="hidden" name="utm_medium" value={ typeof window !== `undefined` ?	getUrlParameter('utm_medium') : ''} />
 
-	<input type="hidden" name="utm_campaign" value={ if (typeof window !== `undefined`){	getUrlParameter('utm_campaign') } || ''} />
+	<input type="hidden" name="utm_campaign" value={ typeof window !== `undefined` ?	getUrlParameter('utm_campaign') : ''} />
 	 
-	<input type="hidden" name="utm_term" value={ if (typeof window !== `undefined`){	getUrlParameter('utm_term') } || ''} />
+	<input type="hidden" name="utm_term" value={ typeof window !== `undefined` ?	getUrlParameter('utm_term') : ''} />
 	 
-	<input type="hidden" name="utm_content" value={ if (typeof window !== `undefined`){	getUrlParameter('utm_content') } || ''} />
+	<input type="hidden" name="utm_content" value={ typeof window !== `undefined` ?	getUrlParameter('utm_content') : ''} />
 	 
-	<input type="hidden" name="gclid" value={ if (typeof window !== `undefined`){	getUrlParameter('gclid') } || ''} />
+	<input type="hidden" name="gclid" value={ typeof window !== `undefined` ?	getUrlParameter('gclid') : ''} />
 </div>
             <div className="btn_wrap">
               <button className="button" type="submit">
