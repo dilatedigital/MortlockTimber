@@ -272,13 +272,13 @@ class ProductPricingForm extends Component {
 	this.state.fields.external_referral_site = pre_submission();
 	this.state.fields.landing_page = pre_submission();
 	this.state.fields.pre_submission_page = pre_submission();
-	this.state.fields.submission_page = submission_page();
-	this.state.fields.utm_source = getUrlParameter('utm_source');
-	this.state.fields.utm_medium = getUrlParameter('utm_medium');
-	this.state.fields.utm_campaign = getUrlParameter('utm_campaign');
-	this.state.fields.utm_term = getUrlParameter('utm_term');
-	this.state.fields.utm_content = getUrlParameter('utm_content');
-	this.state.fields.gclid = getUrlParameter('gclid');	
+	this.state.fields.submission_page = this.submission_page();
+	this.state.fields.utm_source = this.getUrlParameter('utm_source');
+	this.state.fields.utm_medium = this.getUrlParameter('utm_medium');
+	this.state.fields.utm_campaign = this.getUrlParameter('utm_campaign');
+	this.state.fields.utm_term = this.getUrlParameter('utm_term');
+	this.state.fields.utm_content = this.getUrlParameter('utm_content');
+	this.state.fields.gclid = this.getUrlParameter('gclid');	
     if (popupActive) {
       return (
         <div className="formsub__popup">
