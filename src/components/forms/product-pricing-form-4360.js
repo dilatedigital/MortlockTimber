@@ -100,26 +100,6 @@ class ProductPricingForm extends Component {
     window.dataLayer = window.dataLayer || []
     window.dataLayer.push(this.props.gtag)
   }
-  
-	submission_page() {
-		var submission_page_url = window.location.href;
-		return submission_page_url;
-	}
-	
- getUrlParameter(sParam) {
-		var sPageURL = window.location.search.substring(1),
-			sURLVariables = sPageURL.split('&'),
-			sParameterName,
-			i;
-
-		for (i = 0; i < sURLVariables.length; i++) {
-			sParameterName = sURLVariables[i].split('=');
-
-			if (sParameterName[0] === sParam) {
-				return sParameterName[1] === undefined ? true : decodeURIComponent(sParameterName[1]);
-			}
-		}
-	}
 
   handleSubmit = async event => {
     event.preventDefault()
@@ -244,41 +224,44 @@ class ProductPricingForm extends Component {
 
   render() {
     const { submitActive, popupActive, popupFormActive } = this.state;
-	// var getUrlParameter = function getUrlParameter(sParam) {
-		// var sPageURL = window.location.search.substring(1),
-			// sURLVariables = sPageURL.split('&'),
-			// sParameterName,
-			// i;
+	var getUrlParameter = function getUrlParameter(sParam) {
+		var sPageURL = window.location.search.substring(1),
+			sURLVariables = sPageURL.split('&'),
+			sParameterName,
+			i;
 
-		// for (i = 0; i < sURLVariables.length; i++) {
-			// sParameterName = sURLVariables[i].split('=');
+		for (i = 0; i < sURLVariables.length; i++) {
+			sParameterName = sURLVariables[i].split('=');
 
-			// if (sParameterName[0] === sParam) {
-				// return sParameterName[1] === undefined ? true : decodeURIComponent(sParameterName[1]);
-			// }
-		// }
-	// };
+			if (sParameterName[0] === sParam) {
+				return sParameterName[1] === undefined ? true : decodeURIComponent(sParameterName[1]);
+			}
+		}
+	};
 	
 	var pre_submission = function pre_submission() {
 		var pre_submission_page = '';
 		return pre_submission_page;
 	};	
 	
-	// var submission_page = function submission_page() {
-		// var submission_page_url = window.location.href;
-		// return submission_page_url;
-	// };	
-	
+	var submission_page = function submission_page() {
+		var submission_page_url = window.location.href;
+		return submission_page_url;
+	};	
+
+	if (typeof window !== `undefined`){
 	this.state.fields.external_referral_site = pre_submission();
 	this.state.fields.landing_page = pre_submission();
 	this.state.fields.pre_submission_page = pre_submission();
-	this.state.fields.submission_page = this.submission_page();
-	this.state.fields.utm_source = this.getUrlParameter('utm_source');
-	this.state.fields.utm_medium = this.getUrlParameter('utm_medium');
-	this.state.fields.utm_campaign = this.getUrlParameter('utm_campaign');
-	this.state.fields.utm_term = this.getUrlParameter('utm_term');
-	this.state.fields.utm_content = this.getUrlParameter('utm_content');
-	this.state.fields.gclid = this.getUrlParameter('gclid');	
+	this.state.fields.submission_page = submission_page();
+	this.state.fields.utm_source = getUrlParameter('utm_source');
+	this.state.fields.utm_medium = getUrlParameter('utm_medium');
+	this.state.fields.utm_campaign = getUrlParameter('utm_campaign');
+	this.state.fields.utm_term = getUrlParameter('utm_term');
+	this.state.fields.utm_content = getUrlParameter('utm_content');
+	this.state.fields.gclid = getUrlParameter('gclid');	
+	}
+	
     if (popupActive) {
       return (
         <div className="formsub__popup">
