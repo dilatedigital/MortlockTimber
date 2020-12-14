@@ -26,7 +26,17 @@ class RequestAQuote extends Component {
         message: '',
         leadsource: 'Website',
         pageURL: this.props.location,
-        interest: 'Unsure'
+        interest: 'Unsure',
+		external_referral_site: '',
+		landing_page: '',
+		pre_submission_page: '',
+		submission_page: '',
+		utm_source: '',
+		utm_medium: '',
+		utm_campaign: '',
+		utm_term: '',
+		utm_content: '',
+		gclid: ''
       },
       errors: {
         firstname: '',
@@ -41,7 +51,17 @@ class RequestAQuote extends Component {
         state: '',
         postcode: '',
         quantity: '',
-        file: ''
+        file: '',
+		external_referral_site: '',
+		landing_page: '',
+		pre_submission_page: '',
+		submission_page: '',
+		utm_source: '',
+		utm_medium: '',
+		utm_campaign: '',
+		utm_term: '',
+		utm_content: '',
+		gclid: ''
       },
       passedValidation: false,
       submitActive: false,
@@ -162,6 +182,16 @@ class RequestAQuote extends Component {
       bodyFormData.append('pageURL', this.state.fields.pageURL)
       bodyFormData.append('interest', this.state.fields.interest)
       bodyFormData.append('file', this.state.fields.file)
+      bodyFormData.append('external_referral_site', this.state.fields.external_referral_site)
+      bodyFormData.append('landing_page', this.state.fields.landing_page)
+      bodyFormData.append('pre_submission_page', this.state.fields.pre_submission_page)
+      bodyFormData.append('submission_page', this.state.fields.submission_page)
+      bodyFormData.append('utm_source', this.state.fields.utm_source)
+      bodyFormData.append('utm_medium', this.state.fields.utm_medium)
+      bodyFormData.append('utm_campaign', this.state.fields.utm_campaign)
+      bodyFormData.append('utm_term', this.state.fields.utm_term)
+      bodyFormData.append('utm_content', this.state.fields.utm_content)
+      bodyFormData.append('gclid', this.state.fields.gclid)
 
       axios.post(formLink, bodyFormData, Helpers.fileConfig).then((res) => {
         if(res.data.status === 'mail_sent') {
@@ -187,7 +217,17 @@ class RequestAQuote extends Component {
                 file: '',
                 leadsource: 'Website',
                 pageURL: this.props.location,
-                interest: 'Unsure'
+                interest: 'Unsure',
+				external_referral_site: '',
+				landing_page: '',
+				pre_submission_page: '',
+				submission_page: '',
+				utm_source: '',
+				utm_medium: '',
+				utm_campaign: '',
+				utm_term: '',
+				utm_content: '',
+				gclid: ''	
               }
             })
           }, 800);
@@ -209,6 +249,36 @@ class RequestAQuote extends Component {
 
   render() {
     const { submitActive } = this.state;
+	var getUrlParameter = function getUrlParameter(sParam) {
+		var sPageURL = window.location.search.substring(1),
+			sURLVariables = sPageURL.split('&'),
+			sParameterName,
+			i;
+
+		for (i = 0; i < sURLVariables.length; i++) {
+			sParameterName = sURLVariables[i].split('=');
+
+			if (sParameterName[0] === sParam) {
+				return sParameterName[1] === undefined ? true : decodeURIComponent(sParameterName[1]);
+			}
+		}
+	};
+	
+	var pre_submission = function pre_submission() {
+		var pre_submission_page = '';
+		return pre_submission_page;
+	};	
+	
+	this.state.fields.external_referral_site = pre_submission();
+	this.state.fields.landing_page = pre_submission();
+	this.state.fields.pre_submission_page = pre_submission();
+	this.state.fields.submission_page = window.location.href;
+	this.state.fields.utm_source = getUrlParameter('utm_source');
+	this.state.fields.utm_medium = getUrlParameter('utm_medium');
+	this.state.fields.utm_campaign = getUrlParameter('utm_campaign');
+	this.state.fields.utm_term = getUrlParameter('utm_term');
+	this.state.fields.utm_content = getUrlParameter('utm_content');
+	this.state.fields.gclid = getUrlParameter('gclid');	
     return (
       <form className={submitActive ? 'contact__form loading' : 'contact__form'} id="quote__form" type="POST" onSubmit={ this.handleSubmit } noValidate>
         <div className="row">
@@ -348,6 +418,27 @@ class RequestAQuote extends Component {
             {this.state.errors.file !== '' && <span className='error'>{this.state.errors.file}</span>}
           </div>
         </div>
+		<div style={{ display: `none` }}>
+	<input type="hidden" name="external_referral_site" value={ pre_submission() || ''} />
+
+	<input type="hidden" name="landing_page" value={ pre_submission() || ''} />
+
+	<input type="hidden" name="pre_submission_page" value={ pre_submission() || ''} />
+
+	<input type="hidden" name="submission_page" value={ window.location.href || ''} />
+
+	<input type="hidden" name="utm_source" value={ getUrlParameter('utm_source') || ''} />
+
+	<input type="hidden" name="utm_medium" value={ getUrlParameter('utm_medium') || ''} />
+
+	<input type="hidden" name="utm_campaign" value={ getUrlParameter('utm_campaign') || ''} />
+	 
+	<input type="hidden" name="utm_term" value={ getUrlParameter('utm_term') || ''} />
+	 
+	<input type="hidden" name="utm_content" value={ getUrlParameter('utm_content') || ''} />
+	 
+	<input type="hidden" name="gclid" value={ getUrlParameter('gclid') || ''} />
+</div>
         <div className="btn_wrap">
           <button className="button" type="submit"><span className="text">Submit</span><Loader /></button>
           {this.state.mainFormMsg && <span className={`form-msg ${this.state.mainFormState}`}>{ this.state.mainFormMsg }</span>}
