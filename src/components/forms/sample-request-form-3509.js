@@ -280,6 +280,7 @@ class SampleRequest extends Component {
 		return submission_page_url;
 	};	
 	
+	if (typeof window !== `undefined`){
 	this.state.fields.external_referral_site = pre_submission();
 	this.state.fields.landing_page = pre_submission();
 	this.state.fields.pre_submission_page = pre_submission();
@@ -289,7 +290,9 @@ class SampleRequest extends Component {
 	this.state.fields.utm_campaign = getUrlParameter('utm_campaign');
 	this.state.fields.utm_term = getUrlParameter('utm_term');
 	this.state.fields.utm_content = getUrlParameter('utm_content');
-	this.state.fields.gclid = getUrlParameter('gclid');	
+	this.state.fields.gclid = getUrlParameter('gclid');
+	}
+	
     if (popupActive) {
       return (
         <div className="formsub__popup">
