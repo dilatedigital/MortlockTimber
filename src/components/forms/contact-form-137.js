@@ -230,7 +230,8 @@ class ContactForm extends Component {
 		var submission_page_url = window.location.href;
 		return submission_page_url;
 	};	
-	
+
+	if (typeof window !== `undefined`){	
 	this.state.fields.external_referral_site = pre_submission();
 	this.state.fields.landing_page = pre_submission();
 	this.state.fields.pre_submission_page = pre_submission();
@@ -241,7 +242,7 @@ class ContactForm extends Component {
 	this.state.fields.utm_term = getUrlParameter('utm_term');
 	this.state.fields.utm_content = getUrlParameter('utm_content');
 	this.state.fields.gclid = getUrlParameter('gclid');	
-	
+	}	
 	
     return (
       <form className={submitActive ? 'contact__form loading' : 'contact__form'} id="contact__form" type="POST" onSubmit={ this.handleSubmit } noValidate>
