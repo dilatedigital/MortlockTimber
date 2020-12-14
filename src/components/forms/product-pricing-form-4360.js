@@ -106,7 +106,7 @@ class ProductPricingForm extends Component {
 		return submission_page_url;
 	}
 	
-function getUrlParameter(sParam) {
+ getUrlParameter(sParam) {
 		var sPageURL = window.location.search.substring(1),
 			sURLVariables = sPageURL.split('&'),
 			sParameterName,
