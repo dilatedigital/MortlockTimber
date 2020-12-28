@@ -6572,3 +6572,13 @@ form {
 form.loading .btn_wrap .button {
   pointer-events: none !important;
 }
+
+@media only screen and (max-width: 600px) {
+.post__content figure.wp-block-embed-wordpress {
+    width: 100%;
+}
+
+.post__content iframe.wp-embedded-content {
+    width: 100%;
+}
+}
