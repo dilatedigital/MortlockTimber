@@ -271,7 +271,7 @@ class ProductPricingForm extends Component {
             class="link"
             target="_blank"
             rel="noreferrer"
-            href={this.props.data.pricing_guide_download_link.link}
+            href="https://site.mortlock.com.au/wp-content/uploads/2020/12/Mortlock-Timber-Product-Pricing-Guide-EMAIL.pdf"
           >
             Click here to download pricing guide
           </a>
