@@ -268,7 +268,7 @@ class ProductPricingPopupForm extends Component {
         <div className="formsub__popup">
           <h3>Thank you!</h3>
           <p>Please click the link below to download the guide.</p>
-          <a class="link" target="_blank" rel="noreferrer" href={this.props.data.pricing_guide_download_link.link}>Click here to download pricing guide</a>
+          <a class="link" target="_blank" rel="noreferrer" href="https://site.mortlock.com.au/wp-content/uploads/2020/12/Mortlock-Timber-Product-Pricing-Guide-EMAIL.pdf">Click here to download pricing guide</a>
         </div>
       )
     } else {
