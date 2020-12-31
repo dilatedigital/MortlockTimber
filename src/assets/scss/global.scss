@@ -6573,6 +6573,57 @@ form.loading .btn_wrap .button {
   pointer-events: none !important;
 }
 
+.newsletter__form input[type="text"], .newsletter__form input[type="email"] {
+    color: #312f30;
+}
+
+.newsletter__form label {display: none!important;}
+
+.newsletter__form .form_group {
+    margin-bottom: 5px;
+}
+
+form.newsletter__form {margin: 0 auto;max-width: 900px; padding-top: 10px;}
+
+.newsletter__form .btn_wrap {
+    margin: 0 30px;
+}
+
+.newsletter__form button.button {width: 33.33333%; margin-top: 20px;}
+
+.newsletter__form button.button:hover {
+
+}
+
+.newsletter {
+    background: #a2764f;
+    padding: 60px 50px 50px;
+    text-align: center;
+    margin-bottom: 80px;
+}
+
+.newsletter__form input[type="text"]::placeholder, .newsletter__form input[type="email"]::placeholder {
+     color: #312f30;   
+}
+
+.footer {
+    padding: 0 0 0;
+}
+
+.newsletter h3 {
+    font-size: 36px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.newsletter__form input[type="text"]:focus, .newsletter__form input[type="email"]:focus {
+    border: 1px solid #dea36e;
+}
+
+.newsletter__form span.error {
+    color: #a20c00;
+}
+
 @media only screen and (min-width: 1024px){
 .post__content ul li {
     padding: 0 0 25px 70px!important;
@@ -6586,5 +6637,9 @@ form.loading .btn_wrap .button {
 
 .post__content iframe.wp-embedded-content {
     width: 100%;
+}
+  
+.newsletter__form button.button {
+    width: auto;
 }
 }
