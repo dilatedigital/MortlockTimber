@@ -1,5 +1,6 @@
 import React from 'react';
 import { StaticQuery, graphql, Link } from "gatsby";
+import NewsletterForm from '../components/forms/newsletter-form-8174';
 
 const Footer = ({ data }) => (
   <StaticQuery
@@ -58,7 +59,11 @@ const Footer = ({ data }) => (
     `}
 
     render={data => (
-      <footer className="footer">
+      <footer className="footer">	  
+      <div className="newsletter">
+      <h3>Subscribe to our newsletter</h3>
+      <NewsletterForm></NewsletterForm>
+      </div>
         <div className="container">
           <div className="footer__top">
             <div className="row">
