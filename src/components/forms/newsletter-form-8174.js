@@ -16,6 +16,7 @@ class NewsletterForm extends Component {
         email: '',
         leadsource: 'Website',
         pageURL: this.props.location,
+	        interest: 'Unsure',
 		external_referral_site: '',
 		landing_page: '',
 		pre_submission_page: '',
@@ -32,6 +33,7 @@ class NewsletterForm extends Component {
         lastname: '',
         email: '',
         pageURL: '',
+	        interest: 'Unsure',
 		external_referral_site: '',
 		landing_page: '',
 		pre_submission_page: '',
@@ -118,6 +120,7 @@ class NewsletterForm extends Component {
       bodyFormData.append('email', this.state.fields.email)
       bodyFormData.append('leadsource', this.state.fields.leadsource)
       bodyFormData.append('pageURL', this.state.fields.pageURL)
+      bodyFormData.append('interest', this.state.fields.interest)
       bodyFormData.append('external_referral_site', this.state.fields.external_referral_site)
       bodyFormData.append('landing_page', this.state.fields.landing_page)
       bodyFormData.append('pre_submission_page', this.state.fields.pre_submission_page)
@@ -143,6 +146,7 @@ class NewsletterForm extends Component {
                 email: '',
                 leadsource: 'Website',
                 pageURL: this.props.location,
+		      		interest: 'Unsure',
 				external_referral_site: '',
 				landing_page: '',
 				pre_submission_page: '',
