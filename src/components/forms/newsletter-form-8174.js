@@ -249,7 +249,7 @@ class NewsletterForm extends Component {
           </div>
         </div>
 		<div style={{ display: `none` }}>
-	<input type="hidden" name="external_referral_site" value={ window.parent.location || ''} />
+	<input type="hidden" name="external_referral_site" value={ pre_submission() || ''} />
 
 	<input type="hidden" name="landing_page" value={ pre_submission() || ''} />
 
