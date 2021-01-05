@@ -6639,9 +6639,13 @@ margin-top: 30px;
     display: block;
 }
 
+.post__content ol {
+    padding-left: 20px;
+}
+
 @media only screen and (min-width: 1024px){
 .post__content ul li {
-    padding: 0 0 15px 65px !important;
+    padding: 0 0 15px 25px !important;
 }
 .post__content p {
     margin-bottom: 15px;
@@ -6653,6 +6657,9 @@ margin-top: 30px;
 .post__content ul {
     margin-top: 0;
     padding: 0px 0 5px;
+}
+.post__content ul li:before {
+    left: 0px;
 }
 }
 
