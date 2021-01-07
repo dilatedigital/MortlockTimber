@@ -13,6 +13,7 @@ const Page = props => {
   const { projects } = useContext(ProjectContext)
 
   const content = props
+
   const page = props.data.allWordpressPage
   let products = []
   let productTypes = []

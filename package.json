@@ -42,6 +42,7 @@
   ],
   "license": "MIT",
   "scripts": {
+    "dev": "GATSBY_CONCURRENT_DOWNLOAD=5 gatsby develop",
     "build": "gatsby build",
     "develop": "gatsby develop",
     "format": "prettier --write \"**/*.{js,jsx,ts,tsx,json,md}\"",
