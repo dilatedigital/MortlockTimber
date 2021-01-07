@@ -6679,6 +6679,10 @@ margin-top: 30px;
 display:block;
 }
 
+.post__content .wp-block-image figure.aligncenter.size-large.is-resized img {
+    width: 100%;
+}
+
 @media only screen and (min-width: 1024px){
 .post__content ul li {
     padding: 0 0 15px 25px !important;
