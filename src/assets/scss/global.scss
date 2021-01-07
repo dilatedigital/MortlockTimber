@@ -6683,6 +6683,10 @@ display:block;
     width: 100%;
 }
 
+.post__content figure.wp-block-image.size-large img {
+    width: 100%;
+}
+
 @media only screen and (min-width: 1024px){
 .post__content ul li {
     padding: 0 0 15px 25px !important;
