@@ -6675,6 +6675,10 @@ margin-top: 30px;
     margin-right: 4%;
 }
 
+.post__content .wp-block-media-text .wp-block-media-text__content strong{
+display:block;
+}
+
 @media only screen and (min-width: 1024px){
 .post__content ul li {
     padding: 0 0 15px 25px !important;
@@ -6692,6 +6696,13 @@ margin-top: 30px;
 }
 .post__content ul li:before {
     left: 0px;
+}
+}
+
+@media only screen and (min-width: 768px){
+.post__content .wp-block-media-text .wp-block-media-text__content pre.wp-block-verse {
+font-size: 18px;
+    line-height: 1.5;
 }
 }
 
