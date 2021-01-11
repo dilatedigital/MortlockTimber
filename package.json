@@ -22,6 +22,7 @@
     "gatsby-plugin-sharp": "^2.6.11",
     "gatsby-plugin-sitemap": "^2.4.12",
     "gatsby-plugin-smoothscroll": "^1.2.0",
+    "gatsby-plugin-sri": "^1.1.0",
     "gatsby-source-filesystem": "^2.3.11",
     "gatsby-source-wordpress": "^3.2.2",
     "gatsby-transformer-sharp": "^2.5.5",
