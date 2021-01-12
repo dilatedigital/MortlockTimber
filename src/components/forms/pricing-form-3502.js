@@ -279,12 +279,34 @@ class PricingForm extends Component {
         <div className="formsub__popup">
           <h3>Thank you!</h3>
           <p>Please click the link below to download the guide.</p>
+          <a
+            class="link"
+            target="_blank"
+            rel="noreferrer"
+            href={this.props.data.download_mortlock_product_pricing_specification_guide.link}
+          >
+            Click here to download Product Pricing Specification Guide
+          </a>
           {this.state.fields.products && this.state.fields.products.map((product, index) => (
-            <div className="link__hold" key={index}>
+            <div className="link__hold" style={{ display: `none!important` }} key={index}>
               {(() => {
+              if(product === 'timberceilings') {
                 return (
-                  <a className="link" target="_blank" rel="noreferrer" href={this.props.data.download_mortlock_product_pricing_specification_guide.link}>Download Product Pricing Specification Guide</a>
+                  <a className="link" target="_blank" rel="noreferrer" href={this.props.zip.download_zip_file_timber_ceilings.link}>Download Timber Ceilings Pricing Guide</a>
                 )
+              } else if(product === 'timberwalls') {
+                return (
+                  <a className="link" target="_blank" rel="noreferrer" href={this.props.zip.download_zip_file_timber_walls.link}>Download Timber Walls Pricing Guide</a>
+                )
+              } else if(product === 'timberdecking') {
+                return (
+                  <a className="link" target="_blank" rel="noreferrer" href={this.props.zip.download_zip_file_timber_decking.link}>Download Timber Decking Pricing Guide</a>
+                )
+              } else if(product === 'shousugiban') {
+                return (
+                  <a className="link" target="_blank" rel="noreferrer" href={this.props.zip.download_zip_shou_sugi_ban.link}>Download Shou Sugi Ban Pricing Guide</a>
+                )
+              }
               })()}
             </div>
           ))}
