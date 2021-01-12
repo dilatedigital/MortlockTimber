@@ -279,14 +279,15 @@ class PricingForm extends Component {
         <div className="formsub__popup">
           <h3>Thank you!</h3>
           <p>Please click the link below to download the guide.</p>
-         <a
-            class="link"
-            target="_blank"
-            rel="noreferrer"
-            href={this.props.data.download_mortlock_product_pricing_specification_guide.link}
-          >
-            Click here to download pricing guide
-          </a>
+          {this.state.fields.products && this.state.fields.products.map((product, index) => (
+            <div className="link__hold" key={index}>
+              {(() => {
+                return (
+                  <a className="link" target="_blank" rel="noreferrer" href={this.props.data.download_mortlock_product_pricing_specification_guide.link}>Download Product Pricing Specification Guide</a>
+                )
+              })()}
+            </div>
+          ))}
         </div>
       )
     } else {
