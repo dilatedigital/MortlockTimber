@@ -143,6 +143,9 @@ export const pageQuery = graphql`
             download_zip_shou_sugi_ban {
               link
             }
+            download_mortlock_product_pricing_specification_guide {
+              link
+            }
           }
         }
       }
