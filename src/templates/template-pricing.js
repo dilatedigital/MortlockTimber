@@ -26,7 +26,8 @@ class Page extends Component {
       download_zip_file_timber_decking: this.props.data.allWordpressPage.edges[0].node.acf.download_zip_file_timber_decking,
       download_zip_file_timber_ceilings: this.props.data.allWordpressPage.edges[0].node.acf.download_zip_file_timber_ceilings,
       download_zip_file_timber_walls: this.props.data.allWordpressPage.edges[0].node.acf.download_zip_file_timber_walls,
-      download_zip_shou_sugi_ban: this.props.data.allWordpressPage.edges[0].node.acf.download_zip_shou_sugi_ban
+      download_zip_shou_sugi_ban: this.props.data.allWordpressPage.edges[0].node.acf.download_zip_shou_sugi_ban,
+      download_mortlock_product_pricing_specification_guide: this.props.data.allWordpressPage.edges[0].node.acf.download_mortlock_product_pricing_specification_guide
     }
     return (
       <Layout>
