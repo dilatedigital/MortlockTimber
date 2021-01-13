@@ -46,6 +46,7 @@ class NewsletterForm extends Component {
       submitActive: false,
       mainFormMsg: '',
       mainFormState: null,
+      leadInfoSource: null,
       pre_submission_page: "",
       external_referral_site: "",
       landing_page: "",
