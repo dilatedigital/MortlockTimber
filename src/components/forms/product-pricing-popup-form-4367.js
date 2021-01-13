@@ -64,6 +64,7 @@ class ProductPricingPopupForm extends Component {
       mainFormState: null,
       popupActive: false,
       selectedSpecies: null,
+      leadInfoSource: null,
       pre_submission_page: "",
       external_referral_site: "",
       landing_page: "",
