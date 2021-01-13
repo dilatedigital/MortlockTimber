@@ -28,7 +28,6 @@ class SampleRequest extends Component {
         interest: "Unsure",
         leadsource: "Website",
         pageURL: this.props.location,
-        pre_submission_page: "",
         submission_page: "",
         utm_source: "",
         utm_medium: "",
@@ -67,6 +66,7 @@ class SampleRequest extends Component {
       mainFormState: null,
       popupActive: false,
       leadInfoSource: null,
+      pre_submission_page: "",
       external_referral_site: "",
       landing_page: "",
     }
@@ -86,10 +86,19 @@ class SampleRequest extends Component {
 
   handleReferrer() {
     setTimeout(() => {
+      if ((sessionStorage.getItem("referrer")).includes("mortlock.com.au")){
+      this.setState({
+        external_referral_site: "None",
+      })
+      }else{
       this.setState({
         external_referral_site: sessionStorage.getItem("referrer"),
-      })
+      })	      
+      }
       this.setState({ landing_page: sessionStorage.getItem("landing") })
+      this.setState({
+        pre_submission_page: sessionStorage.getItem("referrer"),
+      })
       console.log(sessionStorage.getItem("landing"))
     }, 300)
   }
@@ -201,7 +210,7 @@ class SampleRequest extends Component {
       bodyFormData.append("landing_page", this.state.landing_page)
       bodyFormData.append(
         "pre_submission_page",
-        this.state.fields.pre_submission_page
+        this.state.pre_submission_page
       )
       bodyFormData.append("submission_page", this.state.fields.submission_page)
       bodyFormData.append("utm_source", this.state.fields.utm_source)
@@ -237,7 +246,6 @@ class SampleRequest extends Component {
                   interest: "Unsure",
                   leadsource: "Website",
                   pageURL: this.props.location,
-                  pre_submission_page: "",
                   submission_page: "",
                   utm_source: "",
                   utm_medium: "",
@@ -609,12 +617,6 @@ class SampleRequest extends Component {
             </div>
           </div>
           <div style={{ display: `none` }}>
-            <input
-              type="hidden"
-              name="pre_submission_page"
-              value={pre_submission() || ""}
-            />
-
             <input
               type="hidden"
               name="submission_page"
