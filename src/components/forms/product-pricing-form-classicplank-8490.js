@@ -312,7 +312,7 @@ class ProductPricingFormClassicplank extends Component {
       return (
         <>
           <form
-            className={submitActive ? "pricing__form loading" : "pricing__form"}
+            className={submitActive ? "pricing__form loading classicplank-pricing-form" : "pricing__form"}
             id="pricing__form"
             type="POST"
             onSubmit={this.handleSubmit}
