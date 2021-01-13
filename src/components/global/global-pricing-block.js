@@ -3,6 +3,11 @@ import Img from 'gatsby-image';
 
 import ProductPricingForm from "../forms/product-pricing-form-4360";
 import ProductPricingFormClassicplank from "../forms/product-pricing-form-classicplank-8490";
+import ProductPricingFormMarineplank from "../forms/product-pricing-form-marineplank-8505";
+import ProductPricingFormMetroplank from "../forms/product-pricing-form-metroplank-8506";
+import ProductPricingFormProplank from "../forms/product-pricing-form-proplank-8507";
+import ProductPricingFormShousugiban from "../forms/product-pricing-form-shousugiban-8508";
+import ProductPricingFormTrendplank from "../forms/product-pricing-form-trendplank-8509";
 
 const PricingBlock = ({ ...props }) =>  {
   const content = props.data;
@@ -17,7 +22,11 @@ const PricingBlock = ({ ...props }) =>  {
               <h2 dangerouslySetInnerHTML={{ __html: content.pricing_title }} />
               <p dangerouslySetInnerHTML={{ __html: content.pricing_description }} />
               {props.pageID == 573 ? ( <ProductPricingFormClassicplank gtag={props.gtag} finishes={props.finishes} battensize={props.battensize} data={content} pageID={props.pageID} location={props.location} /> ) 
-              : props.pageID == 57444444 ? ( <ProductPricingForm gtag={props.gtag} finishes={props.finishes} battensize={props.battensize} data={content} pageID={props.pageID} location={props.location} /> )			  
+              : props.pageID == 561 ? ( <ProductPricingFormMarineplank gtag={props.gtag} finishes={props.finishes} battensize={props.battensize} data={content} pageID={props.pageID} location={props.location} /> )
+              : props.pageID == 567 ? ( <ProductPricingFormMetroplank gtag={props.gtag} finishes={props.finishes} battensize={props.battensize} data={content} pageID={props.pageID} location={props.location} /> )
+              : props.pageID == 339 ? ( <ProductPricingFormProplank gtag={props.gtag} finishes={props.finishes} battensize={props.battensize} data={content} pageID={props.pageID} location={props.location} /> )
+              : props.pageID == 4205 ? ( <ProductPricingFormShousugiban gtag={props.gtag} finishes={props.finishes} battensize={props.battensize} data={content} pageID={props.pageID} location={props.location} /> )
+              : props.pageID == 4209 ? ( <ProductPricingFormTrendplank gtag={props.gtag} finishes={props.finishes} battensize={props.battensize} data={content} pageID={props.pageID} location={props.location} /> )
               : ( <ProductPricingForm gtag={props.gtag} finishes={props.finishes} battensize={props.battensize} data={content} pageID={props.pageID} location={props.location} /> )  }
             </div>
           </div>
