@@ -59,7 +59,8 @@ class PricingForm extends Component {
       mainFormMsg: '',
       mainFormState: null,
       popupActive: false,
-	pre_submission_page: "",
+      leadInfoSource: null,
+      pre_submission_page: "",
       external_referral_site: "",
       landing_page: "",
     }
