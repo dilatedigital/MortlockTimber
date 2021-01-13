@@ -26,9 +26,6 @@ class ProductPricingPopupForm extends Component {
         leadsource: 'Website',
         pageURL: this.props.location,
         interest: 'Proplank',
-		external_referral_site: '',
-		landing_page: '',
-		pre_submission_page: '',
 		submission_page: '',
 		utm_source: '',
 		utm_medium: '',
@@ -66,12 +63,47 @@ class ProductPricingPopupForm extends Component {
       mainFormMsg: '',
       mainFormState: null,
       popupActive: false,
-      selectedSpecies: null
+      selectedSpecies: null,
+      pre_submission_page: "",
+      external_referral_site: "",
+      landing_page: "",
     }
     this.handleInputChange = this.handleInputChange.bind(this);
     this.pricingPopup = this.pricingPopup.bind(this);
   }
 
+  getLeadSource() {
+    const queryString = window.location.search
+    const urlParams = new URLSearchParams(queryString)
+    if (urlParams.has("utm_source")) {
+      this.setState({ leadInfoSource: urlParams.get("utm_source") })
+    } else {
+      this.setState({ leadInfoSource: "Organic" })
+    }
+  }
+  handleReferrer() {
+    setTimeout(() => {
+      if ((sessionStorage.getItem("referrer")).includes("mortlock.com.au")){
+      this.setState({
+        external_referral_site: "None",
+      })
+      }else{
+      this.setState({
+        external_referral_site: sessionStorage.getItem("referrer"),
+      })	      
+      }
+      this.setState({ landing_page: sessionStorage.getItem("landing") })
+      this.setState({
+        pre_submission_page: sessionStorage.getItem("referrer"),
+      })
+      console.log(sessionStorage.getItem("landing"))
+    }, 300)
+  }
+  componentDidMount() {
+    this.getLeadSource()
+    this.handleReferrer()
+  }
+	
   handleInputChange(event) {
     const { name, value, type } = event.target;
     this.setState({
@@ -152,16 +184,22 @@ class ProductPricingPopupForm extends Component {
       bodyFormData.append('leadsource', this.state.fields.leadsource)
       bodyFormData.append('pageURL', this.state.fields.pageURL)
       bodyFormData.append('interest', this.state.fields.interest)
-      bodyFormData.append('external_referral_site', this.state.fields.external_referral_site)
-      bodyFormData.append('landing_page', this.state.fields.landing_page)
-      bodyFormData.append('pre_submission_page', this.state.fields.pre_submission_page)
-      bodyFormData.append('submission_page', this.state.fields.submission_page)
-      bodyFormData.append('utm_source', this.state.fields.utm_source)
-      bodyFormData.append('utm_medium', this.state.fields.utm_medium)
-      bodyFormData.append('utm_campaign', this.state.fields.utm_campaign)
-      bodyFormData.append('utm_term', this.state.fields.utm_term)
-      bodyFormData.append('utm_content', this.state.fields.utm_content)
-      bodyFormData.append('gclid', this.state.fields.gclid)
+      bodyFormData.append(
+        "external_referral_site",
+        this.state.external_referral_site
+      )
+      bodyFormData.append("landing_page", this.state.landing_page)
+      bodyFormData.append(
+        "pre_submission_page",
+        this.state.pre_submission_page
+      )
+      bodyFormData.append("submission_page", this.state.fields.submission_page)
+      bodyFormData.append("utm_source", this.state.fields.utm_source)
+      bodyFormData.append("utm_medium", this.state.fields.utm_medium)
+      bodyFormData.append("utm_campaign", this.state.fields.utm_campaign)
+      bodyFormData.append("utm_term", this.state.fields.utm_term)
+      bodyFormData.append("utm_content", this.state.fields.utm_content)
+      bodyFormData.append("gclid", this.state.fields.gclid)
 
       axios.post(formLink, bodyFormData, Helpers.config).then((res) => {
         if(res.data.status === 'mail_sent') {
@@ -183,9 +221,6 @@ class ProductPricingPopupForm extends Component {
                 battenspacing: '',
                 backing: '',
                 projectsize: '',
-				external_referral_site: '',
-				landing_page: '',
-				pre_submission_page: '',
 				submission_page: '',
 				utm_source: '',
 				utm_medium: '',
@@ -224,44 +259,39 @@ class ProductPricingPopupForm extends Component {
   }
 
   render() {
-    const { submitActive, popupActive, popupFormActive } = this.state;
-	var getUrlParameter = function getUrlParameter(sParam) {
-		var sPageURL = window.location.search.substring(1),
-			sURLVariables = sPageURL.split('&'),
-			sParameterName,
-			i;
-
-		for (i = 0; i < sURLVariables.length; i++) {
-			sParameterName = sURLVariables[i].split('=');
-
-			if (sParameterName[0] === sParam) {
-				return sParameterName[1] === undefined ? true : decodeURIComponent(sParameterName[1]);
-			}
-		}
-	};
-	
-	var pre_submission = function pre_submission() {
-		var pre_submission_page = '';
-		return pre_submission_page;
-	};	
-	
-	var submission_page = function submission_page() {
-		var submission_page_url = window.location.href;
-		return submission_page_url;
-	};	
-	
-	if (typeof window !== `undefined`){
-	this.state.fields.external_referral_site = pre_submission();
-	this.state.fields.landing_page = pre_submission();
-	this.state.fields.pre_submission_page = pre_submission();
-	this.state.fields.submission_page = submission_page();
-	this.state.fields.utm_source = getUrlParameter('utm_source');
-	this.state.fields.utm_medium = getUrlParameter('utm_medium');
-	this.state.fields.utm_campaign = getUrlParameter('utm_campaign');
-	this.state.fields.utm_term = getUrlParameter('utm_term');
-	this.state.fields.utm_content = getUrlParameter('utm_content');
-	this.state.fields.gclid = getUrlParameter('gclid');	
-	}
+    const { submitActive, popupActive, popupFormActive } = this.state
+    var getUrlParameter = function getUrlParameter(sParam) {
+      var sPageURL = window.location.search.substring(1),
+        sURLVariables = sPageURL.split("&"),
+        sParameterName,
+        i
+      for (i = 0; i < sURLVariables.length; i++) {
+        sParameterName = sURLVariables[i].split("=")
+        if (sParameterName[0] === sParam) {
+          return sParameterName[1] === undefined
+            ? true
+            : decodeURIComponent(sParameterName[1])
+        }
+      }
+    }
+    var pre_submission = function pre_submission() {
+      var pre_submission_page = ""
+      return pre_submission_page
+    }
+    var submission_page = function submission_page() {
+      var submission_page_url = window.location.href
+      return submission_page_url
+    }
+    if (typeof window !== `undefined`) {
+      this.state.fields.pre_submission_page = pre_submission()
+      this.state.fields.submission_page = submission_page()
+      this.state.fields.utm_source = getUrlParameter("utm_source")
+      this.state.fields.utm_medium = getUrlParameter("utm_medium")
+      this.state.fields.utm_campaign = getUrlParameter("utm_campaign")
+      this.state.fields.utm_term = getUrlParameter("utm_term")
+      this.state.fields.utm_content = getUrlParameter("utm_content")
+      this.state.fields.gclid = getUrlParameter("gclid")
+    }
 	
     if(popupActive) {
       return (
@@ -448,27 +478,63 @@ class ProductPricingPopupForm extends Component {
               </div>
             </div>
           </div>
-		<div style={{ display: `none` }}>
-	<input type="hidden" name="external_referral_site" value={ pre_submission() || ''} />
-
-	<input type="hidden" name="landing_page" value={ pre_submission() || ''} />
-
-	<input type="hidden" name="pre_submission_page" value={ pre_submission() || ''} />
-
-	<input type="hidden" name="submission_page" value={ typeof window !== `undefined` ?	window.location.href : ''} />
-
-	<input type="hidden" name="utm_source" value={ typeof window !== `undefined` ?	getUrlParameter('utm_source') : ''} />
-
-	<input type="hidden" name="utm_medium" value={ typeof window !== `undefined` ?	getUrlParameter('utm_medium') : ''} />
-
-	<input type="hidden" name="utm_campaign" value={ typeof window !== `undefined` ?	getUrlParameter('utm_campaign') : ''} />
-	 
-	<input type="hidden" name="utm_term" value={ typeof window !== `undefined` ?	getUrlParameter('utm_term') : ''} />
-	 
-	<input type="hidden" name="utm_content" value={ typeof window !== `undefined` ?	getUrlParameter('utm_content') : ''} />
-	 
-	<input type="hidden" name="gclid" value={ typeof window !== `undefined` ?	getUrlParameter('gclid') : ''} />
-</div>
+<div style={{ display: `none` }}>
+            <input
+              type="hidden"
+              name="submission_page"
+              value={typeof window !== `undefined` ? window.location.href : ""}
+            />
+            <input
+              type="hidden"
+              name="utm_source"
+              value={
+                typeof window !== `undefined`
+                  ? getUrlParameter("utm_source")
+                  : ""
+              }
+            />
+            <input
+              type="hidden"
+              name="utm_medium"
+              value={
+                typeof window !== `undefined`
+                  ? getUrlParameter("utm_medium")
+                  : ""
+              }
+            />
+            <input
+              type="hidden"
+              name="utm_campaign"
+              value={
+                typeof window !== `undefined`
+                  ? getUrlParameter("utm_campaign")
+                  : ""
+              }
+            />
+            <input
+              type="hidden"
+              name="utm_term"
+              value={
+                typeof window !== `undefined` ? getUrlParameter("utm_term") : ""
+              }
+            />
+            <input
+              type="hidden"
+              name="utm_content"
+              value={
+                typeof window !== `undefined`
+                  ? getUrlParameter("utm_content")
+                  : ""
+              }
+            />
+            <input
+              type="hidden"
+              name="gclid"
+              value={
+                typeof window !== `undefined` ? getUrlParameter("gclid") : ""
+              }
+            />
+          </div>
           <div className="btn_wrap">
             <button className="button" type="submit"><span className="text">Submit</span><Loader /></button>
             {this.state.mainFormMsg && <span className={`form-msg ${this.state.mainFormState}`}>{ this.state.mainFormMsg }</span>}
