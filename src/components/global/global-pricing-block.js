@@ -2,6 +2,7 @@ import React from 'react';
 import Img from 'gatsby-image';
 
 import ProductPricingForm from "../forms/product-pricing-form-4360";
+import ProductPricingFormClassicplank from "../forms/product-pricing-form-classicplank-8490";
 
 const PricingBlock = ({ ...props }) =>  {
   const content = props.data;
@@ -15,7 +16,9 @@ const PricingBlock = ({ ...props }) =>  {
             <div className="pricing__text" >
               <h2 dangerouslySetInnerHTML={{ __html: content.pricing_title }} />
               <p dangerouslySetInnerHTML={{ __html: content.pricing_description }} />
-              <ProductPricingForm gtag={props.gtag} finishes={props.finishes} battensize={props.battensize} data={content} pageID={props.pageID} location={props.location} />
+              {props.pageID == 573 ? ( <ProductPricingFormClassicplank gtag={props.gtag} finishes={props.finishes} battensize={props.battensize} data={content} pageID={props.pageID} location={props.location} /> ) 
+              : props.pageID == 57444444 ? ( <ProductPricingForm gtag={props.gtag} finishes={props.finishes} battensize={props.battensize} data={content} pageID={props.pageID} location={props.location} /> )			  
+              : ( <ProductPricingForm gtag={props.gtag} finishes={props.finishes} battensize={props.battensize} data={content} pageID={props.pageID} location={props.location} /> )  }
             </div>
           </div>
           <div className="col-sm-offset-1 col-sm-5">
