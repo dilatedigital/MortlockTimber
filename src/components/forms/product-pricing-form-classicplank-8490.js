@@ -139,7 +139,7 @@ class ProductPricingFormClassicplank extends Component {
     this.setState({ submitActive: true })
 
     const formLink =
-      "https://site.mortlock.com.au/wp-json/contact-form-7/v1/contact-forms/4360/feedback"
+      "https://site.mortlock.com.au/wp-json/contact-form-7/v1/contact-forms/8490/feedback"
     let isFormValid = false
     let elements = document.querySelectorAll(".pricing__form .noEmpty")
 
