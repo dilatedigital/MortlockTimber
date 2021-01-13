@@ -10,7 +10,7 @@ const togglePopupOverlay = () => {
   document.body.classList.toggle("popup__active")
 }
 
-class ProductPricingFormCTrendplank extends Component {
+class ProductPricingFormTrendplank extends Component {
   constructor(props) {
     super(props)
 
