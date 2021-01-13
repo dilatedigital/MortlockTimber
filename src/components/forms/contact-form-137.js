@@ -357,7 +357,6 @@ class ContactForm extends Component {
             <textarea aria-label="Message" id="message" placeholder="Please leave a detailed message here..." name="message" value={this.state.fields.message || ''} onChange={ this.handleInputChange } />
           </div>
         </div>
-		<div style={{ display: `none` }}>
           <div style={{ display: `none` }}>
             <input
               type="hidden"
