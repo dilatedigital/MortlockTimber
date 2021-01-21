@@ -16,7 +16,7 @@ const ProductOverview = ({ ...props }) =>  {
     { content.product_overview_aside_title ? <div className="aside__text" dangerouslySetInnerHTML={{ __html: content.product_overview_aside_title }} /> : null }
       <div className="container">
         <div className="row">
-          <div className="col-sm-4">
+          <div className="col-sm-4 newheight">
             <h2 className="main-heading" data-sal="slide-up" 
       data-sal-easing="ease"
       data-sal-delay="5" dangerouslySetInnerHTML={{ __html: content.product_title }} />
