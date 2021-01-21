@@ -3378,6 +3378,10 @@ ul.footer_menu {
       background: $primary-color;
     }
   }
+  // edit to fix left col height
+  .newheight{
+    max-height: 200px;
+  }
 }
 
 .aside__image {
