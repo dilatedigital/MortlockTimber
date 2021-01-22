@@ -13,6 +13,7 @@ class Post extends Component {
     const pageData = this.props.data.wordpressPost
     const relatedData = this.props.data.allWordpressPost
     const postURL = this.props.location.href;
+    // const pricingImage = this.props.data.allWordpressAcfOptions.edges[0].node.options.pricing_image
     
     const zip = {
       download_mortlock_product_pricing_specification_guide: this.props.data.allWordpressAcfOptions.edges[0].node.options.download_mortlock_product_pricing_specification_guide
@@ -71,27 +72,37 @@ class Post extends Component {
                                 }
                                 /> < /
                                 div >
-                                <
-                                div className = "container" >
-                                <div className="row center-xs">
+                                <div class="contact__wrapper">
+                                <div className = "container">
+                               
                                   
                                 <div class="quote__text">
-                                <h2 dangerouslySetInnerHTML={{ __html: this.props.data.allWordpressAcfOptions.edges[0].node.options.pricing_form_heading }} /></div>
+                                <h2 dangerouslySetInnerHTML={{ __html: this.props.data.allWordpressAcfOptions.edges[0].node.options.pricing_form_heading }} />
+                                </div>
+                                <div className="row">
+                                      <div className = "col-sm-6">
+                                      <p dangerouslySetInnerHTML={{ __html: this.props.data.allWordpressAcfOptions.edges[0].node.options.pricing_form_description }} />
+                                      <div className = "pricing_formwrap" >
+                                      <PricingForm zip = { zip }
+                                      location = { this.props.location.href }/> 
+                                      </div>
+                                      </div> 
+                                      <div className="col-sm-6">
+                                            <div className="" data-sal="slide-up" data-sal-easing="ease" data-sal-delay="5">
+          <Img fluid={ this.props.data.allWordpressAcfOptions.edges[0].node.options.pricing_image.localFile.childImageSharp.fluid} alt="Mortlock Timber" />
+                                            </div>
+                                          </div>
+                                </div> 
+                                </div> 
+                                </div>
+                                <div className="contact__wrapper">
+                                  <div className="container container__small">
+                                  <div dangerouslySetInnerHTML={{ __html: this.props.data.allWordpressAcfOptions.edges[0].node.options.pricing_form_description_bottom }} />
 
+                               
+                                  </div>
+                                </div>
                                 <
-                                div className = "col-sm-6  start-xs" >
-                                
-                                <p dangerouslySetInnerHTML={{ __html: this.props.data.allWordpressAcfOptions.edges[0].node.options.pricing_form_description }} />
-                                <
-                                div className = "pricing_formwrap" >
-                                <
-                                PricingForm zip = { zip }
-                                location = { this.props.location.href }
-                                /> < /
-                                div >< /
-                                div > <
-                                /div> < /
-                                div > <
                                 div className = "related__blogs" >
                                 <
                                 div className = "container" >
@@ -209,9 +220,20 @@ class Post extends Component {
         options {
         pricing_form_heading
         pricing_form_description
+        pricing_form_description_bottom
         download_mortlock_product_pricing_specification_guide{
           link
         }
+        pricing_image{
+          localFile {
+            childImageSharp {
+              fluid(maxWidth: 500) {
+                ...GatsbyImageSharpFluid_withWebp
+              }
+            }
+          }
+        }
+        
         }
       }
       }
