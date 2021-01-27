@@ -18,7 +18,6 @@ function SEO({ description, lang, meta, title }) {
           siteMetadata {
             title
             description
-            canonicalUrl
             author
           }
         }
@@ -69,13 +68,6 @@ function SEO({ description, lang, meta, title }) {
           content: metaDescription,
         },
       ].concat(meta)}
-        links={[
-             {
-                  rel: 'canonical',
-                  href: site.siteMetadata.canonicalUrl,
-              },
-            ]}
-    />
   )
 }
 
