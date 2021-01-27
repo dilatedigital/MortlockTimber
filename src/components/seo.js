@@ -18,6 +18,7 @@ function SEO({ description, lang, meta, title }) {
           siteMetadata {
             title
             description
+            canonicalUrl
             author
           }
         }
@@ -34,6 +35,7 @@ function SEO({ description, lang, meta, title }) {
       }}
       title={title}
       titleTemplate={title}
+      canonicalUrl={site.siteMetadata.canonicalUrl}
       meta={[
         {
           name: `description`,
