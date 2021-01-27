@@ -35,7 +35,6 @@ function SEO({ description, lang, meta, title }) {
       }}
       title={title}
       titleTemplate={title}
-      canonical={site.siteMetadata.canonicalUrl}
       meta={[
         {
           name: `description`,
@@ -70,6 +69,12 @@ function SEO({ description, lang, meta, title }) {
           content: metaDescription,
         },
       ].concat(meta)}
+        links={[
+             {
+                  rel: 'canonical',
+                  href: site.siteMetadata.canonicalUrl,
+              },
+            ]}
     />
   )
 }
