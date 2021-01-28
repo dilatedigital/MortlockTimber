@@ -25,8 +25,7 @@ function SEO({ description, lang, meta, title }) {
     `
   )
 
-  const metaDescription = description || site.siteMetadata.description;
-  const url = typeof window !== 'undefined' ? window.location.href : '';
+  const metaDescription = description || site.siteMetadata.description
 
   return (
     <Helmet
@@ -69,12 +68,6 @@ function SEO({ description, lang, meta, title }) {
           content: metaDescription,
         },
       ].concat(meta)}
-    link={[
-     {
-          rel: 'canonical',
-          href: url,
-      },
-    ]}
     />
   )
 }
