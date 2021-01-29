@@ -18,6 +18,7 @@ module.exports = {
         defaultDataLayer: { platform: "gatsby" },
       },
     },
+
     {
       resolve: `gatsby-plugin-alias-imports`,
       options: {
@@ -199,6 +200,12 @@ module.exports = {
       options: {
         hash: "sha512", // 'sha256', 'sha384' or 'sha512' ('sha512' = default)
         crossorigin: false, // Optional
+      },
+    },
+    {
+      resolve: `gatsby-plugin-canonical-urls`,
+      options: {
+        siteUrl: `https://www.mortlock.com.au`,
       },
     },
   ],
