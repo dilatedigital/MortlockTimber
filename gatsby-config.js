@@ -18,6 +18,7 @@ module.exports = {
         defaultDataLayer: { platform: "gatsby" },
       },
     },
+
     {
       resolve: `gatsby-plugin-alias-imports`,
       options: {
@@ -204,11 +205,24 @@ module.exports = {
       },
     },
     {
+<<<<<<< HEAD
+=======
+      resolve: `gatsby-plugin-canonical-urls`,
+      options: {
+        siteUrl: `https://www.mortlock.com.au`,
+      },
+    },
+    {
+>>>>>>> 665f3cd330d856e5583d13e87d33bf6bde22afb2
       resolve: 'gatsby-plugin-robots-txt',
       options: {
         sitemap: 'https://www.mortlock.com.au/sitemap.xml',
         policy: [{ userAgent: '*', disallow: '/wp-admin/', allow: '/wp-admin/admin-ajax.php' }]
       }
+<<<<<<< HEAD
     },	
+=======
+    },
+>>>>>>> 665f3cd330d856e5583d13e87d33bf6bde22afb2
   ],
 }
