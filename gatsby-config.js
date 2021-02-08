@@ -33,6 +33,7 @@ module.exports = {
     `gatsby-plugin-scroll-reveal`,
     `gatsby-background-image`,
     `gatsby-plugin-react-helmet`,
+	`gatsby-plugin-netlify`,
     `gatsby-plugin-sass`,
     {
       resolve: `gatsby-source-filesystem`,
@@ -137,6 +138,7 @@ module.exports = {
         //   replacementUrl: "https://wp.iamskater.com",
         // },
         // Set how many simultaneous requests are sent at once.
+		conprocess: process.env.GATSBY_CONCURRENT_DOWNLOAD = 5,
         concurrentRequests: 10,
         // Set WP REST API routes whitelists
         // and blacklists using glob patterns.
@@ -201,5 +203,12 @@ module.exports = {
         crossorigin: false, // Optional
       },
     },
+    {
+      resolve: 'gatsby-plugin-robots-txt',
+      options: {
+        sitemap: 'https://www.mortlock.com.au/sitemap.xml',
+        policy: [{ userAgent: '*', disallow: '/wp-admin/', allow: '/wp-admin/admin-ajax.php' }]
+      }
+    },	
   ],
 }
