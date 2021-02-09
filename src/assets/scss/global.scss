@@ -6743,6 +6743,22 @@ span#mt-popup-close:hover {
     color: #fff;
 }
 
+.gallery__slider .image .gatsby-image-wrapper {
+    height: 100%;
+}
+
+.gallery__slider .image .gatsby-image-wrapper div[aria-hidden="true"], .gallery__slider .image .gatsby-image-wrapper img[aria-hidden="true"] {
+    display: none;
+}
+
+.gallery__slider .image .gatsby-image-wrapper picture {
+}
+
+.gallery__slider .image img {
+    position: relative!important;
+    width: auto!important;
+}
+
 @media only screen and (min-width: 1024px){
 .post__content ul li {
     padding: 0 0 15px 25px !important;
@@ -6774,6 +6790,13 @@ font-size: 18px;
 .post__content .wp-block-media-text figure.wp-block-media-text__media img {
     max-height: 200px;
     min-height: 200px;
+}
+}
+
+@media only screen and (max-width: 768px){
+.mt-popup-content h5 {
+    line-height: 1.2em;
+    margin: 0 0 20px;
 }
 }
 
