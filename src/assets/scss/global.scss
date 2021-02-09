@@ -6757,6 +6757,9 @@ span#mt-popup-close:hover {
 .gallery__slider .image img {
     position: relative!important;
     width: auto!important;
+	height: auto!Important;
+	top: 50%!important;
+    transform: translateY(-50%);	
 }
 
 @media only screen and (min-width: 1024px){
