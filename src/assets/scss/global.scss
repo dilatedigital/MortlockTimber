@@ -6762,6 +6762,14 @@ span#mt-popup-close:hover {
     transform: translateY(-50%);	
 }
 
+.gallery__slider .slick-slide.slick-active.slick-current {
+    opacity: 1;
+}
+
+.gallery__slider .slick-slide {
+    opacity: 0;
+}
+
 @media only screen and (min-width: 1024px){
 .post__content ul li {
     padding: 0 0 15px 25px !important;
