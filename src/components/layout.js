@@ -46,7 +46,7 @@ const Layout = ({ children, ...props }) => {
 			</div>
 	  </div>
 		<script type="application/ld+json">
-		  {`
+		  {`{
 			"@context": "https://schema.org",
 			"@type": "WebSite",
 			"name": "Mortlock Timber",
@@ -56,10 +56,10 @@ const Layout = ({ children, ...props }) => {
 			  "query-input": "required name=query",
 			  "target": "https://www.mortlock.com.au/search?q={query}"
 			}
-		  `}
+		  }`}
 		</script>
 		<script type="application/ld+json">
-		{`
+		{`{
 		  "@context": "https://schema.org",
 		  "@type": "Organization",
 		  "name": "Mortlock Timber",
@@ -79,7 +79,7 @@ const Layout = ({ children, ...props }) => {
 			"https://www.pinterest.com.au/mortlocktimber/",
 			"https://www.youtube.com/channel/UCM9q-N6z8SAmiHEyVGCmqsg"
 		  ]
-		`}
+		}`}
 		</script>
     </div>
   )
