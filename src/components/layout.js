@@ -35,7 +35,7 @@ const Layout = ({ children, ...props }) => {
       <Header color={props.headerColor} />
       <main id="main">{children}</main>
       <Footer />
-	  /*<div id="mt-popup-overlay"></div>
+	  <div id="mt-popup-overlay"></div>
 	  <div id="mt-popup-container">
 			<span id="mt-popup-close">x</span>
 			<div class="mt-popup-content">
@@ -44,7 +44,43 @@ const Layout = ({ children, ...props }) => {
 			<p>Please re-submit your enquiry again below and we will get back to your enquiry urgently.</p>
 			<a href="/resubmit-enquiry/" class="button" tabindex="0" role="button">Resubmit Enquiry</a>
 			</div>
-	  </div>*/
+	  </div>
+		<script type="application/ld+json">
+		  {`
+			"@context": "https://schema.org",
+			"@type": "WebSite",
+			"name": "Mortlock Timber",
+			"url": "https://www.mortlock.com.au/",
+			"potentialAction": {
+			  "@type": "SearchAction",
+			  "query-input": "required name=query",
+			  "target": "https://www.mortlock.com.au/search?q={query}"
+			}
+		  `}
+		</script>
+		<script type="application/ld+json">
+		{`
+		  "@context": "https://schema.org",
+		  "@type": "Organization",
+		  "name": "Mortlock Timber",
+		  "url": "https://www.mortlock.com.au/",
+		  "logo": "https://site.mortlock.com.au/wp-content/uploads/2020/07/mortlock-timber-logo.svg",
+		  "contactPoint": {
+			"@type": "ContactPoint",
+			"telephone": "1800894400",
+			"contactType": "customer service",
+			"areaServed": "AU",
+			"availableLanguage": "en"
+		  },
+		  "sameAs": [
+			"https://www.facebook.com/mortlocktimber/",
+			"https://www.instagram.com/mortlocktimber/",
+			"https://www.linkedin.com/company/mortlock-timber-group/",
+			"https://www.pinterest.com.au/mortlocktimber/",
+			"https://www.youtube.com/channel/UCM9q-N6z8SAmiHEyVGCmqsg"
+		  ]
+		`}
+		</script>
     </div>
   )
 }
