@@ -47,37 +47,37 @@ const Layout = ({ children, ...props }) => {
 	  </div>
 		<script type="application/ld+json">
 		  {`{
-			"@context": "https://schema.org",
-			"@type": "WebSite",
-			"name": "Mortlock Timber",
-			"url": "https://www.mortlock.com.au/",
-			"potentialAction": {
-			  "@type": "SearchAction",
-			  "query-input": "required name=query",
-			  "target": "https://www.mortlock.com.au/search?q={query}"
+			\"@context\": \"https://schema.org\",
+			\"@type\": \"WebSite\",
+			\"name\": \"Mortlock Timber\",
+			\"url\": \"https://www.mortlock.com.au/\",
+			\"potentialAction\": {
+			  \"@type\": \"SearchAction\",
+			  \"query-input\": \"required name=query\",
+			  \"target\": \"https://www.mortlock.com.au/search?q={query}\"
 			}
 		  }`}
 		</script>
 		<script type="application/ld+json">
 		{`{
-		  "@context": "https://schema.org",
-		  "@type": "Organization",
-		  "name": "Mortlock Timber",
-		  "url": "https://www.mortlock.com.au/",
-		  "logo": "https://site.mortlock.com.au/wp-content/uploads/2020/07/mortlock-timber-logo.svg",
-		  "contactPoint": {
-			"@type": "ContactPoint",
-			"telephone": "1800894400",
-			"contactType": "customer service",
-			"areaServed": "AU",
-			"availableLanguage": "en"
+		  \"@context\": \"https://schema.org\",
+		  \"@type\": \"Organization\",
+		  \"name\": \"Mortlock Timber\",
+		  \"url\": \"https://www.mortlock.com.au/\",
+		  \"logo\": \"https://site.mortlock.com.au/wp-content/uploads/2020/07/mortlock-timber-logo.svg\",
+		  \"contactPoint\": {
+			\"@type\": \"ContactPoint\",
+			\"telephone\": \"1800894400\",
+			\"contactType\": \"customer service\",
+			\"areaServed\": \"AU\",
+			\"availableLanguage\": \"en\"
 		  },
-		  "sameAs": [
-			"https://www.facebook.com/mortlocktimber/",
-			"https://www.instagram.com/mortlocktimber/",
-			"https://www.linkedin.com/company/mortlock-timber-group/",
-			"https://www.pinterest.com.au/mortlocktimber/",
-			"https://www.youtube.com/channel/UCM9q-N6z8SAmiHEyVGCmqsg"
+		  \"sameAs\": [
+			\"https://www.facebook.com/mortlocktimber/\",
+			\"https://www.instagram.com/mortlocktimber/\",
+			\"https://www.linkedin.com/company/mortlock-timber-group/\",
+			\"https://www.pinterest.com.au/mortlocktimber/\",
+			\"https://www.youtube.com/channel/UCM9q-N6z8SAmiHEyVGCmqsg\"
 		  ]
 		}`}
 		</script>
