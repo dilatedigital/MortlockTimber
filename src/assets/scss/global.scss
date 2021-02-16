@@ -6790,6 +6790,23 @@ span#mt-popup-close:hover {
 	z-index: 9;
 }
 
+.post__content .inner__bannerbuttons {
+    text-align: center;
+    margin-top: 40px;
+}
+
+.post__content .inner__bannerbuttons a.button.whiteoutline {
+    background: transparent;
+    border: 1px solid #312f30;
+    color: #312f30;
+    margin-left: 10px;
+}
+
+.post__content .inner__bannerbuttons a.button.whiteoutline:hover {
+    background: #312f30;
+    color: #fff;
+}
+
 
 @media only screen and (min-width: 1024px){
 .post__content ul li {
@@ -6865,5 +6882,16 @@ font-size: 18px;
 
 .post__content .wp-block-media-text:nth-child(odd) {
     margin-right: 0;
+}
+}
+
+@media only screen and (max-width: 400px) {
+.post__content .inner__bannerbuttons a.button {
+    display: block;
+}
+
+.post__content .inner__bannerbuttons a.button.whiteoutline {
+    margin-left: 0;
+    margin-top: 10px;
 }
 }
