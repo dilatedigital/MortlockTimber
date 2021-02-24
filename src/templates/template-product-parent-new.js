@@ -78,7 +78,8 @@ class Page extends Component {
     const expandableContent = {
       text_section_title: this.props.data.wordpressPage.acf.text_section_title,
       text_section_description: this.props.data.wordpressPage.acf.text_section_description,
-      text_section_expand_description: this.props.data.wordpressPage.acf.text_section_expand_description
+      text_section_expand_description: this.props.data.wordpressPage.acf.text_section_expand_description,
+	  text_section_image: this.props.data.wordpressPage.acf.text_section_image
     }
 	
     const productProducts = {
@@ -278,6 +279,15 @@ export const pageQuery = graphql`
 				text_section_title
 				text_section_description
 				text_section_expand_description
+				text_section_image {
+				  localFile {
+					childImageSharp {
+					  fluid(maxWidth: 650) {
+						...GatsbyImageSharpFluid_withWebp
+					  }
+					}
+				  }
+				}
 				pricing_title
 				pricing_image {
 				  localFile {

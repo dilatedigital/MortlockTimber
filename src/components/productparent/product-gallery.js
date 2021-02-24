@@ -83,11 +83,13 @@ const ProductGallery = ({ ...props }) =>  {
     return (
 	<>
           <div className="gallery__wrapper">
+		  <div className="top-content">
             <h2 dangerouslySetInnerHTML={{ __html: content.gallery_title }} />
             { content.gallery_description && <div dangerouslySetInnerHTML={{ __html: content.gallery_description }} /> }
             { (content.gallery_expand_description && readMoreActive) && <div className="extra__content" dangerouslySetInnerHTML={{ __html: content.gallery_expand_description }} /> }
             {content.gallery_expand_description && <span className="button" tabIndex={0} role="button" onKeyDown={ () => expandContent() } onClick={ () => expandContent() }>{!readMoreActive ? 'Read more' : 'Read less' }</span> }
-            <div className="galley__image">
+            </div>
+			<div className="galley__image">
               {content.gallery_images
                 ? content.gallery_images.map((image, index) => (
                     <div

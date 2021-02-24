@@ -7002,7 +7002,6 @@ span#mt-popup-close:hover {
 }
 
 .product-table-container .products-column .product-stick .product-block.button-block {
-    margin-top: 25px;
 }
 
 .product-table-container .products-column .product-stick .product-block.checbox-block.text-block span.checkbox-icon.tick-icon, .product-table-container .products-column .product-stick .product-block.checbox-block.text-block span.checkbox-icon.cross-icon {
@@ -7022,6 +7021,139 @@ span#mt-popup-close:hover {
 .product-table-container .products-column .product-stick {
     min-width: 25%;
 }
+
+.product-table-container .products-column .product-stick .product-block.checbox-block span.checkbox-text {
+    display: none;
+}
+
+.product-table-container .products-column .product-stick .product-block.checbox-block.text-block span.checkbox-text {
+    display: block;
+}
+
+.product-table-container .products-column .product-stick .product-block.button-block {
+    padding: 0;
+}
+
+.new-category-template .product-parent-products .main-heading:before {
+    content: "";
+    position: absolute;
+    left: -9999px;
+    bottom: -40px;
+    right: 50%;
+    background: #a2764f;
+    height: 2px;
+}
+
+.new-category-template .product-parent-products .main-heading {
+    position: relative;
+}
+
+.new-category-template .product-parent-products .product-content .main-heading:before {
+    display: none;
+}
+
+.new-category-template .product-parent-products .main-heading {
+    margin-bottom: 100px;
+}
+
+.product-parent-table h2.main-heading {
+    margin-bottom: 15px;
+}
+
+.product-parent-table span.read-more-btn.button {
+    display: inline-block;
+    background: transparent;
+    text-transform: capitalize;
+    padding: 0;
+    border: none;
+    margin-top: -45px;
+    font-size: 18px;
+    letter-spacing: 0;
+}
+
+.product-parent-table span.read-more-btn.button:hover {
+    color: #a2764f;
+    text-decoration: underline;
+}
+
+.product-parent-table span.read-more-btn.button:after {content: '...';}
+
+.new-category-template .product-parent-table .top-content {
+    text-align: left;
+}
+
+.new-category-template .product-parent-table .top-content:before {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -25px;
+    right: -9999px;
+    background: #a2764f;
+    height: 2px;
+}
+
+.new-category-template .product-parent-table .top-content{
+    position:relative;
+}
+
+.new-category-template .product-parent-table .top-content {
+    margin-bottom: 90px;
+}
+
+.product-project-gallery .top-content:before {
+    content: "";
+    position: absolute;
+    left: -9999px;
+    bottom: -25px;
+    right: 25%;
+    background: #a2764f;
+    height: 2px;
+}
+
+.product-project-gallery .top-content{
+    position:relative;
+    text-align:left;
+    margin-bottom: 85px;
+}
+
+.product-project-gallery .gallery__wrapper .top-content h2 {
+    text-align: left;
+    margin-bottom: 10px;
+    padding-bottom: 0;
+}
+
+.product-project-gallery .gallery__wrapper .top-content span.button {
+    display: inline-block;
+    background: transparent;
+    text-transform: capitalize;
+    padding: 0;
+    border: none;
+    margin-top: -45px;
+    font-size: 18px;
+    letter-spacing: 0;
+}
+
+.product-project-gallery .gallery__wrapper .top-content span.button:hover {
+    color: #a2764f;
+    text-decoration: underline;
+}
+
+.product-project-gallery .gallery__wrapper .top-content span.button:after {content: '...';}
+
+.product-text-section .price__image.sal-animate {
+    position: relative;
+    z-index: 1;
+}
+
+.product-text-section .pricing__text {
+    text-align: left;
+}
+
+.product-category-pricing-block .pricing__text h2, .product-cat, .product-text-section .pricing__text h2 {
+    line-height: 1.4em;
+}
+
+.products-column.col-sm-9::-webkit-scrollbar {height:5px}
 
 
 @media only screen and (min-width: 1024px){
@@ -7095,7 +7227,7 @@ font-size: 18px;
 }
 
 .product-text-section .expand__content {
-    padding: 40px 0 60px 0;
+    padding: 60px 0 60px 0;
 }
 
 .product-category-request-sample {
@@ -7202,6 +7334,11 @@ min-width: auto;
 .product-table-container .products-column .product-stick .product-block {
     min-width: 100%;
 }
+
+.product-text-section .price__image {
+    margin-bottom: 50px;
+    max-width: 500px;
+}
 }
 
 @media only screen and (max-width: 767px) {
@@ -7274,6 +7411,16 @@ min-width: auto;
 
 .product-table-container .products-column .product-stick .product-block.button-block {
     margin-top: 20px;
+}
+
+.product-table-container .products-column .product-stick {
+    min-width: 50%;
+}
+}
+
+@media only screen and (max-width: 450px) {
+.product-table-container .products-column .product-stick {
+    min-width: 100%;
 }
 }
 
