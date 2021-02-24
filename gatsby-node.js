@@ -101,6 +101,9 @@ exports.createPages = async ({ graphql, actions }) => {
   const productParentTemplate = path.resolve(
     `./src/templates/template-product-parent.js`
   )
+  const productParentTemplateNew = path.resolve(
+    `./src/templates/template-product-parent-new.js`
+  )
   const requestAQuoteTemplate = path.resolve(
     `./src/templates/template-request-a-quote.js`
   )
@@ -155,6 +158,16 @@ exports.createPages = async ({ graphql, actions }) => {
         createPage({
           path: `${edge.node.path}`,
           component: slash(productParentTemplate),
+          context: {
+            id: edge.node.id,
+            slug: edge.node.slug,
+          },
+        })
+        break
+      case "template-product-parent-new.php":
+        createPage({
+          path: `${edge.node.path}`,
+          component: slash(productParentTemplateNew),
           context: {
             id: edge.node.id,
             slug: edge.node.slug,
