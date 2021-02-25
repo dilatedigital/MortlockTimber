@@ -236,6 +236,7 @@ export const pageQuery = graphql`
 					  }
 					}
 					product_description
+					product_expand_description
 					button_text
 					button_link
 				}
