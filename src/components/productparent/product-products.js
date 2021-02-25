@@ -6,7 +6,9 @@ const ProductProducts = ({ ...props }) =>  {
   const content = props.data;
   const id = props.id;
   
-  var [readMoreActive0, readMoreActive1, readMoreActive2] = false;
+  var readMoreActive0 = false;
+  var readMoreActive1 = false;
+  var readMoreActive2 = false;
 
   function expandContent(value){
 	  console.log(value);
