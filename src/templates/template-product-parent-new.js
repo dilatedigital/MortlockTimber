@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { graphql } from "gatsby";
 import BackgroundImage from 'gatsby-background-image';
+import scrollTo from "gatsby-plugin-smoothscroll"
 
 import SEO from "../components/seo";
 import Layout from '../components/layout';
@@ -162,11 +163,6 @@ class Page extends Component {
           location={this.props.location.href}
         />
 		</div>
-        <div
-          className="fixed-request-pricing"
-        >
-          Request Pricing
-        </div>
 		<div className="product-category-related-articles">
         {this.props.data.wordpressPage.acf.show_related_articles &&
           this.props.data.allWordpressPost.edges.length && (

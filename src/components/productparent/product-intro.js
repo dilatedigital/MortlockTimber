@@ -16,7 +16,7 @@ const ProductApplication = ({ ...props }) =>  {
       <div className="application__wrapper">
         <div className="container">
           <div className="row">
-            <div className="col-sm-5">
+            <div className="col-sm-5 product-intro-content">
               <div className="application__text">
 			  <h2 className="main-heading" data-sal="slide-up" 
       data-sal-easing="ease"
@@ -26,7 +26,7 @@ const ProductApplication = ({ ...props }) =>  {
             {content.video_expand_description && <span className="button" tabIndex={0} role="button" onKeyDown={ () => expandContent() } onClick={ () => expandContent() }>{!readMoreActive ? 'Read more' : 'Read less' }</span> }
               </div>
             </div>
-            <div className="col-sm-7">
+            <div className="col-sm-7 product-intro-image">
               <Img fluid={content.video_image.localFile.childImageSharp.fluid} alt="Mortlock Timber" />
             </div>
           </div>
