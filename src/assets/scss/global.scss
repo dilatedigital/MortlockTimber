@@ -7165,7 +7165,7 @@ span#mt-popup-close:hover {
     font-size: 18px;
     letter-spacing: 0;
     text-align: left;
-    margin-bottom: 15px;
+    margin-bottom: 25px;
     width: max-content;
 }
 
@@ -7485,6 +7485,10 @@ min-width: auto;
 
 .product-text-section .pricing__text {
     padding-bottom: 0;
+}
+
+body .new-category-template span.product_read_more, span.read-more-btn.button, .product-project-gallery .gallery__wrapper .top-content span.button, .product-text-section .expand__content .pricing__text .button {
+    font-size: 16px!important;
 }
 }
 
