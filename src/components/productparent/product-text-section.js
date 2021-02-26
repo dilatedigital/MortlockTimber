@@ -17,7 +17,7 @@ const ExpandableContent = ({ ...props }) =>  {
         <div className="row">
           <div className="col-sm-offset-1 col-sm-5">
             <div className="price__image" data-sal="slide-up" data-sal-easing="ease" data-sal-delay="5">
-			  <Img fluid={content.text_section_image.localFile.childImageSharp.fluid} alt="Mortlock Timber" />
+			  { content.text_section_image && <Img fluid={content.text_section_image.localFile.childImageSharp.fluid} alt="Mortlock Timber" /> }
             </div>
           </div>
           <div className="col-sm-6">

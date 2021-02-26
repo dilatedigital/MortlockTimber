@@ -44,7 +44,7 @@ const ProductProducts = ({ ...props }) =>  {
               </div>
             </div>
             <div className="col-sm-offset-1 col-sm-6 product-image">
-              <Img fluid={product_item.product_aside_image.localFile.childImageSharp.fluid} alt="Mortlock Timber" />
+			{ product_item.product_aside_image && <Img fluid={product_item.product_aside_image.localFile.childImageSharp.fluid} alt="Mortlock Timber" /> }
             </div>
           </div>
 		  )) : null }

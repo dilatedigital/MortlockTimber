@@ -6930,7 +6930,7 @@ span#mt-popup-close:hover {
 }
 
 .product-parent-products .container .row.product-item .product-image {
-    max-height: 300px;
+    max-height: 400px;
     overflow: hidden;
 }
 
@@ -7197,7 +7197,7 @@ span#mt-popup-close:hover {
 
 .product-text-section .expand__content .pricing__text .button:after {content: '...';}
 
-.product-table-container .products-column:after {content: 'Scroll to view more';display: block;position: absolute;left: 50%;background: #312f30;bottom: 0;text-transform: uppercase;padding: 5px 10px;transform: translateX(-50%);font-size: 11px;color: #fff;letter-spacing: 1px;width: fit-content;}
+.product-table-container .products-column:after {content: 'Scroll to view more';display: none;position: absolute;left: 50%;background: #312f30;bottom: 0;text-transform: uppercase;padding: 5px 10px;transform: translateX(-50%);font-size: 11px;color: #fff;letter-spacing: 1px;width: fit-content;}
 
 .product-table-container .products-column {
     position: relative;

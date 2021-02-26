@@ -181,8 +181,8 @@ class Page extends Component {
 export default Page
 
 export const pageQuery = graphql`
-  query($slug: String!) {
-    wordpressPage {
+  query($id: String!, $slug: String!) {
+    wordpressPage(id: { eq: $id }) {
 			  yoast {
 				title
 				metadesc
