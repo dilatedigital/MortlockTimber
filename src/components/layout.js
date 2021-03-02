@@ -11,6 +11,11 @@ const Layout = ({ children, ...props }) => {
     if (!sessionStorage.getItem("landing")) {
       sessionStorage.setItem("landing", window.location.pathname)
     }
+document.addEventListener('copy', (event) => {
+  const pagelink = ` Read more at: ${document.location.href}`;
+  event.clipboardData.setData('text', document.getSelection() + pagelink);
+  event.preventDefault();
+});
     // if (!sessionStorage.getItem("mtServerdownPopup")) {
       // sessionStorage.setItem("mtServerdownPopup", "seen")
   // document.getElementById("mt-popup-overlay").style.display = 'block';

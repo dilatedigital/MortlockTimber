@@ -7202,6 +7202,10 @@ span#mt-popup-close:hover {
     padding-bottom: 30px;
 }
 
+div#gatsby-plugin-scroll-indicator {
+    height: 5px!important;
+}
+
 @media only screen and (min-width: 1024px){
 .post__content ul li {
     padding: 0 0 15px 25px !important;
@@ -7219,6 +7223,10 @@ span#mt-popup-close:hover {
 }
 .post__content ul li:before {
     left: 0px;
+}
+
+div#gatsby-plugin-scroll-indicator {
+    background: #fff!important;
 }
 }
 

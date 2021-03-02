@@ -216,6 +216,19 @@ module.exports = {
         sitemap: 'https://www.mortlock.com.au/sitemap.xml',
         policy: [{ userAgent: '*', disallow: '/wp-admin/', allow: '/wp-admin/admin-ajax.php' }]
       }
-    },	
+    },
+  {
+    resolve: `gatsby-plugin-scroll-indicator`,
+    options: {
+      // Configure color of the scroll indicator
+      color: "#a2764f",
+      // Height of the scroll indicator
+      height: "3px",
+      // Configure paths where the scroll indicator will appear
+      paths: ["/news/**"],
+      // Configure the z-index of the indicator element
+      zIndex: `9999`,
+    },
+  },	
   ],
 }
