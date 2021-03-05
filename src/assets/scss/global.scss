@@ -7206,6 +7206,11 @@ div#gatsby-plugin-scroll-indicator {
     height: 5px!important;
 }
 
+.menubox .imagebox .gatsby-image-wrapper {
+    max-height: 215px;
+    min-height: 215px;
+}
+
 @media only screen and (min-width: 1024px){
 .post__content ul li {
     padding: 0 0 15px 25px !important;
