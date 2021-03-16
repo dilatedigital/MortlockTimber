@@ -2,7 +2,7 @@
 /products/timber-cladding /timber-cladding/
 /builders /
 /portfolio/timber-decking /timber-decking/
-/product/trendplank /timber-cladding/trend-plank/
+/product/trendplank /timber-wall/trend-plank/
 /portfolio/timber-cladding /
 /clarendon /
 /resources /
@@ -19,7 +19,6 @@
 /augusta-holiday-home /
 /broadwater-holiday-residence /
 /sitemap /sitemap.xml
-/timber-cladding/trendplank-timber-cladding/ /timber-wall/trend-plank/
 /perth-garden-festival /
 /selection-projects-2016 /
 /aria-luxury-apartments /
@@ -81,7 +80,7 @@
 /mortlock-timber-legal-email-disclaimer /news/
 /design-for-durability-low-maintenence /news/
 /resources/maintenance/internal-timber-products /news/
-/trendplank_timber-cladding_revit /timber-cladding/trend-plank/
+/trendplank_timber-cladding_revit /timber-wall/trend-plank/
 /tag/proplank /timber-decking/proplank-timber-battens/
 /product/classicplank /timber-decking/classicplank-timber-decking/
 /timber_species_type/jarrah /
@@ -112,8 +111,8 @@
 /testimonial /
 /product/hardwood-timber /
 /products/ceiling-lining /
-/product/trendplan /timber-cladding/trend-plank/
-/product/shou-sugi-ban /timber-cladding/shou-sugi-ban/
+/product/trendplan /timber-wall/trend-plank/
+/product/shou-sugi-ban /timber-wall/shou-sugi-ban/
 /products/timber-cladding /timber-decking/
 /product/fijian-mahogany-decking /
 /products/timber-decking /timber-decking/
@@ -148,7 +147,7 @@
 /testimonial/jesse-searls-founder-of-the-surreal-foundry-cycleworks /
 /testimonial/darrell-playle-rusty-nail-designs /
 /wp-content/uploads/2018/09/doc-1624-pollinate-health-report-february-2018-1.pdf?$ /
-/products-category/shou-sugi-ban-cladding /timber-cladding/shou-sugi-ban/
+/products-category/shou-sugi-ban-cladding /timber-wall/shou-sugi-ban/
 /seascape-rise-by-adrian-zorzi /
 /timber_species_type/hemlock /
 /faq/how-do-you-prevent-colour-leaching-from-vertical-cladding /
@@ -226,3 +225,4 @@
 /resubmit-enquiry/ /request-a-quote/
 /timber-cladding/shou-sugi-ban/ /timber-wall/shou-sugi-ban/
 /timber-cladding/trend-plank/ /timber-wall/trend-plank/
+/timber-cladding/trendplank-timber-cladding/ /timber-wall/trend-plank/
