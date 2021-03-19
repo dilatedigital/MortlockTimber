@@ -279,8 +279,8 @@ const markers = [
     name: 'Warehouse & Freight Distribution VIC',
     location: 'Spotswood, Melbourne, 3105',
     position: {
-      lat: -37.7669906,
-      lng: 145.0682016
+      lat: -37.828910,
+      lng: 144.881285
     }
   },
   {

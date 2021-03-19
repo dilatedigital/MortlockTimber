@@ -136,11 +136,11 @@ const Header = ({ data, ...props }) => (
                                           return (
                                             <div className="dropdown">
                                               <div className="container">
-                                                <div className="row">
+											  <div className="row">
                                                   {data.allWordpressAcfOptions.edges[0].node.options.header_mega_menu.map((dropmenu, index) => {
-                                                    if(dropmenu.menu_category === "timberdecking") {
+                                                    if(dropmenu.menu_category === "timberdeckingtitleitem") {
                                                       return (
-                                                        <div className="col-md-4" key={index}>
+                                                        <div className="col-md-4 main-item" key={index}>
                                                           <div className="menubox">
                                                             <Link tabIndex={0} onKeyDown={ () => removeActiveClass() } onClick={() => removeActiveClass() } to={dropmenu.menu_link.replace('https://site.mortlock.com.au','')}>
                                                               <span className="menuTitle">{dropmenu.menu_title}</span>
@@ -159,7 +159,30 @@ const Header = ({ data, ...props }) => (
                                                       return null;
                                                     }
                                                   })}
+											  <div className="col-md-8">
+                                                <div className="row">
+                                                  {data.allWordpressAcfOptions.edges[0].node.options.header_mega_menu.map((dropmenu, index) => {
+                                                    if(dropmenu.menu_category === "timberdecking") {
+                                                      return (
+                                                        <div className="col-md-4 dropdown-item" key={index}>
+                                                          <div className="menubox">
+                                                            <Link tabIndex={0} onKeyDown={ () => removeActiveClass() } onClick={() => removeActiveClass() } to={dropmenu.menu_link.replace('https://site.mortlock.com.au','')}>
+                                                              <span className="menuTitle">{dropmenu.menu_title}</span>
+                                                              <div className="imagebox">
+                                                                <Img fluid={dropmenu.menu_image.localFile.childImageSharp.fluid} alt="Mortlock Timber" />
+                                                              </div>
+                                                              <p>{dropmenu.menu_description}</p>
+                                                            </Link>
+                                                          </div>
+                                                        </div>
+                                                      )
+                                                    } else {
+                                                      return null;
+                                                    }
+                                                  })}
                                                 </div>
+												</div>
+												</div>
                                               </div>
                                             </div>
                                           )
@@ -167,13 +190,13 @@ const Header = ({ data, ...props }) => (
                                           return (
                                             <div className="dropdown">
                                               <div className="container">
-                                                <div className="row center-sm">
+											  <div className="row">
                                                   {data.allWordpressAcfOptions.edges[0].node.options.header_mega_menu.map((dropmenu, index) => {
-                                                    if(dropmenu.menu_category === "timberceilings") {
+                                                    if(dropmenu.menu_category === "timberceilingstitleitem") {
                                                       return (
-                                                        <div className="col-md-4" key={index}>
+                                                        <div className="col-md-4 main-item" key={index}>
                                                           <div className="menubox">
-                                                          <Link tabIndex={0} onKeyDown={ () => removeActiveClass() } onClick={() => removeActiveClass() } to={dropmenu.menu_link.replace('https://site.mortlock.com.au','')}>
+                                                            <Link tabIndex={0} onKeyDown={ () => removeActiveClass() } onClick={() => removeActiveClass() } to={dropmenu.menu_link.replace('https://site.mortlock.com.au','')}>
                                                               <span className="menuTitle">{dropmenu.menu_title}</span>
                                                               <div className="imagebox">
                                                                 <Img fluid={dropmenu.menu_image.localFile.childImageSharp.fluid} alt="Mortlock Timber" />
@@ -190,7 +213,30 @@ const Header = ({ data, ...props }) => (
                                                       return null;
                                                     }
                                                   })}
+											  <div className="col-md-8">
+                                                <div className="row">
+                                                  {data.allWordpressAcfOptions.edges[0].node.options.header_mega_menu.map((dropmenu, index) => {
+                                                    if(dropmenu.menu_category === "timberceilings") {
+                                                      return (
+                                                        <div className="col-md-4 dropdown-item" key={index}>
+                                                          <div className="menubox">
+                                                          <Link tabIndex={0} onKeyDown={ () => removeActiveClass() } onClick={() => removeActiveClass() } to={dropmenu.menu_link.replace('https://site.mortlock.com.au','')}>
+                                                              <span className="menuTitle">{dropmenu.menu_title}</span>
+                                                              <div className="imagebox">
+                                                                <Img fluid={dropmenu.menu_image.localFile.childImageSharp.fluid} alt="Mortlock Timber" />
+                                                              </div>
+                                                              <p>{dropmenu.menu_description}</p>
+                                                            </Link>
+                                                          </div>
+                                                        </div>
+                                                      )
+                                                    } else {
+                                                      return null;
+                                                    }
+                                                  })}
                                                 </div>
+												</div>
+												</div>
                                               </div>
                                             </div>
                                           )
@@ -198,13 +244,13 @@ const Header = ({ data, ...props }) => (
                                           return (
                                             <div className="dropdown">
                                               <div className="container">
-                                                <div className="row">
+											  <div className="row">
                                                   {data.allWordpressAcfOptions.edges[0].node.options.header_mega_menu.map((dropmenu, index) => {
-                                                    if(dropmenu.menu_category === "timberwalls") {
+                                                    if(dropmenu.menu_category === "timberwallstitleitem") {
                                                       return (
-                                                        <div className="col-md-4" key={index}>
+                                                        <div className="col-md-4 main-item" key={index}>
                                                           <div className="menubox">
-                                                          <Link tabIndex={0} onKeyDown={ () => removeActiveClass() } onClick={() => removeActiveClass() } to={dropmenu.menu_link.replace('https://site.mortlock.com.au','')}>
+                                                            <Link tabIndex={0} onKeyDown={ () => removeActiveClass() } onClick={() => removeActiveClass() } to={dropmenu.menu_link.replace('https://site.mortlock.com.au','')}>
                                                               <span className="menuTitle">{dropmenu.menu_title}</span>
                                                               <div className="imagebox">
                                                                 <Img fluid={dropmenu.menu_image.localFile.childImageSharp.fluid} alt="Mortlock Timber" />
@@ -221,7 +267,30 @@ const Header = ({ data, ...props }) => (
                                                       return null;
                                                     }
                                                   })}
+											  <div className="col-md-8">
+                                                <div className="row">
+                                                  {data.allWordpressAcfOptions.edges[0].node.options.header_mega_menu.map((dropmenu, index) => {
+                                                    if(dropmenu.menu_category === "timberwalls") {
+                                                      return (
+                                                        <div className="col-md-4 dropdown-item" key={index}>
+                                                          <div className="menubox">
+                                                          <Link tabIndex={0} onKeyDown={ () => removeActiveClass() } onClick={() => removeActiveClass() } to={dropmenu.menu_link.replace('https://site.mortlock.com.au','')}>
+                                                              <span className="menuTitle">{dropmenu.menu_title}</span>
+                                                              <div className="imagebox">
+                                                                <Img fluid={dropmenu.menu_image.localFile.childImageSharp.fluid} alt="Mortlock Timber" />
+                                                              </div>
+                                                              <p>{dropmenu.menu_description}</p>
+                                                            </Link>
+                                                          </div>
+                                                        </div>
+                                                      )
+                                                    } else {
+                                                      return null;
+                                                    }
+                                                  })}
                                                 </div>
+												</div>
+												</div>
                                               </div>
                                             </div>
                                           )
