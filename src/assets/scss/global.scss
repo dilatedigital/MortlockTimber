@@ -7270,6 +7270,29 @@ button.button-learn.request-sample-landing {
 display:none!important;
 }
 
+.option__box 
+ .button_center.custom-button {
+    width: 100%;
+}
+
+.option__box div:nth-child(2) {
+    height: 100%;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.option__box h3 {
+    width: 100%;
+}
+
+ul.main__nav .dropdown {
+    display: none;
+}
+
+ul.main__nav>li:hover .dropdown {
+    display: block;
+}
+
 @media only screen and (min-width: 1024px){
 .post__content ul li {
     padding: 0 0 15px 25px !important;
@@ -7304,6 +7327,11 @@ div#gatsby-plugin-scroll-indicator {
 .why__product {
     padding: 100px 0 100px;
 }
+
+ul.main__nav>li {
+    margin: 0;
+    padding: 0 25px;
+}
 }
 
 @media only screen and (min-width: 769px){
@@ -7316,6 +7344,12 @@ div#gatsby-plugin-scroll-indicator {
 .post__content .wp-block-media-text .wp-block-media-text__content pre.wp-block-verse {
 font-size: 18px;
     line-height: 1.5;
+}
+}
+
+@media only screen and (min-width: 767px){
+.option__box .button_center.custom-button {
+    margin-bottom: 30px;
 }
 }
 
