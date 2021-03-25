@@ -225,7 +225,7 @@ class Page extends Component {
           }
         />
         <div
-          className="inner__banner"
+          className="inner__banner product-single-template"
           data-sample={requestSampleTag}
           data-price={requestPricingTag}
         >
