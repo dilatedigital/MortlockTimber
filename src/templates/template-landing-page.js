@@ -50,6 +50,14 @@ class Page extends Component {
       faqs: this.props.data.wordpressPage.acf.faqs,
     }
 
+	const postID = this.props.data.wordpressPage.wordpress_id
+	var faqSchema;
+	if (postID == 5009) {
+	  faqSchema = <script type="application/ld+json" dangerouslySetInnerHTML={{__html: '{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"IS JARRAH GOOD FOR DECKING?","acceptedAnswer":{"@type":"Answer","text":"Jarrah is a great option for timber decking, its termite resistance, durability, and striking appearance make it one of the best timbers to use for hardwood timber decking."}},{"@type":"Question","name":"WHAT ARE THE BENEFITS OF JARRAH DECKING?","acceptedAnswer":{"@type":"Answer","text":"Jarrah has many benefits when used for timber decking, these include termite and rot resistance, and long-term durability. Because of its longevity, Jarrah is often used in highly exposed to weather areas like boardwalks and marine environments."}},{"@type":"Question","name":"DOES JARRAH DECKING BLEED?","acceptedAnswer":{"@type":"Answer","text":"Jarrah is less prone to tannin leaching than timbers like merbau decking and many tropical timbers. It does still bleed tannin."}},{"@type":"Question","name":"HOW MUCH DOES JARRAH DECKING COST?","acceptedAnswer":{"@type":"Answer","text":"Popular options for Jarrah decking costs start at around $85 p/m2 and can be as high as $210 per m2 not including installation, an in depth article on how much timber decking costs can be found."}},{"@type":"Question","name":"HOW DO YOU MAINTAIN JARRAH DECKING?","acceptedAnswer":{"@type":"Answer","text":"Maintaining Jarrah timber decking involves general cleaning like sweeping and mopping and re-oiling. The frequency of the re-oiling depends on how exposed the timber decking is to the weather. For further details on maintenance"}}]}'}}></script>;
+	} else {
+	  faqSchema= '';
+	} 
+	
     return (
       <Layout>
         <SEO
@@ -583,6 +591,7 @@ class Page extends Component {
 		<ProductFaq data={productFAQ} />
 			</div>
 		</div>
+		{faqSchema}
 		<div className="landing-page-request-sample">
         <RequestSample
           data={requestSample}
@@ -639,6 +648,7 @@ export default Page
 export const pageQuery = graphql`
   query($id: String!) {
     wordpressPage(id: { eq: $id }) {
+	  wordpress_id
       yoast {
         title
         metadesc
