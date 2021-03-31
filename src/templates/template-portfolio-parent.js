@@ -230,7 +230,7 @@ const Page = props => {
                             <div className="image_overlay">
                               <Link
                                 className="button primary"
-                                to={post.node.path}
+                                to={`https://www.mortlock.com.au${post.node.path}`}
                               >
                                 View Project
                               </Link>
@@ -239,7 +239,7 @@ const Page = props => {
                           <div className="project_desc">
                             <h3>
                               <Link
-                                to={post.node.path}
+                                to={`https://www.mortlock.com.au${post.node.path}`}
                                 dangerouslySetInnerHTML={{
                                   __html: post.node.title,
                                 }}
@@ -271,14 +271,14 @@ const Page = props => {
                               ></BGImage>
                             )}
                             <div className="image_overlay">
-                              <Link className="button primary" to={post.path}>
+                              <Link className="button primary" to={`https://www.mortlock.com.au${post.path}`}>
                                 View Project
                               </Link>
                             </div>
                           </div>
                           <div className="project_desc">
                             <h3>
-                              <Link to={post.path}>{post.title}</Link>
+                              <Link to={`https://www.mortlock.com.au${post.path}`}>{post.title}</Link>
                             </h3>
                             {/* <span className="location">
                                   {post.node.acf.project_banner_description}
@@ -308,7 +308,7 @@ const Page = props => {
                     to={
                       index === 0
                         ? content.pageContext.actualPath
-                        : `${content.pageContext.actualPath}${index + 1}`
+                        : `https://www.mortlock.com.au${content.pageContext.actualPath}${index + 1}`
                     }
                   >
                     {index + 1}

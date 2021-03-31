@@ -184,7 +184,7 @@ class Page extends Component {
                       {(!this.state.searching && !this.state.filtering) ?
                         <div className="blog_image">
                           <Link
-                            to={`${data.pageContext.actualPath}${post.node.slug}`}
+                            to={`https://www.mortlock.com.au${data.pageContext.actualPath}${post.node.slug}`}
                           >
                             {post.node.featured_media ? (
                               <BackgroundImage
@@ -200,7 +200,7 @@ class Page extends Component {
                           </Link>
                         </div> :
                         <div className="blog_image">
-                          <Link to={`${post.node.path}`}>
+                          <Link to={`https://www.mortlock.com.au${post.node.path}`}>
                             <div className="bg_image" style={{ backgroundImage: `url(${post.node.featured_media.link})` }}></div>
                           </Link>
                         </div>
@@ -217,7 +217,7 @@ class Page extends Component {
                       </div>
                       <div className="blog_text">
                         <h3>
-                          <Link to={(!this.state.searching && !this.state.filtering) ? `${data.pageContext.actualPath}${post.node.slug}` : `${post.node.path}` } dangerouslySetInnerHTML={{ __html: post.node.title }} />
+                          <Link to={(!this.state.searching && !this.state.filtering) ? `https://www.mortlock.com.au${data.pageContext.actualPath}${post.node.slug}` : `https://www.mortlock.com.au${post.node.path}` } dangerouslySetInnerHTML={{ __html: post.node.title }} />
                         </h3>
                         {(() => {
                           const regex = /(<([^>]+)>)/ig;
@@ -226,7 +226,7 @@ class Page extends Component {
                             <p dangerouslySetInnerHTML={{ __html: removeHTMLtags }} />
                           )
                         })()}
-                        <Link className="link" to={(!this.state.searching && !this.state.filtering) ? `${data.pageContext.actualPath}${post.node.slug}` : `${post.node.path}` }>Read more</Link>
+                        <Link className="link" to={(!this.state.searching && !this.state.filtering) ? `https://www.mortlock.com.au${data.pageContext.actualPath}${post.node.slug}` : `https://www.mortlock.com.au${post.node.path}` }>Read more</Link>
                       </div>
                     </div>
                   </div>
@@ -257,7 +257,7 @@ class Page extends Component {
                         to={
                           index === 0
                             ? data.pageContext.actualPath
-                            : `${data.pageContext.actualPath}${index + 1}`
+                            : `https://www.mortlock.com.au${data.pageContext.actualPath}${index + 1}`
                         }
                       >
                         {index + 1}

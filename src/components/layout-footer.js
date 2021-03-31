@@ -69,7 +69,7 @@ const Footer = ({ data }) => (
             <div className="row">
               <div className="col-sm-7 col-md-4 col-lg-3">
                 <div className="footer_logo">
-                  <Link to="/" dangerouslySetInnerHTML={{ __html: data.allWordpressAcfOptions.edges[0].node.options.footer_logo_svg_code }} />
+                  <Link to="https://www.mortlock.com.au/" dangerouslySetInnerHTML={{ __html: data.allWordpressAcfOptions.edges[0].node.options.footer_logo_svg_code }} />
                     {/* <Img 
                       fluid={data.allWordpressAcfOptions.edges[0].node.options.footer_logo.localFile.childImageSharp.fluid} 
                       alt={ data.allWordpressAcfOptions.edges[0].node.options.footer_logo.alt_text ? data.allWordpressAcfOptions.edges[0].node.options.footer_logo.alt_text : 'Mortlock Timber' }
@@ -90,7 +90,7 @@ const Footer = ({ data }) => (
                 <h4>Products</h4>
                 <ul className="footer_menu">
                   {data.allWordpressMenusMenusItems.edges[1].node.items.map((menu) => (
-                  <li key={menu.wordpress_id}><Link to={"/" + menu.slug}>{menu.title}</Link></li>
+                  <li key={menu.wordpress_id}><Link to={"https://www.mortlock.com.au/" + menu.slug}>{menu.title}</Link></li>
                   ))}
                 </ul>
               </div>
@@ -99,7 +99,7 @@ const Footer = ({ data }) => (
                 <div className="splitMenu">
                   <ul className="footer_menu">
                     {data.allWordpressMenusMenusItems.edges[0].node.items.map((menu) => (
-                    <li key={menu.wordpress_id}><Link to={"/" + menu.slug}>{menu.title}</Link></li>
+                    <li key={menu.wordpress_id}><Link to={"https://www.mortlock.com.au/" + menu.slug}>{menu.title}</Link></li>
                     ))}
                   </ul>
                 </div>
