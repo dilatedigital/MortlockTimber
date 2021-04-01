@@ -118,6 +118,7 @@ const Banner = ({ ...props }) => {
                           style={slide.slider_banner_button_style}
                         />
                         <Button
+						type="external"
                           link={slide.second_button_link}
                           text={slide.second_button_text}
                           style={slide.second_button_style}
