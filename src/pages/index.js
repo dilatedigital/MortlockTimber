@@ -140,6 +140,9 @@ export const pageQuery = graphql`
               slider_banner_button_link
               slider_banner_button_text
               slider_banner_button_style
+              second_button_link
+              second_button_text
+              second_button_style			  
               slider_banner_heading
               slider_banner_sub_heading
               slider_banner_image {

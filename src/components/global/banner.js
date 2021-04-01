@@ -117,6 +117,11 @@ const Banner = ({ ...props }) => {
                           text={slide.slider_banner_button_text}
                           style={slide.slider_banner_button_style}
                         />
+                        <Button
+                          link={slide.second_button_link}
+                          text={slide.second_button_text}
+                          style={slide.second_button_style}
+                        />
                       </div>
                     </div>
                   </div>
