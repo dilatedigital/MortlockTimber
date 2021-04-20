@@ -229,6 +229,12 @@ module.exports = {
       // Configure the z-index of the indicator element
       zIndex: `9999`,
     },
-  },	
+  },
+  {
+    resolve: `gatsby-plugin-facebook-pixel`,
+    options: {
+      pixelId: "2405409289757762",
+    },
+  },  
   ],
 }

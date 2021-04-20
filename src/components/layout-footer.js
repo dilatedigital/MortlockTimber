@@ -90,7 +90,7 @@ const Footer = ({ data }) => (
                 <h4>Products</h4>
                 <ul className="footer_menu">
                   {data.allWordpressMenusMenusItems.edges[1].node.items.map((menu) => (
-                  <li key={menu.wordpress_id}><Link to={"https://www.mortlock.com.au/" + menu.slug}>{menu.title}</Link></li>
+                  <li key={menu.wordpress_id}><Link to={"https://www.mortlock.com.au/" + menu.slug + "/"}>{menu.title}</Link></li>
                   ))}
                 </ul>
               </div>
@@ -99,7 +99,7 @@ const Footer = ({ data }) => (
                 <div className="splitMenu">
                   <ul className="footer_menu">
                     {data.allWordpressMenusMenusItems.edges[0].node.items.map((menu) => (
-                    <li key={menu.wordpress_id}><Link to={"https://www.mortlock.com.au/" + menu.slug}>{menu.title}</Link></li>
+                    <li key={menu.wordpress_id}><Link to={"https://www.mortlock.com.au/" + menu.slug + "/"}>{menu.title}</Link></li>
                     ))}
                   </ul>
                 </div>

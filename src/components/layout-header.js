@@ -91,7 +91,7 @@ const Header = ({ data, ...props }) => (
                 return (
                   <>
                   {slug.edges[num].node.items.map((menu) => (
-                    <li tabIndex={-1} onKeyDown={ () => removeActiveClass() } onClick={() => removeActiveClass() } key={menu.wordpress_id}><Link to={"https://www.mortlock.com.au/" + menu.slug}>{menu.title}</Link></li>
+                    <li tabIndex={-1} onKeyDown={ () => removeActiveClass() } onClick={() => removeActiveClass() } key={menu.wordpress_id}><Link to={"https://www.mortlock.com.au/" + menu.slug + "/"}>{menu.title}</Link></li>
                   ))}
                   </>
                 )
@@ -125,7 +125,7 @@ const Header = ({ data, ...props }) => (
                                 return (
                                   <>
                                     <div className="menu__linkwrap">
-                                      <Link to={"https://www.mortlock.com.au/" + menu.slug} tabIndex={0} onKeyDown={ () => removeActiveClass() } onClick={() => removeActiveClass() }>{menu.title}</Link>
+                                      <Link to={"https://www.mortlock.com.au/" + menu.slug + "/"} tabIndex={0} onKeyDown={ () => removeActiveClass() } onClick={() => removeActiveClass() }>{menu.title}</Link>
                                       <span className="drop__control" role="button" tabIndex={0} onKeyDown={ e => toggleMenuAccordion(e) } onClick={ e => toggleMenuAccordion(e) }>
                                         <svg className="icon" width="100pt" height="100pt" version="1.1" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg"><path d="m49.938 55.984-37.711-36.293-12.227 12.742 49.938 47.875 50.062-47.875-12.227-12.742z" /></svg>
                                       </span>
@@ -142,7 +142,7 @@ const Header = ({ data, ...props }) => (
                                                       return (
                                                         <div className="col-md-4 main-item" key={index}>
                                                           <div className="menubox">
-                                                            <Link tabIndex={0} onKeyDown={ () => removeActiveClass() } onClick={() => removeActiveClass() } to={dropmenu.menu_link.replace('https://site.mortlock.com.au','https://www.mortlock.com.au/')}>
+                                                            <Link tabIndex={0} onKeyDown={ () => removeActiveClass() } onClick={() => removeActiveClass() } to={dropmenu.menu_link.replace('https://site.mortlock.com.au','https://www.mortlock.com.au')}>
                                                               <span className="menuTitle">{dropmenu.menu_title}</span>
                                                               <div className="imagebox">
                                                                 <Img fluid={dropmenu.menu_image.localFile.childImageSharp.fluid} alt="Mortlock Timber" />
@@ -166,7 +166,7 @@ const Header = ({ data, ...props }) => (
                                                       return (
                                                         <div className="col-md-4 dropdown-item" key={index}>
                                                           <div className="menubox">
-                                                            <Link tabIndex={0} onKeyDown={ () => removeActiveClass() } onClick={() => removeActiveClass() } to={dropmenu.menu_link.replace('https://site.mortlock.com.au','https://www.mortlock.com.au/')}>
+                                                            <Link tabIndex={0} onKeyDown={ () => removeActiveClass() } onClick={() => removeActiveClass() } to={dropmenu.menu_link.replace('https://site.mortlock.com.au','https://www.mortlock.com.au')}>
                                                               <span className="menuTitle">{dropmenu.menu_title}</span>
                                                               <div className="imagebox">
                                                                 <Img fluid={dropmenu.menu_image.localFile.childImageSharp.fluid} alt="Mortlock Timber" />
@@ -196,7 +196,7 @@ const Header = ({ data, ...props }) => (
                                                       return (
                                                         <div className="col-md-4 main-item" key={index}>
                                                           <div className="menubox">
-                                                            <Link tabIndex={0} onKeyDown={ () => removeActiveClass() } onClick={() => removeActiveClass() } to={dropmenu.menu_link.replace('https://site.mortlock.com.au','https://www.mortlock.com.au/')}>
+                                                            <Link tabIndex={0} onKeyDown={ () => removeActiveClass() } onClick={() => removeActiveClass() } to={dropmenu.menu_link.replace('https://site.mortlock.com.au','https://www.mortlock.com.au')}>
                                                               <span className="menuTitle">{dropmenu.menu_title}</span>
                                                               <div className="imagebox">
                                                                 <Img fluid={dropmenu.menu_image.localFile.childImageSharp.fluid} alt="Mortlock Timber" />
@@ -220,7 +220,7 @@ const Header = ({ data, ...props }) => (
                                                       return (
                                                         <div className="col-md-4 dropdown-item" key={index}>
                                                           <div className="menubox">
-                                                          <Link tabIndex={0} onKeyDown={ () => removeActiveClass() } onClick={() => removeActiveClass() } to={dropmenu.menu_link.replace('https://site.mortlock.com.au','https://www.mortlock.com.au/')}>
+                                                          <Link tabIndex={0} onKeyDown={ () => removeActiveClass() } onClick={() => removeActiveClass() } to={dropmenu.menu_link.replace('https://site.mortlock.com.au','https://www.mortlock.com.au')}>
                                                               <span className="menuTitle">{dropmenu.menu_title}</span>
                                                               <div className="imagebox">
                                                                 <Img fluid={dropmenu.menu_image.localFile.childImageSharp.fluid} alt="Mortlock Timber" />
@@ -250,7 +250,7 @@ const Header = ({ data, ...props }) => (
                                                       return (
                                                         <div className="col-md-4 main-item" key={index}>
                                                           <div className="menubox">
-                                                            <Link tabIndex={0} onKeyDown={ () => removeActiveClass() } onClick={() => removeActiveClass() } to={dropmenu.menu_link.replace('https://site.mortlock.com.au','https://www.mortlock.com.au/')}>
+                                                            <Link tabIndex={0} onKeyDown={ () => removeActiveClass() } onClick={() => removeActiveClass() } to={dropmenu.menu_link.replace('https://site.mortlock.com.au','https://www.mortlock.com.au')}>
                                                               <span className="menuTitle">{dropmenu.menu_title}</span>
                                                               <div className="imagebox">
                                                                 <Img fluid={dropmenu.menu_image.localFile.childImageSharp.fluid} alt="Mortlock Timber" />
@@ -274,7 +274,7 @@ const Header = ({ data, ...props }) => (
                                                       return (
                                                         <div className="col-md-4 dropdown-item" key={index}>
                                                           <div className="menubox">
-                                                          <Link tabIndex={0} onKeyDown={ () => removeActiveClass() } onClick={() => removeActiveClass() } to={dropmenu.menu_link.replace('https://site.mortlock.com.au','https://www.mortlock.com.au/')}>
+                                                          <Link tabIndex={0} onKeyDown={ () => removeActiveClass() } onClick={() => removeActiveClass() } to={dropmenu.menu_link.replace('https://site.mortlock.com.au','https://www.mortlock.com.au')}>
                                                               <span className="menuTitle">{dropmenu.menu_title}</span>
                                                               <div className="imagebox">
                                                                 <Img fluid={dropmenu.menu_image.localFile.childImageSharp.fluid} alt="Mortlock Timber" />
@@ -303,7 +303,7 @@ const Header = ({ data, ...props }) => (
                                             <div className="dropdown">
                                               <ul>
                                                 {menu.child_items.map((submenu) => (
-                                                  <li key={submenu.wordpress_id} className={(menu.classes !== '') ? menu.classes : null}><Link to={"https://www.mortlock.com.au/" + submenu.slug}>{submenu.title}</Link></li>
+                                                  <li key={submenu.wordpress_id} className={(menu.classes !== '') ? menu.classes : null}><Link to={"https://www.mortlock.com.au/" + submenu.slug + "/"}>{submenu.title}</Link></li>
                                                 ))}
                                               </ul>
                                             </div>
@@ -316,7 +316,7 @@ const Header = ({ data, ...props }) => (
                                 )
                               } else {
                                 return (
-                                  <Link to={"https://www.mortlock.com.au/" + menu.slug} tabIndex={0} onKeyDown={ () => removeActiveClass() } onClick={() => removeActiveClass() }>{menu.title}</Link>
+                                  <Link to={"https://www.mortlock.com.au/" + menu.slug + "/"} tabIndex={0} onKeyDown={ () => removeActiveClass() } onClick={() => removeActiveClass() }>{menu.title}</Link>
                                 )
                               }
                             })()}

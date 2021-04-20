@@ -7369,6 +7369,11 @@
   dependencies:
     "@babel/runtime" "^7.12.5"
 
+"gatsby-plugin-facebook-pixel@^1.0.5":
+  "integrity" "sha512-EFozZ47iskV1zIfNz7XGYGYhh0Mhfi9S1rswbRPefnc0s/NhQqVa45Ky82eM2M8yxiICS3BAmI1rS5dFDDNT7Q=="
+  "resolved" "https://registry.npmjs.org/gatsby-plugin-facebook-pixel/-/gatsby-plugin-facebook-pixel-1.0.5.tgz"
+  "version" "1.0.5"
+
 "gatsby-plugin-google-tagmanager@^2.3.12":
   "integrity" "sha512-R8UkrRgT/mBc6fjOFTgC2pNwGA1ZE7k74AqcsaKTn3OjY0+YvOON9RF1V/hbSOHFZ7t7QyWDebU2P4mbOZxrhQ=="
   "resolved" "https://registry.npmjs.org/gatsby-plugin-google-tagmanager/-/gatsby-plugin-google-tagmanager-2.3.12.tgz"
