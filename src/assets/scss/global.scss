@@ -3862,6 +3862,7 @@ ul.check__list {
   font-size: 16px;
   font-weight: 700;
   letter-spacing: 2px;
+  display:none;
 
   @include breakpoint("medium") {
     margin-bottom: 20px;
