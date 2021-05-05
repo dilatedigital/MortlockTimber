@@ -283,15 +283,6 @@ class NewsletterForm extends Component {
               </div>
             </div>
           </div>
-          <div className="col-sm-6">
-            <div className="form_group">
-              <label htmlFor="email">Email *</label>
-              <div className="form_input">
-                <input aria-label="Email" className="noEmpty" type="email" name="email" id="email" placeholder="Enter your email address" value={this.state.fields.email || ''} onChange={ this.handleInputChange } />
-                {this.state.errors.email !== '' && <span className='error'>{this.state.errors.email}</span>}
-              </div>
-            </div>
-          </div>
         </div>
           <div style={{ display: `none` }}>
             <input
