@@ -93,7 +93,7 @@ const Banner = ({ ...props }) => {
                       data-sal-delay="100"
                     >
                       <div className="bottomtext__top">
-                        <h1
+                        <h6 className="banner_main_text"
                           dangerouslySetInnerHTML={{
                             __html: slide.slider_banner_heading,
                           }}
