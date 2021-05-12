@@ -54,7 +54,10 @@ const ProductTable = ({ ...props }) =>  {
 				  </div>
 				  )) : null }
 				  <div className="product-block button-block">
-					<a class="button white" href={products_table_item.product_item_button_link}>{products_table_item.product_item_button_text}</a>
+					<a class="button white" href={products_table_item.product_item_button_link}>{products_table_item.product_item_button_text}</a><br/>
+				  </div> 
+ <div className="product-block button-block minHeightAuto">
+   <a href="/request-a-quote" class="button primary">request a quote</a>
 				  </div> 
 			  </div>
 			  )) : null }

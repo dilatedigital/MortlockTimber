@@ -1,5 +1,7 @@
 import React from 'react';
 import Img from 'gatsby-image';
+import { Link } from 'gatsby';
+import scrollTo from 'gatsby-plugin-smoothscroll';
 
 const removePopupActiveClass = () => {
   document.body.classList.remove('popup__active');
@@ -15,7 +17,16 @@ const ProductFinishes = ({ ...props }) =>  {
         <div className="container container__big">
           <div className="popup__heading">
           <h2>{props.title} Finishes</h2>
-          <a href={props.link.link} className="button-learn" download={`${props.title} Finishes`} rel="noreferrer" target="_blank">Download all finishes <span className="btnArrow"><svg className="icon" width="100pt" height="100pt" version="1.1" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg"><path d="m32.812 0l-15.625 15.625 34.375 34.375-34.375 34.375 15.625 15.625 50-50z"/></svg></span></a>
+      
+  <div class="row cta_buttons nomargin">
+     <div class="col-sm-6 sal-animate" data-sal="slide-up" data-sal-easing="ease" data-sal-delay="5">
+     <a href={props.link.link} className="button-learn" download={'${props.title} Finishes'} rel="noreferrer" target="_blank">Download all finishes <span className="btnArrow"><svg className="icon" width="100pt" height="100pt" version="1.1" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg"><path d="m32.812 0l-15.625 15.625 34.375 34.375-34.375 34.375 15.625 15.625 50-50z"/></svg></span></a>
+</div>
+ <div class="col-sm-6 sal-animate" data-sal="slide-up" data-sal-easing="ease" data-sal-delay="5">
+<a href="/request-a-quote" class="button-learn">request a quote <span class="btnArrow"><svg class="icon" width="100pt" height="100pt" version="1.1" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg"><path d="m32.812 0l-15.625 15.625 34.375 34.375-34.375 34.375 15.625 15.625 50-50z"></path></svg></span></a>
+</div>
+               
+              </div>
           <div className="content__clear">
             <span className="small__info">As timber is a natural product it can vary in colour and other natural characteristics. The images may not be a true representation of the finished product. We recommend requesting samples and viewing images of projects before making your final decision.</span>
           </div>

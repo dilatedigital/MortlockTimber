@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import Img from 'gatsby-image';
 import Slider from "react-slick";
+import { Link } from 'gatsby';
+import scrollTo from 'gatsby-plugin-smoothscroll';
 
 function SampleNextArrow(props) {
   const { className, onClick } = props;
@@ -57,6 +59,11 @@ class ProductApplication extends Component {
             <div className="col-sm-4">
               <div className="application__text">
                 <div className="application__textbox" data-sal="slide-up"  data-sal-easing="ease" data-sal-delay="5" dangerouslySetInnerHTML={{ __html: this.props.data.application_content }} />
+          <div class="row cta_buttons margin-t-b">
+              <div class="col-sm-12 sal-animate" data-sal="slide-up" data-sal-easing="ease" data-sal-delay="5"><div class="btn__wrap"><a href="/request-a-quote" class="button-learn">request a quote <span class="btnArrow"><svg class="icon" width="100pt" height="100pt" version="1.1" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg"><path d="m32.812 0l-15.625 15.625 34.375 34.375-34.375 34.375 15.625 15.625 50-50z"></path></svg></span></a></div></div>
+         
+              </div>
+            
                 <div className="application__iconbox">
                   <Slider className="app__list" ref={slider => (this.slider2 = slider)} focusOnSelect={true} asNavFor={this.state.nav1} {...navSliderSettings}>
                     {this.props.data.application_gallery_image.map((list, index) => (

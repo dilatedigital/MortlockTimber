@@ -13,6 +13,8 @@ class Post extends Component {
     const pageData = this.props.data.wordpressPost
     const relatedData = this.props.data.allWordpressPost
     const postURL = this.props.location.href;
+    
+    
     // const pricingImage = this.props.data.allWordpressAcfOptions.edges[0].node.options.pricing_image
     
     const zip = {
@@ -31,6 +33,7 @@ class Post extends Component {
     return (
     <Layout headerColor="dark">
       <SEO description={pageData.yoast.metadesc} title={pageData.yoast.title}/> 
+      console.log(">>>" + pageData);
         <div className="single__wrapper">
 		{blogPostingSchema}
           <div className="container">
