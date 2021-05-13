@@ -26,7 +26,7 @@ const ProductBenefit = ({ ...props }) =>  {
                   data-sal-delay="5">
                   {(benefit.benefit_or_button === 'button') ?
                     <div className="btn__wrap">
-                      { (benefit.button_link.includes('#')) ? <button className="button-learn" key={index} data-id={benefit.button_link} onClick={() => scrollTo(`${benefit.button_link}`)}>{benefit.button_text} <span className="btnArrow"><svg className="icon" width="100pt" height="100pt" version="1.1" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg"><path d="m32.812 0l-15.625 15.625 34.375 34.375-34.375 34.375 15.625 15.625 50-50z"/></svg></span></button> :
+                      { (benefit.button_link.includes('#')) ? <button className="button-learn sample-bt" key={index} data-id={benefit.button_link} onClick={() => scrollTo(`${benefit.button_link}`)}>{benefit.button_text} <span className="btnArrow"><svg className="icon" width="100pt" height="100pt" version="1.1" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg"><path d="m32.812 0l-15.625 15.625 34.375 34.375-34.375 34.375 15.625 15.625 50-50z"/></svg></span></button> :
                       <Link to={ benefit.button_link } className="button-learn">{ benefit.button_text } <span className="btnArrow"><svg className="icon" width="100pt" height="100pt" version="1.1" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg"><path d="m32.812 0l-15.625 15.625 34.375 34.375-34.375 34.375 15.625 15.625 50-50z"/></svg></span></Link> }
                     </div> :
                     <div className="icon__wrapper">

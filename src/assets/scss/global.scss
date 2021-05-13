@@ -396,6 +396,8 @@ label,
   letter-spacing: 0.1em;
   cursor: pointer;
   transition: all 0.3s;
+  
+  
 
   @include breakpoint("small") {
     padding: 10px 25px;
@@ -1711,14 +1713,14 @@ ul.main__nav {
   border: 1px solid #312f30;
   border-radius: 0;
   text-transform: uppercase;
-  font-size: 15px;
+  font-size: 14px;
   line-height: 1.3125;
   color: $primary-color;
-  padding: 14px 73px 14px 20px;
+  padding: 14px 53px 14px 10px;
   position: relative;
   text-align: center;
   letter-spacing: 2px;
-  min-width: 250px;
+  min-width: 240px;
   cursor: pointer;
   transition: all 0.3s;
 
@@ -1780,7 +1782,12 @@ ul.main__nav {
     }
   }
 }
-
+.sample-bt {
+  margin-left:-95px;
+ @media only screen and (max-width: 767px) {
+      margin-left: 0;
+    }
+}
 .margin-t-b{
   margin-top:-30px;
     margin-bottom:30px;
@@ -1788,20 +1795,30 @@ ul.main__nav {
 
 .cta_buttons { 
     .button-learn{
-      font-size: 15px;
-      letter-spacing: 0;
-      text-align: left;
-      width: -webkit-max-content;
-      width: -moz-max-content;
-      width: max-content;
-      letter-spacing: 2px;
-      line-height: 1.3125;
-      margin:5px;
+    display: inline-block;
+    vertical-align: middle;
+    text-transform: uppercase;
+    font-size: 14px;
+    cursor: pointer;
+    transition: all .3s;
+    margin:5px 0;
       }
+    .btn__wrap{
+      display:inline-block;
+    }
   }
+.mr-45{
+  margin-right:45px;
+}
 .nomargin{
   .button-learn{
     margin:0;
+        min-width: 270px;
+  }
+  
+  @media(max-width:767px){
+    .mr-45{margin-right:0;margin-left:35px;}
+    
   }
 }
 .footer_logo {
@@ -7288,8 +7305,26 @@ span#mt-popup-close:hover {
 
 .minHeightAuto{
   min-height:auto !important;
-}
+  .button{
+    font-size:12px;
+     padding:9px 12px;
+  }
+  
+   @media only screen and (max-width: 767px) {
+      margin-bottom:10px;
+    
+     }
 
+}
+ @media only screen and (max-width: 767px) {
+     .product-stick .product-block.button-block {
+          margin-top: 0 !important;
+      }
+    .product-block .button{
+           font-size:12px;
+           padding:9px 12px;
+        }
+    }
 
 .product-table-container .products-column {
     position: relative;
