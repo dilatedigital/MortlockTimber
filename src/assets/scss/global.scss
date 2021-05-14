@@ -7305,14 +7305,14 @@ span#mt-popup-close:hover {
 
 .minHeightAuto{
   min-height:auto !important;
-  .button{
+  
+   @media only screen and (max-width: 767px) {
+      margin-bottom:10px;
+    .button{
     font-size:12px;
      padding:9px 12px;
   }
   
-   @media only screen and (max-width: 767px) {
-      margin-bottom:10px;
-    
      }
 
 }
