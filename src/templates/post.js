@@ -33,7 +33,6 @@ class Post extends Component {
     return (
     <Layout headerColor="dark">
       <SEO description={pageData.yoast.metadesc} title={pageData.yoast.title}/> 
-      console.log(">>>" + pageData);
         <div className="single__wrapper">
 		{blogPostingSchema}
           <div className="container">
