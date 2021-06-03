@@ -8,6 +8,7 @@ import ProductPricingFormMetroplank from "../forms/product-pricing-form-metropla
 import ProductPricingFormProplank from "../forms/product-pricing-form-proplank-8507";
 import ProductPricingFormShousugiban from "../forms/product-pricing-form-shousugiban-8508";
 import ProductPricingFormTrendplank from "../forms/product-pricing-form-trendplank-8509";
+import ProductPricingFormVacoa from "../forms/product-pricing-form-vacoa-12055";
 
 const PricingBlock = ({ ...props }) =>  {
   const content = props.data;
@@ -59,6 +60,7 @@ const PricingBlock = ({ ...props }) =>  {
               : props.pageID == 339 ? ( <ProductPricingFormProplank gtag={props.gtag} finishes={props.finishes} battensize={props.battensize} data={content} pageID={props.pageID} location={props.location} /> )
               : props.pageID == 4205 ? ( <ProductPricingFormShousugiban gtag={props.gtag} finishes={props.finishes} battensize={props.battensize} data={content} pageID={props.pageID} location={props.location} /> )
               : props.pageID == 4209 ? ( <ProductPricingFormTrendplank gtag={props.gtag} finishes={props.finishes} battensize={props.battensize} data={content} pageID={props.pageID} location={props.location} /> )
+              : props.pageID == 12050 ? ( <ProductPricingFormVacoa gtag={props.gtag} finishes={props.finishes} battensize={props.battensize} data={content} pageID={props.pageID} location={props.location} /> )
               : ( <ProductPricingForm gtag={props.gtag} finishes={props.finishes} battensize={props.battensize} data={content} pageID={props.pageID} location={props.location} /> )  }
             </div>
           </div>
