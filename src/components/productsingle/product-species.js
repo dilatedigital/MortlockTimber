@@ -23,8 +23,8 @@ const ProductSpecies = ({ ...props }) =>  {
   return (
     <div className="product-species">
       <div className="general-heading">
-        <h2>timber species</h2>
-        <span className="info">Select timber species below to see their corresponding finishes</span>
+        <h2>{content.timber_species_heading}</h2>
+        <span className="info">{content.timber_species_aside_sub_heading}</span>
       </div>
       <div className="species-boxes">
         <div className="row">

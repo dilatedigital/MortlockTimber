@@ -85,6 +85,10 @@ class Page extends Component {
         .timber_finishes_button_style,
       timber_finishes_download_link: this.props.data.wordpressPage.acf
         .timber_finishes_download_link,
+      timber_species_heading: this.props.data.wordpressPage.acf
+        .timber_species_heading,
+      timber_species_aside_sub_heading: this.props.data.wordpressPage.acf
+        .timber_species_aside_sub_heading,
     }
 
     const productInstallation = {
@@ -486,6 +490,8 @@ export const pageQuery = graphql`
           image_title
           image_icon
         }
+		timber_species_heading
+		timber_species_aside_sub_heading
         timber_finishes_download_text
         timber_finishes_button_style
         timber_finishes_download_link {
