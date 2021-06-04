@@ -235,6 +235,7 @@ module.exports = {
     options: {
       pixelId: "",
     },
-  },  
+  },
+   `gatsby-plugin-meta-redirect`,
   ],
 }
