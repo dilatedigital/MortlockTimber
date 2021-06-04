@@ -9,6 +9,18 @@ class Page extends Component {
 
     return (
       <Layout>
+        <SEO
+          description={
+            this.props.data.wordpressPage.yoast.metadesc
+              ? this.props.data.wordpressPage.yoast.metadesc
+              : null
+          }
+          title={
+            this.props.data.wordpressPage.yoast.title
+              ? this.props.data.wordpressPage.yoast.title
+              : null
+          }
+        />
         <div className="general__wrappper">
           <div className="container">
             <h1>{StaticPage.title}</h1>
@@ -25,9 +37,12 @@ export default Page
 export const pageQuery = graphql`
   query($id: String!) {
     wordpressPage(id: { eq: $id }) {
-      title
-      content
-    }
+      wordpress_id
+      yoast {
+        title
+        metadesc
+      }
+	}
     site {
       id
       siteMetadata {

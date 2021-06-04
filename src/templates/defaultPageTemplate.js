@@ -10,8 +10,17 @@ class Page extends Component {
 
     return (
       <Layout>
-        <SEO 
-          title="Terms & Conditions - Mortlock Timber"
+        <SEO
+          description={
+            this.props.data.wordpressPage.yoast.metadesc
+              ? this.props.data.wordpressPage.yoast.metadesc
+              : null
+          }
+          title={
+            this.props.data.wordpressPage.yoast.title
+              ? this.props.data.wordpressPage.yoast.title
+              : null
+          }
         />
         <div className="general__wrappper">
           <div className="container">
@@ -29,8 +38,11 @@ export default Page
 export const pageQuery = graphql`
   query($id: String!) {
     wordpressPage(id: { eq: $id }) {
-      title
-      content
+      wordpress_id
+      yoast {
+        title
+        metadesc
+      }
     }
     site {
       id
