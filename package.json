@@ -17,6 +17,7 @@
     "gatsby-plugin-facebook-pixel": "^1.0.5",
     "gatsby-plugin-google-tagmanager": "^2.3.12",
     "gatsby-plugin-manifest": "^2.4.22",
+    "gatsby-plugin-meta-redirect": "^1.1.1",
     "gatsby-plugin-netlify": "^2.10.0",
     "gatsby-plugin-offline": "^3.2.9",
     "gatsby-plugin-react-helmet": "^3.3.4",
