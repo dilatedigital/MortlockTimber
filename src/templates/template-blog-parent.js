@@ -119,8 +119,17 @@ class Page extends Component {
 
     return (
       <Layout>
-        <SEO 
-          title="Mortlock News | Mortlock Timber"
+        <SEO
+          description={
+            this.props.data.wordpressPage.yoast.metadesc
+              ? this.props.data.wordpressPage.yoast.metadesc
+              : null
+          }
+          title={
+            this.props.data.wordpressPage.yoast.title
+              ? this.props.data.wordpressPage.yoast.title
+              : null
+          }
         />
         <div className="blog__wrapper">
           <div className="container">
@@ -277,7 +286,14 @@ class Page extends Component {
 export default Page
 
 export const pageQuery = graphql`
-  query($skip: Int!, $limit: Int!) {
+  query($id: String!, $skip: Int!, $limit: Int!) {
+    wordpressPage(id: { eq: $id }) {
+      wordpress_id
+      yoast {
+        title
+        metadesc
+      }
+	}
     allWordpressPost(
       sort: { fields: [date], order: DESC }
       limit: $limit
