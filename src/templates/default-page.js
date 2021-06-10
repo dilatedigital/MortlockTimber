@@ -38,6 +38,8 @@ export const pageQuery = graphql`
   query($id: String!) {
     wordpressPage(id: { eq: $id }) {
       wordpress_id
+      title
+      content
       yoast {
         title
         metadesc
