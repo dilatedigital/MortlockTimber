@@ -102,6 +102,14 @@ export const pageQuery = graphql`
             metadesc
           }
           acf {
+            pricing_banner_image_overlay
+            pricing_banner_heading
+            pricing_banner_description
+            pricing_banner_buttons {
+              pricing_button_text
+              pricing_button_link
+              pricing_button_style
+            }
             pricing_banner_image {
               localFile {
                 childImageSharp {
@@ -110,14 +118,6 @@ export const pageQuery = graphql`
                   }
                 }
               }
-            }
-            pricing_banner_image_overlay
-            pricing_banner_heading
-            pricing_banner_description
-            pricing_banner_buttons {
-              pricing_button_text
-              pricing_button_link
-              pricing_button_style
             }
             pricing_image {
               localFile {

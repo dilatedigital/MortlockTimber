@@ -110,6 +110,7 @@ createRedirect({ fromPath: '/news/do-i-have-to-maintain-shou-sugi-ban-charred-ti
     `./src/templates/template-request-a-quote.js`
   )
   const pricingTemplate = path.resolve(`./src/templates/template-pricing.js`)
+  const pricingTemplateNew = path.resolve(`./src/templates/template-pricing-new.js`)
   const portfolioParentTemplate = path.resolve(
     `./src/templates/template-portfolio-parent.js`
   )
@@ -210,6 +211,16 @@ createRedirect({ fromPath: '/news/do-i-have-to-maintain-shou-sugi-ban-charred-ti
           component: slash(pricingTemplate),
           context: {
             id: edge.node.id,
+          },
+        })
+        break
+      case "template-pricing-new.php":
+        createPage({
+          path: edge.node.path,
+          component: slash(pricingTemplateNew),
+          context: {
+            id: edge.node.id,
+			slug: edge.node.slug,
           },
         })
         break
