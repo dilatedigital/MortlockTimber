@@ -7704,6 +7704,22 @@ content: "";
     left: 0px;
 }
 
+.contact__wrapper.primary-cost-drivers .spec__column .spec__box h3 {
+    text-transform: uppercase;
+    margin-bottom: 15px;
+        margin-top: 40px;
+}
+
+.contact__wrapper.logistics .spec__column .spec__box h3 {
+    text-transform: uppercase;
+    margin-bottom: 15px;
+    margin-top: 40px;
+}
+
+.contact__wrapper.logistics .spec__column .spec__box h3:first-child, .contact__wrapper.primary-cost-drivers .spec__column .spec__box h3:first-child {
+    margin-top: 0;
+}
+
 @media only screen and (min-width: 1024px){
 .post__content ul li {
     padding: 0 0 15px 25px !important;
