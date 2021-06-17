@@ -320,7 +320,7 @@ export const pageQuery = graphql`
             cost_range_image {
               localFile {
                 childImageSharp {
-                  fluid(maxWidth: 500) {
+                  fluid(maxWidth: 1920) {
                     ...GatsbyImageSharpFluid_withWebp
                   }
                 }
@@ -339,7 +339,7 @@ export const pageQuery = graphql`
             installation_image {
               localFile {
                 childImageSharp {
-                  fluid(maxWidth: 500) {
+                  fluid(maxWidth: 1000) {
                     ...GatsbyImageSharpFluid_withWebp
                   }
                 }
@@ -356,7 +356,7 @@ export const pageQuery = graphql`
             primary_cost_image {
               localFile {
                 childImageSharp {
-                  fluid(maxWidth: 500) {
+                  fluid(maxWidth: 1000) {
                     ...GatsbyImageSharpFluid_withWebp
                   }
                 }
@@ -371,7 +371,7 @@ export const pageQuery = graphql`
             logistics_image {
               localFile {
                 childImageSharp {
-                  fluid(maxWidth: 500) {
+                  fluid(maxWidth: 1000) {
                     ...GatsbyImageSharpFluid_withWebp
                   }
                 }
