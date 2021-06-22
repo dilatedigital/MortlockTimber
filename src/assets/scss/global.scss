@@ -7514,7 +7514,7 @@ min-width:unset;
 }
 
 .cost-range .cr-buttons .inner__bannerbuttons .button:nth-child(2) {
-    margin-left: 25px;
+    margin-left: 20px;
 }
 
 .contact__wrapper.installation-section {
@@ -7547,11 +7547,11 @@ color: #7e7e7e;
 }
 
 .contact__wrapper.primary-cost-drivers .pcd-description {
-    padding-bottom: 40px;
+    padding-bottom: 20px;
 }
 
 .contact__wrapper.primary-cost-drivers  .spec__column {
-    margin: 100px -92px 0 0;
+    margin: 65px -92px 0 0;
     padding: 80px;
     background: #fff;
 }
@@ -7570,7 +7570,7 @@ padding:80px;
 }
 
 .contact__wrapper.primary-cost-drivers .pcd-buttons .inner__bannerbuttons button:nth-child(2) {
-    margin-left: 25px;
+    margin-left: 20px;
 }
 
 .contact__wrapper.installation-section {
@@ -7718,6 +7718,32 @@ content: "";
 
 .contact__wrapper.logistics .spec__column .spec__box h3:first-child, .contact__wrapper.primary-cost-drivers .spec__column .spec__box h3:first-child {
     margin-top: 0;
+}
+
+.contact__wrapper.cost-range {
+    padding: 0px 0 50px;
+}
+
+.contact__wrapper.pricing-intro {
+    padding-bottom: 40px;
+    padding-top: 60px;
+}
+
+.contact__wrapper.installation-section .installation-buttons .inner__bannerbuttons button:nth-child(2) {
+    margin-left: 20px;
+}
+
+.cost-range .quote__text.cr-title{
+	margin-bottom: 45px;
+}
+
+.pricing__image.cr-image.mobile-chart {
+    display: none;
+}
+
+.pricing__image.cr-image.mobile-chart {
+    margin-top: -20px;
+    margin-bottom: -35px;
 }
 
 @media only screen and (min-width: 1024px){
@@ -8018,6 +8044,36 @@ min-width: auto;
 .product-parent-intro .product-intro-image {
     order: 0;
     margin-top: 0;
+}
+
+.contact__wrapper.pricing-intro {
+    padding-bottom: 30px;
+    padding-top: 40px;
+}
+
+.pricing__image.cr-image.mobile-chart {
+    display: block;
+}
+
+.pricing__image.cr-image.desktop-chart {
+    display: none;
+}
+
+.contact__wrapper.installation-section .installation-buttons .inner__bannerbuttons button {
+    display: block;
+}
+
+.contact__wrapper.installation-section .installation-buttons .inner__bannerbuttons button:nth-child(2) {
+    margin-left: 0;
+    margin-top: 15px;
+}
+
+.contact__wrapper.primary-cost-drivers .spec__column {
+    padding: 50px;
+}
+
+.contact__wrapper.logistics .spec__column {
+    padding: 50px;
 }
 }
 

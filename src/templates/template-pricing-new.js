@@ -35,9 +35,14 @@ class Page extends Component {
       download_mortlock_product_pricing_specification_guide: this.props.data.allWordpressPage.edges[0].node.acf.download_mortlock_product_pricing_specification_guide
     }
 	
+    const pricingIntro = {
+		pricing_intro_content: this.props.data.allWordpressPage.edges[0].node.acf.pricing_intro_content
+	}
+	
     const costRange = {
       cost_range_title: this.props.data.allWordpressPage.edges[0].node.acf.cost_range_title,
       cost_range_image: this.props.data.allWordpressPage.edges[0].node.acf.cost_range_image,
+      cost_range_image_mobile: this.props.data.allWordpressPage.edges[0].node.acf.cost_range_image_mobile,
       cost_range_description_one: this.props.data.allWordpressPage.edges[0].node.acf.cost_range_description_one,
       cost_range_description_two: this.props.data.allWordpressPage.edges[0].node.acf.cost_range_description_two,
       cost_range_buttons: this.props.data.allWordpressPage.edges[0].node.acf.cost_range_buttons
@@ -83,6 +88,11 @@ class Page extends Component {
           title={this.props.data.allWordpressPage.edges[0].node.yoast.title} 
         />
         <PricingBanner data={bannerContent} />
+        <div className="contact__wrapper pricing-intro">
+          <div className="container">
+			<div className="pricing-intro-content" dangerouslySetInnerHTML={{ __html: pricingIntro.pricing_intro_content }} />
+		  </div>
+		 </div>
         <div className="contact__wrapper cost-range">
           <div className="container">
             <div className="quote__text cr-title">
@@ -90,10 +100,15 @@ class Page extends Component {
             </div>
             <div className="row">
               <div className="col-sm-12">
-                <div className="pricing__image cr-image" data-sal="slide-up" 
+                <div className="pricing__image cr-image desktop-chart" data-sal="slide-up" 
       data-sal-easing="ease"
       data-sal-delay="5">
                   {costRange.cost_range_image ? <Img fluid={costRange.cost_range_image.localFile.childImageSharp.fluid} alt="Mortlock Timber" /> : null}
+                </div>
+                <div className="pricing__image cr-image mobile-chart" data-sal="slide-up" 
+      data-sal-easing="ease"
+      data-sal-delay="5">
+				  {costRange.cost_range_image_mobile ? <Img fluid={costRange.cost_range_image_mobile.localFile.childImageSharp.fluid} alt="Mortlock Timber" /> : null}
                 </div>
               </div>
               <div className="col-sm-12">
@@ -120,11 +135,6 @@ class Page extends Component {
 					  </div> : null }
                 </div>
               </div>
-              <div className="col-sm-12">
-                <div className="pricing_formwrap cr-description-bottom">
-                  <div dangerouslySetInnerHTML={{ __html: costRange.cost_range_description_two }} />
-                </div>
-              </div>
             </div>
           </div>
         </div>
@@ -144,9 +154,6 @@ class Page extends Component {
 				  <div className="col-sm-7">
 					<div
 					  className="spec__column"
-					  data-sal="slide-up"
-					  data-sal-easing="ease"
-					  data-sal-delay="5"
 					>
 					  <div
 						className="spec__box"
@@ -316,8 +323,18 @@ export const pageQuery = graphql`
               pricing_button_link
               pricing_button_style
             }
+			pricing_intro_content
             cost_range_title
             cost_range_image {
+              localFile {
+                childImageSharp {
+                  fluid(maxWidth: 1920) {
+                    ...GatsbyImageSharpFluid_withWebp
+                  }
+                }
+              }
+            }
+            cost_range_image_mobile {
               localFile {
                 childImageSharp {
                   fluid(maxWidth: 1920) {
@@ -339,7 +356,7 @@ export const pageQuery = graphql`
             installation_image {
               localFile {
                 childImageSharp {
-                  fluid(maxWidth: 1000) {
+                  fluid(maxWidth: 2000) {
                     ...GatsbyImageSharpFluid_withWebp
                   }
                 }
@@ -356,7 +373,7 @@ export const pageQuery = graphql`
             primary_cost_image {
               localFile {
                 childImageSharp {
-                  fluid(maxWidth: 1000) {
+                  fluid(maxWidth: 2000) {
                     ...GatsbyImageSharpFluid_withWebp
                   }
                 }
