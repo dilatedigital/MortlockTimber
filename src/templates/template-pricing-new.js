@@ -59,6 +59,7 @@ class Page extends Component {
     const primaryCost = {
       primary_cost_title: this.props.data.allWordpressPage.edges[0].node.acf.primary_cost_title,
       primary_cost_image: this.props.data.allWordpressPage.edges[0].node.acf.primary_cost_image,
+      primary_cost_image_mobile: this.props.data.allWordpressPage.edges[0].node.acf.primary_cost_image_mobile,
       primary_cost_description: this.props.data.allWordpressPage.edges[0].node.acf.primary_cost_description,
       primary_cost_content: this.props.data.allWordpressPage.edges[0].node.acf.primary_cost_content,
       primary_cost_buttons: this.props.data.allWordpressPage.edges[0].node.acf.primary_cost_buttons
@@ -178,12 +179,25 @@ class Page extends Component {
 						</div>
 					</div>
 				  </div>
-				  <div className="col-sm-5">
+				  <div className="col-sm-5 pc-image-desktop">
 					<div className="spec__image">
 					  {primaryCost.primary_cost_image ? (
 						<Img
 						  fluid={
 							primaryCost.primary_cost_image.localFile
+							  .childImageSharp.fluid
+						  }
+						  alt="Mortlock Timber"
+						/>
+					  ) : null}
+					</div>
+				  </div>
+				  <div className="col-sm-5 pc-image-mobile">
+					<div className="spec__image">
+					  {primaryCost.primary_cost_image_mobile ? (
+						<Img
+						  fluid={
+							primaryCost.primary_cost_image_mobile.localFile
 							  .childImageSharp.fluid
 						  }
 						  alt="Mortlock Timber"
@@ -231,17 +245,19 @@ class Page extends Component {
 				</div>
 			  </div>
 		  </div>
-		</div>
-        <div className="contact__wrapper pricing-related-articles">		
-			{this.props.data.allWordpressPage.edges[0].node.acf.show_related_articles &&
-			  this.props.data.allWordpressPost.edges.length && (
-				<GlobalNewsSlider
-				  contentData={this.props.data.allWordpressPost.edges}
-				  title={relatedArticleSectionTitle}
-				/>
-			  )}
-		</div>
-		  
+		</div>		
+        <div className="contact__wrapper how-to-use">
+          <div className="container">
+            <div className="row">
+              <div className="col-sm-12">
+				<div className="quote__text htu-title">
+				  <h2 dangerouslySetInnerHTML={{ __html: howToUse.how_to_use_title }} />
+				</div>
+				<div className="htu-description" dangerouslySetInnerHTML={{ __html: howToUse.how_to_use_description }} />
+              </div>
+            </div>
+          </div>
+        </div>		
         <div id="download" className="contact__wrapper pricing-guide-form">
           <div className="container">
             <div className="quote__text pgf-title">
@@ -267,18 +283,15 @@ class Page extends Component {
             <div dangerouslySetInnerHTML={{ __html: this.props.data.allWordpressPage.edges[0].node.acf.pricing_description_bottom }} />
           </div>
         </div>
-        <div className="contact__wrapper how-to-use">
-          <div className="container">
-            <div className="row">
-              <div className="col-sm-12">
-				<div className="quote__text htu-title">
-				  <h2 dangerouslySetInnerHTML={{ __html: howToUse.how_to_use_title }} />
-				</div>
-				<div className="htu-description" dangerouslySetInnerHTML={{ __html: howToUse.how_to_use_description }} />
-              </div>
-            </div>
-          </div>
-        </div>
+        <div className="contact__wrapper pricing-related-articles">		
+			{this.props.data.allWordpressPage.edges[0].node.acf.show_related_articles &&
+			  this.props.data.allWordpressPost.edges.length && (
+				<GlobalNewsSlider
+				  contentData={this.props.data.allWordpressPost.edges}
+				  title={relatedArticleSectionTitle}
+				/>
+			  )}
+		</div>
         <div id="requestquote" className="contact__wrapper request-quote">
           <div className="container">		
             <div className="quote__text" data-sal="slide-up" 
@@ -344,7 +357,6 @@ export const pageQuery = graphql`
               }
             }
             cost_range_description_one
-			cost_range_description_two
             cost_range_buttons {
               cost_range_button_text
               cost_range_button_link
@@ -371,6 +383,15 @@ export const pageQuery = graphql`
             primary_cost_description
 			primary_cost_content
             primary_cost_image {
+              localFile {
+                childImageSharp {
+                  fluid(maxWidth: 2000) {
+                    ...GatsbyImageSharpFluid_withWebp
+                  }
+                }
+              }
+            }
+            primary_cost_image_mobile {
               localFile {
                 childImageSharp {
                   fluid(maxWidth: 2000) {
