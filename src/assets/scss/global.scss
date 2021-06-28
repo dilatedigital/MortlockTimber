@@ -7585,7 +7585,7 @@ padding:80px;
 }
 
 .contact__wrapper.primary-cost-drivers {
-    padding-bottom: 40px;
+    padding-bottom: 0px;
 }
 
 .contact__wrapper.primary-cost-drivers {}
@@ -7766,7 +7766,27 @@ content: "";
 }
 
 .contact__wrapper.pricing-related-articles {
-    padding: 30px 0 80px;
+    padding: 30px 0 30px;
+}
+
+.pricing-related-articles .slick-slider .slide, .slick-slider .slick-slide, .control_wrapper .slide, .control_wrapper .slick-slide {
+    padding: 15px;
+}
+
+.pricing-related-articles .slick-slider .slick-list {
+    height: auto!important;
+}
+
+@media only screen and (min-width: 1500px){
+.pricing-related-articles .article .article__date {
+    left: -12px;
+}
+}
+
+@media only screen and (min-width: 1200px){
+.pricing-related-articles .article .article__date {
+    left: -12px;
+}
 }
 
 @media only screen and (min-width: 1024px){
@@ -7837,7 +7857,16 @@ font-size: 18px;
 }
 }
 
-@media only screen and (max-width: 1223px) {
+@media only screen and (max-width: 1499px) {
+.contact__wrapper.pricing-related-articles {
+    padding: 30px 0 70px;
+}
+}
+
+@media only screen and (max-width: 1250px) {
+.pricing-related-articles .slick-slider .slide, .slick-slider .slick-slide, .control_wrapper .slide, .control_wrapper .slick-slide {
+    padding: 0;
+}
 }
 
 @media only screen and (max-width: 1200px) {

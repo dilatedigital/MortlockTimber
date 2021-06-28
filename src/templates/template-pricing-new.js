@@ -11,7 +11,7 @@ import PricingForm from "../components/forms/pricing-form-3502";
 import RequestAQuote from "../components/forms/request-quote-form-3495";
 import PricingInstallation from "../components/pricing/pricing-installation"
 import PricingBanner from "../components/pricing/pricing-banner"
-import GlobalNewsSlider from "../components/global-news-slider"
+import PricingNewsSlider from "../components/pricing-news-slider"
 
 class Page extends Component {
   render() {
@@ -286,7 +286,7 @@ class Page extends Component {
         <div className="contact__wrapper pricing-related-articles">		
 			{this.props.data.allWordpressPage.edges[0].node.acf.show_related_articles &&
 			  this.props.data.allWordpressPost.edges.length && (
-				<GlobalNewsSlider
+				<PricingNewsSlider
 				  contentData={this.props.data.allWordpressPost.edges}
 				  title={relatedArticleSectionTitle}
 				/>
