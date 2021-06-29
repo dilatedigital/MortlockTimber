@@ -17,17 +17,17 @@ const PricingNewsSlider = ({ ...props }) => {
     arrows: false,
     responsive: [
       {
-        breakpoint: 1024,
+        breakpoint: 1250,
         settings: {
-          slidesToShow: 1,
+          slidesToShow: 2,
           slidesToScroll: 1,
           adaptiveHeight: true,
         },
       },
       {
-        breakpoint: 1250,
+        breakpoint: 1024,
         settings: {
-          slidesToShow: 2,
+          slidesToShow: 1,
           slidesToScroll: 1,
           adaptiveHeight: true,
         },
