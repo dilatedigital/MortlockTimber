@@ -172,7 +172,7 @@ class RequestAQuote extends Component {
     this.setState({ submitActive: true });
     const formLink = 'https://site.mortlock.com.au/wp-json/contact-form-7/v1/contact-forms/3495/feedback';
     let isFormValid = false;
-    let elements = document.querySelectorAll('.contact__form .noEmpty');
+    let elements = document.querySelectorAll('.request_quote_form .noEmpty');
 
     for (let i = 0, element; element = elements[i++];) {
       if (element.value === "") {
@@ -319,7 +319,7 @@ class RequestAQuote extends Component {
     }
 	
     return (
-      <form className={submitActive ? 'contact__form loading' : 'contact__form'} id="quote__form" type="POST" onSubmit={ this.handleSubmit } noValidate>
+      <form className={submitActive ? 'request_quote_form loading' : 'request_quote_form'} id="quote__form" type="POST" onSubmit={ this.handleSubmit } noValidate>
         <div className="row">
           <div className="col-sm-6">
             <div className="form_group">
