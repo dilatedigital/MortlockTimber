@@ -375,12 +375,20 @@ class Page extends Component {
           location={this.props.location.href}
           gtag={requestSampleTag}
         />
+		<div className="floating-product-buttons">
+        <div
+          className="fixed-request-sample"
+          onClick={() => scrollTo(`#request-a-sample`)}
+        >
+          Request Sample
+        </div>
         <div
           className="fixed-request-pricing"
           onClick={() => scrollTo(`#pricing`)}
         >
           Request Pricing
         </div>
+		</div>
         {this.props.data.wordpressPage.acf.show_related_articles &&
           this.props.data.allWordpressPost.edges.length && (
             <GlobalNewsSlider

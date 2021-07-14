@@ -7777,6 +7777,31 @@ content: "";
     height: auto!important;
 }
 
+.fixed-request-pricing, .fixed-request-sample {
+    position: relative;
+    right: unset;
+    bottom: unset;
+    width: 50%;
+    text-align: center;
+    background: #a2764f;
+    color: #fff;
+    text-transform: uppercase;
+    padding: 13px 20px;
+    letter-spacing: 1px;
+    display: inline-block;
+}
+
+.floating-product-buttons {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    z-index: 98;
+}
+
+.fixed-request-pricing {
+    background: #805a39;
+}
+
 @media only screen and (min-width: 1500px){
 .pricing-related-articles .article .article__date {
     left: -12px;
@@ -7786,6 +7811,10 @@ content: "";
 @media only screen and (min-width: 1200px){
 .pricing-related-articles .article .article__date {
     left: -12px;
+}
+
+.floating-product-buttons{
+	display:none;
 }
 }
 
@@ -8370,6 +8399,10 @@ padding: 0 15px;
 @media only screen and (max-width: 450px) {
 .product-table-container .products-column .product-stick {
     min-width: 100%;
+}
+
+.floating-product-buttons{
+	font-size:14px;
 }
 }
 
