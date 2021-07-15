@@ -224,6 +224,9 @@ class ContactForm extends Component {
           setTimeout(() => {
             this.setState({ mainFormMsg: '', mainFormState: '' });
           }, 10000);
+          setTimeout(() => {
+			window.location = "https://www.mortlock.com.au/thank-you/";
+          }, 1000);
         } else if(res.data.status === 'validation_failed') {
           setTimeout(() => {
             this.setState({
