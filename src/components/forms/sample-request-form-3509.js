@@ -320,15 +320,16 @@ class SampleRequest extends Component {
     if (popupActive) {
       return (
         <div className="formsub__popup">
-          <h3>Thank you!</h3>
-          <p>Please click the link below to download the sample.</p>
+          <h3>Thanks for requesting a sample from Mortlock Timber.</h3>
+          <p>Our Sales team will be in touch shortly to find out exactly what samples you need for your project.</p>
+		  <p>In the meantime, please take a look at our Pricing Guide for this product below.</p>
           <a
             class="link"
             target="_blank"
             rel="noreferrer"
             href={this.props.data.request_sample_brochure.link}
           >
-            Click here to download sample
+            Download Product Pricing Guide
           </a>
         </div>
       )
@@ -609,7 +610,7 @@ class SampleRequest extends Component {
               <textarea
                 aria-label="Message"
                 id="message"
-                placeholder="Please leave a detailed message here..."
+                placeholder="Tell us a little bit more about your project so we can tailor samples for your project."
                 name="message"
                 value={this.state.message}
                 onChange={this.handleInputChange}
