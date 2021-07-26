@@ -7802,6 +7802,28 @@ content: "";
     background: #805a39;
 }
 
+table td, table th {
+    border-right: 1px solid #312f30;
+}
+
+table th {
+    border-bottom: 1px solid #312f30;
+    text-align: left;
+    padding: 11px 26px;
+}
+
+figure.wp-block-table.is-style-regular {
+    margin-top: 25px;
+}
+
+.post__content p strong {
+    display: inline-block;
+}
+
+figure.wp-block-table.is-style-regular table {
+    overflow-x: scroll;
+}
+
 @media only screen and (min-width: 1500px){
 .pricing-related-articles .article .article__date {
     left: -12px;
