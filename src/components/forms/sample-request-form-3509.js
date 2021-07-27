@@ -260,7 +260,10 @@ class SampleRequest extends Component {
 
             setTimeout(() => {
               this.setState({ mainFormMsg: "", mainFormState: "" })
-            }, 4000)
+            }, 4000);
+          setTimeout(() => {
+			window.location = "https://www.mortlock.com.au/thank-you-sample-request-form/";
+          }, 50);
           } else if (res.data.status === "validation_failed") {
             setTimeout(() => {
               this.setState({

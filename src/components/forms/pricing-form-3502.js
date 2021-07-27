@@ -254,9 +254,6 @@ class PricingForm extends Component {
           setTimeout(() => {
             this.setState({ mainFormMsg: '', mainFormState: '' });
           }, 4000);
-          setTimeout(() => {
-			window.location = "https://www.mortlock.com.au/thank-you-pricing-guide-form/";
-          }, 500);
         } else if(res.data.status === 'validation_failed') {
           setTimeout(() => {
             this.setState({
