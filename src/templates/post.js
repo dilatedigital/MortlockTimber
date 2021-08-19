@@ -7,19 +7,35 @@ import BackgroundImage from 'gatsby-background-image';
 import SEO from "../components/seo";
 import Layout from "../components/layout";
 import PricingForm from "../components/forms/pricing-form-3502";
+import ProductPricingForm from "../components/forms/product-pricing-form-4360";
+import ProductPricingFormClassicplank from "../components/forms/product-pricing-form-classicplank-8490";
+import ProductPricingFormMarineplank from "../components/forms/product-pricing-form-marineplank-8505";
+import ProductPricingFormMetroplank from "../components/forms/product-pricing-form-metroplank-8506";
+import ProductPricingFormProplank from "../components/forms/product-pricing-form-proplank-8507";
+import ProductPricingFormShousugiban from "../components/forms/product-pricing-form-shousugiban-8508";
+import ProductPricingFormTrendplank from "../components/forms/product-pricing-form-trendplank-8509";
+import ProductPricingFormVacoa from "../components/forms/product-pricing-form-vacoa-12055";
 
 class Post extends Component {
   render() {
     const pageData = this.props.data.wordpressPost
     const relatedData = this.props.data.allWordpressPost
     const postURL = this.props.location.href;
+	
     
     
     // const pricingImage = this.props.data.allWordpressAcfOptions.edges[0].node.options.pricing_image
-    
-    const zip = {
-      download_mortlock_product_pricing_specification_guide: this.props.data.allWordpressAcfOptions.edges[0].node.options.download_mortlock_product_pricing_specification_guide
+
+	
+	const pricingProduct = this.props.data.allWordpressPost.edges[0].node.acf.pricing_product
+	
+    const productPricing = {
+      pricing_title: this.props.data.allWordpressPost.edges[0].node.acf.pricing_title,
+      pricing_description: this.props.data.allWordpressPost.edges[0].node.acf.pricing_description,
+      pricing_image: this.props.data.allWordpressAcfOptions.edges[0].node.options.pricing_image,
+      pricing_guide_download_link: this.props.data.allWordpressPost.edges[0].node.acf.pricing_guide_download_link,
     }
+	
 
     const socialSharers = (event, el) => {
       event.preventDefault();
@@ -83,14 +99,21 @@ class Post extends Component {
                                
                                   
                                 <div class="quote__text">
-                                <h2 dangerouslySetInnerHTML={{ __html: this.props.data.allWordpressAcfOptions.edges[0].node.options.pricing_form_heading }} />
+                                <h2 dangerouslySetInnerHTML={{ __html: this.props.data.allWordpressPost.edges[0].node.acf.pricing_title }} />
                                 </div>
                                 <div className="row">
                                       <div className = "col-sm-6">
-                                      <p dangerouslySetInnerHTML={{ __html: this.props.data.allWordpressAcfOptions.edges[0].node.options.pricing_form_description }} />
+                                      <p dangerouslySetInnerHTML={{ __html: this.props.data.allWordpressPost.edges[0].node.acf.pricing_description }} />
                                       <div className = "pricing_formwrap" >
-                                      <PricingForm zip = { zip }
-                                      location = { this.props.location.href }/> 
+										{pricingProduct == 'general' ? ( <ProductPricingForm gtag={this.props.gtag} finishes={this.props.finishes} battensize={this.props.battensize} data={productPricing} pageID={this.props.pageID} location={this.props.location} /> ) 
+									  : pricingProduct == 'classicplank' ? ( <ProductPricingFormClassicplank gtag={this.props.gtag} finishes={this.props.finishes} battensize={this.props.battensize} data={productPricing} pageID={this.props.pageID} location={this.props.location} /> )
+									  : pricingProduct == 'marineplank' ? ( <ProductPricingFormMarineplank gtag={this.props.gtag} finishes={this.props.finishes} battensize={this.props.battensize} data={productPricing} pageID={this.props.pageID} location={this.props.location} /> )
+									  : pricingProduct == 'metroplank' ? ( <ProductPricingFormMetroplank gtag={this.props.gtag} finishes={this.props.finishes} battensize={this.props.battensize} data={productPricing} pageID={this.props.pageID} location={this.props.location} /> )
+									  : pricingProduct == 'proplank' ? ( <ProductPricingFormProplank gtag={this.props.gtag} finishes={this.props.finishes} battensize={this.props.battensize} data={productPricing} pageID={this.props.pageID} location={this.props.location} /> )
+									  : pricingProduct == 'shousugiban' ? ( <ProductPricingFormShousugiban gtag={this.props.gtag} finishes={this.props.finishes} battensize={this.props.battensize} data={productPricing} pageID={this.props.pageID} location={this.props.location} /> )
+									  : pricingProduct == 'trendplank' ? ( <ProductPricingFormTrendplank gtag={this.props.gtag} finishes={this.props.finishes} battensize={this.props.battensize} data={productPricing} pageID={this.props.pageID} location={this.props.location} /> )
+									  : pricingProduct == 'vacoa' ? ( <ProductPricingFormVacoa gtag={this.props.gtag} finishes={this.props.finishes} battensize={this.props.battensize} data={productPricing} pageID={this.props.pageID} location={this.props.location} /> )
+									  : ( <ProductPricingForm gtag={this.props.gtag} finishes={this.props.finishes} battensize={this.props.battensize} data={productPricing} pageID={this.props.pageID} location={this.props.location} /> )  }
                                       </div>
                                       </div> 
                                       <div className="col-sm-6">
@@ -101,7 +124,7 @@ class Post extends Component {
                                 </div> 
                                 </div> 
                                 </div>
-                                <div className="contact__wrapper">
+                                <div className="contact__wrapper posts-pricing-bottom-text">
                                   <div className="container container__small">
                                   <div dangerouslySetInnerHTML={{ __html: this.props.data.allWordpressAcfOptions.edges[0].node.options.pricing_form_description_bottom }} />
 
@@ -216,6 +239,14 @@ class Post extends Component {
               }
             }
           }
+			acf {
+				pricing_product
+				pricing_title
+				pricing_description
+				pricing_guide_download_link {
+				  link
+				}
+			}
           
         }
       }
@@ -224,12 +255,7 @@ class Post extends Component {
       edges {
       node {
         options {
-        pricing_form_heading
-        pricing_form_description
         pricing_form_description_bottom
-        download_mortlock_product_pricing_specification_guide{
-          link
-        }
         pricing_image{
           localFile {
             childImageSharp {
