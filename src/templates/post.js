@@ -106,7 +106,7 @@ class Post extends Component {
                                 <h2 dangerouslySetInnerHTML={{ __html: this.props.data.wordpressPost.acf.pricing_title }} />
                                 </div>
                                 <div className="row">
-  <div className = {"" + (pricingProduct == 'quote' ? 'col-sm-12' : pricingProduct == 'sample' ? 'col-sm-12' : 'col-sm-6')}>
+  <div className = {"" + (pricingProduct == 'quote' ? 'col-sm-12 post-page-form' : pricingProduct == 'sample' ? 'col-sm-12 post-page-form' : 'col-sm-6 post-page-form')}>
                                       <p dangerouslySetInnerHTML={{ __html: this.props.data.wordpressPost.acf.pricing_description }} />
                                       <div className = "pricing_formwrap" >
 										{pricingProduct == 'general' ? ( <ProductPricingForm gtag={this.props.gtag} finishes={this.props.finishes} battensize={this.props.battensize} data={productPricing} pageID={this.props.pageID} location={this.props.location} /> ) 

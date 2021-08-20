@@ -7832,6 +7832,15 @@ figure.wp-block-table.is-style-regular table {
     display: none!important;
 }
 
+.post-page-form form .btn_wrap .button {
+    width: 100%;
+}
+
+.post-page-form .custom-file-label:before {
+    width: 100%;
+    text-align: center;
+}
+
 @media only screen and (min-width: 1500px){
 .pricing-related-articles .article .article__date {
     left: -12px;
