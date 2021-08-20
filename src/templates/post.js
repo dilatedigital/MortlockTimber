@@ -27,13 +27,13 @@ class Post extends Component {
     // const pricingImage = this.props.data.allWordpressAcfOptions.edges[0].node.options.pricing_image
 
 	
-	const pricingProduct = this.props.data.allWordpressPost.edges[0].node.acf.pricing_product
+	const pricingProduct = this.props.data.wordpressPost.acf.pricing_product
 	
     const productPricing = {
-      pricing_title: this.props.data.allWordpressPost.edges[0].node.acf.pricing_title,
-      pricing_description: this.props.data.allWordpressPost.edges[0].node.acf.pricing_description,
+      pricing_title: this.props.data.wordpressPost.acf.pricing_title,
+      pricing_description: this.props.data.wordpressPost.acf.pricing_description,
       pricing_image: this.props.data.allWordpressAcfOptions.edges[0].node.options.pricing_image,
-      pricing_guide_download_link: this.props.data.allWordpressPost.edges[0].node.acf.pricing_guide_download_link,
+      pricing_guide_download_link: this.props.data.wordpressPost.acf.pricing_guide_download_link,
     }
 	
 
@@ -99,11 +99,11 @@ class Post extends Component {
                                
                                   
                                 <div class="quote__text">
-                                <h2 dangerouslySetInnerHTML={{ __html: this.props.data.allWordpressPost.edges[0].node.acf.pricing_title }} />
+                                <h2 dangerouslySetInnerHTML={{ __html: this.props.data.wordpressPost.acf.pricing_title }} />
                                 </div>
                                 <div className="row">
                                       <div className = "col-sm-6">
-                                      <p dangerouslySetInnerHTML={{ __html: this.props.data.allWordpressPost.edges[0].node.acf.pricing_description }} />
+                                      <p dangerouslySetInnerHTML={{ __html: this.props.data.wordpressPost.acf.pricing_description }} />
                                       <div className = "pricing_formwrap" >
 										{pricingProduct == 'general' ? ( <ProductPricingForm gtag={this.props.gtag} finishes={this.props.finishes} battensize={this.props.battensize} data={productPricing} pageID={this.props.pageID} location={this.props.location} /> ) 
 									  : pricingProduct == 'classicplank' ? ( <ProductPricingFormClassicplank gtag={this.props.gtag} finishes={this.props.finishes} battensize={this.props.battensize} data={productPricing} pageID={this.props.pageID} location={this.props.location} /> )
@@ -215,6 +215,14 @@ class Post extends Component {
         title
         metadesc
       }
+			acf {
+				pricing_product
+				pricing_title
+				pricing_description
+				pricing_guide_download_link {
+				  link
+				}
+			}
     }
     allWordpressPost(sort: {fields: [date], order:DESC}, limit: 2) {
       edges {
@@ -238,16 +246,7 @@ class Post extends Component {
                 }
               }
             }
-          }
-			acf {
-				pricing_product
-				pricing_title
-				pricing_description
-				pricing_guide_download_link {
-				  link
-				}
-			}
-          
+          }          
         }
       }
     }
