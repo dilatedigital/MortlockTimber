@@ -15,6 +15,8 @@ import ProductPricingFormProplank from "../components/forms/product-pricing-form
 import ProductPricingFormShousugiban from "../components/forms/product-pricing-form-shousugiban-8508";
 import ProductPricingFormTrendplank from "../components/forms/product-pricing-form-trendplank-8509";
 import ProductPricingFormVacoa from "../components/forms/product-pricing-form-vacoa-12055";
+import RequestAQuote from "../components/forms/request-quote-form-3495";
+import SampleRequest from "../components/forms/sample-request-form-3509";
 
 class Post extends Component {
   render() {
@@ -26,7 +28,6 @@ class Post extends Component {
     
     // const pricingImage = this.props.data.allWordpressAcfOptions.edges[0].node.options.pricing_image
 
-	
 	const pricingProduct = this.props.data.wordpressPost.acf.pricing_product
 	
     const productPricing = {
@@ -36,7 +37,10 @@ class Post extends Component {
       pricing_guide_download_link: this.props.data.wordpressPost.acf.pricing_guide_download_link,
     }
 	
-
+    const requestSample = {
+      request_sample_brochure: this.props.data.wordpressPost.acf.request_sample_brochure,
+    }
+	
     const socialSharers = (event, el) => {
       event.preventDefault();
       window.open(el, '', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=440,width=660');
@@ -102,7 +106,7 @@ class Post extends Component {
                                 <h2 dangerouslySetInnerHTML={{ __html: this.props.data.wordpressPost.acf.pricing_title }} />
                                 </div>
                                 <div className="row">
-                                      <div className = "col-sm-6">
+  <div className = {"" + (pricingProduct == 'quote' ? 'col-sm-12' : pricingProduct == 'sample' ? 'col-sm-12' : 'col-sm-6')}>
                                       <p dangerouslySetInnerHTML={{ __html: this.props.data.wordpressPost.acf.pricing_description }} />
                                       <div className = "pricing_formwrap" >
 										{pricingProduct == 'general' ? ( <ProductPricingForm gtag={this.props.gtag} finishes={this.props.finishes} battensize={this.props.battensize} data={productPricing} pageID={this.props.pageID} location={this.props.location} /> ) 
@@ -113,10 +117,12 @@ class Post extends Component {
 									  : pricingProduct == 'shousugiban' ? ( <ProductPricingFormShousugiban gtag={this.props.gtag} finishes={this.props.finishes} battensize={this.props.battensize} data={productPricing} pageID={this.props.pageID} location={this.props.location} /> )
 									  : pricingProduct == 'trendplank' ? ( <ProductPricingFormTrendplank gtag={this.props.gtag} finishes={this.props.finishes} battensize={this.props.battensize} data={productPricing} pageID={this.props.pageID} location={this.props.location} /> )
 									  : pricingProduct == 'vacoa' ? ( <ProductPricingFormVacoa gtag={this.props.gtag} finishes={this.props.finishes} battensize={this.props.battensize} data={productPricing} pageID={this.props.pageID} location={this.props.location} /> )
+									  : pricingProduct == 'quote' ? ( <RequestAQuote location={this.props.location.href} /> )
+									  : pricingProduct == 'sample' ? ( <SampleRequest pageID={this.props.wpPageId} data={requestSample} location={this.props.location} gtag={this.props.gtag} /> )									  
 									  : ( <ProductPricingForm gtag={this.props.gtag} finishes={this.props.finishes} battensize={this.props.battensize} data={productPricing} pageID={this.props.pageID} location={this.props.location} /> )  }
                                       </div>
                                       </div> 
-                                      <div className="col-sm-6">
+                                      <div className = {"" + (pricingProduct == 'quote' ? 'col-sm-6 hide-post-form-image' : pricingProduct == 'sample' ? 'col-sm-6 hide-post-form-image' : 'col-sm-6')}>
                                             <div className="" data-sal="slide-up" data-sal-easing="ease" data-sal-delay="5">
           <Img fluid={ this.props.data.allWordpressAcfOptions.edges[0].node.options.pricing_image.localFile.childImageSharp.fluid} alt="Mortlock Timber" />
                                             </div>
@@ -124,7 +130,7 @@ class Post extends Component {
                                 </div> 
                                 </div> 
                                 </div>
-                                <div className="contact__wrapper posts-pricing-bottom-text">
+  <div className = {"" + (pricingProduct == 'quote' ? 'contact__wrapper posts-pricing-bottom-text hide-posts-pricing-bottom-text' : pricingProduct == 'sample' ? 'contact__wrapper posts-pricing-bottom-text hide-posts-pricing-bottom-text' : 'contact__wrapper posts-pricing-bottom-text')}>
                                   <div className="container container__small">
                                   <div dangerouslySetInnerHTML={{ __html: this.props.data.allWordpressAcfOptions.edges[0].node.options.pricing_form_description_bottom }} />
 
@@ -221,6 +227,9 @@ class Post extends Component {
 				pricing_description
 				pricing_guide_download_link {
 				  link
+				}
+				request_sample_brochure{
+					link
 				}
 			}
     }

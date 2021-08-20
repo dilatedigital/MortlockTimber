@@ -7824,6 +7824,14 @@ figure.wp-block-table.is-style-regular table {
     overflow-x: scroll;
 }
 
+.hide-post-form-image {
+    display: none!important;
+}
+
+.posts-pricing-bottom-text.hide-posts-pricing-bottom-text {
+    display: none!important;
+}
+
 @media only screen and (min-width: 1500px){
 .pricing-related-articles .article .article__date {
     left: -12px;
