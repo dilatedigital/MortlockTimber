@@ -267,6 +267,9 @@ class RequestAQuote extends Component {
               }
             })
           }, 800);
+         setTimeout(() => {
+			window.location = "https://www.mortlock.com.au/request-quote-thank-you/";
+          }, 1000);
         } else if(res.data.status === 'validation_failed') {
           setTimeout(() => {
             this.setState({

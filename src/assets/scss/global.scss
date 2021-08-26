@@ -7841,9 +7841,104 @@ figure.wp-block-table.is-style-regular table {
     text-align: center;
 }
 
+.product-category-pricing-block.ty-message-block .pricing__block {
+    background: #efefef!important;
+}
+
+.product-category-pricing-block.ty-message-block .pricing__block .pricing__text p {
+    text-align: center;
+    font-weight: 700;
+    font-size: 36px;
+    letter-spacing: 2px;
+}
+
+.product-category-pricing-block.ty-message-block .pricing__block .pricing__text .inner__bannerbuttons {
+    text-align: center;
+}
+
+.product-category-pricing-block.ty-message-block .pricing__block .pricing__text .inner__bannerbuttons a.button.secondary {
+    color: #efefef;
+}
+
+.product-category-pricing-block.ty-message-block .pricing__block .pricing__text .inner__bannerbuttons a.button.secondary:hover {
+    background: #efefef;
+    color: #312f30;
+}
+
+.product-category-related-articles.ty-articles .news__block h2 {
+    padding-top: 30px;
+}
+
+.contact__wrapper.product-category-related-articles.pricing-related-articles.ty-articles {
+    padding: 30px 0 0px;
+}
+
+.product-category-related-articles.ty-articles .news__block h2 {
+    padding-top: 30px;
+}
+
+.contact__wrapper.product-category-related-articles.pricing-related-articles.ty-articles {
+    padding: 30px 0 0px;
+}
+
+.newsletter {
+    text-align: left;
+}
+
+.newsletter .newsletter-text-column p {
+    font-size: 20px;
+}
+
+.newsletter .newsletter-text-column h3 {
+    margin-bottom: 15px;
+}
+
+form.newsletter__form {
+    padding-top: 0;
+    max-width: 85%;
+}
+
+.newsletter__form input[type="text"], .newsletter__form input[type="email"] {
+    color: #fff;
+    border: 1px solid #ffffff;
+    height: 45px;
+}
+
+.newsletter__form input[type="text"]::placeholder, .newsletter__form input[type="email"]::placeholder {
+  color: #ffffff; }
+
+.newsletter__form .form_group {
+    margin-bottom: 15px;
+}
+
+.newsletter__form .btn_wrap {
+    margin: 0;
+}
+
+.newsletter__form button.button {
+    width: 100%;
+    margin-top: 0;
+}
+
+.newsletter .newsletter-form-column {
+    border-left: 3px solid #312f30;
+}
+
+.newsletter .row {
+    align-items: center;
+}
+
+.product-category-pricing-block.ty-content-block .inner__bannerbuttons a.button.primary {
+    margin-right: 15px;
+}
+
 @media only screen and (min-width: 1500px){
 .pricing-related-articles .article .article__date {
     left: -12px;
+}
+  
+.article {
+    max-width: 275px;
 }
 }
 
@@ -7906,6 +8001,10 @@ ul.main__nav>li:hover .dropdown {
 }
 .contact__wrapper.posts-pricing-bottom-text {
     padding-top: 0;
+}
+  
+.article {
+    max-width: 275px;
 }
 }
 
@@ -8004,6 +8103,11 @@ font-size: 18px;
     margin-left: 0;
     margin-top: 15px;
 }
+  
+.product-category-pricing-block.ty-content-block .inner__bannerbuttons a.button.primary {
+    margin-right: 0px;
+  margin-bottom:10px
+}
 }
 
 @media only screen and (max-width: 1023px) {
@@ -8053,6 +8157,20 @@ font-size: 18px;
 
 #requestquote.contact__wrapper.request-quote {
     padding: 50px 0 60px;
+}
+  
+.newsletter .newsletter-text-column {
+    margin-bottom: 20px;
+    text-align: center;
+    margin-top: 10px;
+}
+
+.newsletter .newsletter-form-column {
+    border-left: none;
+}
+
+form.newsletter__form {
+    max-width: 100%;
 }
 }
 
@@ -8381,6 +8499,19 @@ body .new-category-template span.product_read_more, span.read-more-btn.button, .
 .contact__wrapper.primary-cost-drivers .pc-image-mobile {
     display: block;
 }
+
+.product-category-pricing-block.ty-content-block .inner__bannerbuttons a.button.primary {
+    margin-right: 10px;
+  margin-bottom:0px
+}
+  
+.product-category-pricing-block.ty-message-block .pricing__block .pricing__text p {
+    font-size: 24px;
+}
+
+.product-category-pricing-block.ty-message-block {
+    padding-top: 0;
+}
 }
 
 @media only screen and (max-width: 600px) {
@@ -8435,6 +8566,14 @@ padding: 0 15px;
 
 .cost-range .cr-description-bottom {
     padding-top: 40px;
+}
+  
+.newsletter {
+    padding: 60px 20px 50px;
+}
+
+.newsletter__form button.button {
+    width: 100%;
 }
 }
 

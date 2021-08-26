@@ -232,9 +232,9 @@ class ProductPricingFormTrendplank extends Component {
             }, 800)
 
             setTimeout(() => {
-              this.setState({ mainFormMsg: "", mainFormState: "" })
-            }, 4000)
-          } else if (res.data.status === "validation_failed") {
+			window.location = "https://www.mortlock.com.au/trendplank-pricing-thank-you/";
+          }, 1000);
+        } else if (res.data.status === "validation_failed") {
             setTimeout(() => {
               this.setState({
                 submitActive: false,

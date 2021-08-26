@@ -61,8 +61,17 @@ const Footer = ({ data }) => (
     render={data => (
       <footer className="footer">	  
       <div className="newsletter">
-      <h3>Subscribe to our newsletter</h3>
+  <div className="container">
+  <div className="row">
+  <div className="col-sm-12 col-md-6 col-lg-7 newsletter-text-column">
+      <h3>Join us for Mortlock News</h3>
+  <p>Subscribe to the Mortlock Timber newsletter to find out more about new product releases, handy tips & advice, pricing breakdowns and much much more!</p>
+  </div>
+  <div className="col-sm-12 col-md-6 col-lg-5 newsletter-form-column">
       <NewsletterForm></NewsletterForm>
+  </div>
+  </div>
+  </div>
       </div>
         <div className="container">
           <div className="footer__top">

@@ -199,8 +199,8 @@ class NewsletterForm extends Component {
           }, 800); 
 
           setTimeout(() => {
-            this.setState({ mainFormMsg: '', mainFormState: '' });
-          }, 10000);
+			window.location = "https://www.mortlock.com.au/newsletter-thank-you/";
+          }, 1000);
         } else if(res.data.status === 'validation_failed') {
           setTimeout(() => {
             this.setState({
@@ -256,7 +256,7 @@ class NewsletterForm extends Component {
     return (
       <form className={submitActive ? 'newsletter__form loading' : 'newsletter__form'} id="newsletter__form" type="POST" onSubmit={ this.handleSubmit } noValidate>
         <div className="row">
-          <div className="col-sm-4">
+          <div className="col-sm-12">
             <div className="form_group">
               <label htmlFor="firstname">first name *</label>
               <div className="form_input">
@@ -265,7 +265,7 @@ class NewsletterForm extends Component {
               </div>
             </div>
           </div>
-          <div className="col-sm-4">
+          <div className="col-sm-12">
             <div className="form_group">
               <label htmlFor="lastname">last name *</label>
               <div className="form_input">
@@ -274,7 +274,7 @@ class NewsletterForm extends Component {
               </div>
             </div>
           </div>
-          <div className="col-sm-4">
+          <div className="col-sm-12">
             <div className="form_group">
               <label htmlFor="email">Email *</label>
               <div className="form_input">

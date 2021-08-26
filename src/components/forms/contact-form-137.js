@@ -220,10 +220,6 @@ class ContactForm extends Component {
               }
             })
           }, 800); 
-
-          setTimeout(() => {
-            this.setState({ mainFormMsg: '', mainFormState: '' });
-          }, 10000);
           setTimeout(() => {
 			window.location = "https://www.mortlock.com.au/thank-you-contact-form/";
           }, 1000);
