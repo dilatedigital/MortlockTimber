@@ -5,7 +5,7 @@ import qs from 'qs';
 import Helpers from '../helpers/helpers';
 import Loader from '../helpers/loader';
 
-class ContactForm extends Component {
+class LandingPageForm extends Component {
   constructor(props) {
     super(props);
 
@@ -17,7 +17,7 @@ class ContactForm extends Component {
         phone: '',
         company: '',
         state: '',
-        whoareyou: '',
+        quantity: '',
         leadsource: 'Website',
         message: '',
         pageURL: this.props.location,
@@ -37,7 +37,7 @@ class ContactForm extends Component {
         phone: '',
         company: '',
         state: '',
-        whoareyou: '',
+        quantity: '',
         message: '',
         pageURL: '',
         interest: 'Unsure',
@@ -50,20 +50,20 @@ class ContactForm extends Component {
 		utm_campaign: '',
 		utm_term: '',
 		utm_content: '',
-		gclid: ''		
+		gclid: ''
       },
       passedValidation: false,
       submitActive: false,
       mainFormMsg: '',
       mainFormState: null,
       leadInfoSource: null,
+      pre_submission_page: "",
       external_referral_site: "",
       landing_page: "",
-      pre_submission_page: '',
     }
     this.handleInputChange = this.handleInputChange.bind(this);
   }
-	
+
   getLeadSource() {
     const queryString = window.location.search
     const urlParams = new URLSearchParams(queryString)
@@ -95,10 +95,10 @@ class ContactForm extends Component {
     this.getLeadSource()
     this.handleReferrer()
   }
-
+	
   handleGTag() {
     window.dataLayer = window.dataLayer || [];
-    window.dataLayer.push({'event': 'WebLead', 'eventAction': 'ContactUs'});
+    window.dataLayer.push({'event': 'WebLead', 'eventAction': 'LandingPage'});
   }
 
   handleInputChange(event) {
@@ -133,7 +133,7 @@ class ContactForm extends Component {
   handleSubmit = async (event) => {
     event.preventDefault();
     this.setState({ submitActive: true });
-    const formLink = 'https://site.mortlock.com.au/wp-json/contact-form-7/v1/contact-forms/137/feedback';
+    const formLink = 'https://site.mortlock.com.au/wp-json/contact-form-7/v1/contact-forms/5153/feedback';
     let isFormValid = false;
     let elements = document.querySelectorAll('.contact__form .noEmpty');
 
@@ -157,6 +157,7 @@ class ContactForm extends Component {
     }
 
     if(isFormValid) {
+      var leadInfo = '1) Message :-   ' + this.state.fields.message + '     2) Quantity of decking required?:-   ' + this.state.fields.quantity;
       var bodyFormData = new FormData();
       bodyFormData.append('firstname', this.state.fields.firstname)
       bodyFormData.append('lastname', this.state.fields.lastname)
@@ -168,8 +169,8 @@ class ContactForm extends Component {
       bodyFormData.append('state', this.state.fields.state)
       bodyFormData.append('email', this.state.fields.email)
       bodyFormData.append('phone', this.state.fields.phone)
-      bodyFormData.append('whoareyou', this.state.fields.whoareyou)
-      bodyFormData.append('message', this.state.fields.message)
+      bodyFormData.append('quantity', this.state.fields.quantity)
+      bodyFormData.append('message', leadInfo)
       bodyFormData.append('leadsource', this.state.fields.leadsource)
       bodyFormData.append('pageURL', this.state.fields.pageURL)
       bodyFormData.append('interest', this.state.fields.interest)
@@ -205,7 +206,7 @@ class ContactForm extends Component {
                 phone: '',
                 company: '',
                 state: '',
-                whoareyou: '',
+                quantity: '',
                 leadsource: 'Website',
                 message: '',
                 pageURL: this.props.location,
@@ -224,9 +225,6 @@ class ContactForm extends Component {
           setTimeout(() => {
             this.setState({ mainFormMsg: '', mainFormState: '' });
           }, 10000);
-          setTimeout(() => {
-			window.location = "https://www.mortlock.com.au/thank-you-contact-form/";
-          }, 1000);
         } else if(res.data.status === 'validation_failed') {
           setTimeout(() => {
             this.setState({
@@ -276,10 +274,10 @@ class ContactForm extends Component {
       this.state.fields.utm_term = getUrlParameter("utm_term")
       this.state.fields.utm_content = getUrlParameter("utm_content")
       this.state.fields.gclid = getUrlParameter("gclid")
-    }	
+    }
 	
     return (
-      <form className={submitActive ? 'contact__form loading' : 'contact__form'} id="contact__form" type="POST" onSubmit={ this.handleSubmit } noValidate>
+      <form className={submitActive ? 'contact__form loading' : 'contact__form'} id="landing-page-contact-form" type="POST" onSubmit={ this.handleSubmit } noValidate>
         <div className="row">
           <div className="col-sm-6">
             <div className="form_group">
@@ -351,15 +349,10 @@ class ContactForm extends Component {
           </div>
         </div>
         <div className="form_group">
-          <label htmlFor="whoareyou">are you a/an</label>
+          <label htmlFor="quantity">quantity of decking required (m2)? *</label>
           <div className="form_input">
-            <select name="whoareyou" id="whoareyou" value={this.state.fields.whoareyou || ''} onChange={ this.handleInputChange }>
-              <option value="default">- Select -</option>
-              <option value="Architect/Specifier">Architect/Specifier</option>
-              <option value="Builder">Builder</option>
-              <option value="Contractor/Carpenter">Contractor/Carpenter</option>
-              <option value="Individual/Owner Builder">Individual/Owner Builder</option>
-            </select>
+            <input aria-label="Project Size" className="noEmpty" type="text" name="quantity" id="quantity" placeholder="Enter details here" value={this.state.fields.quantity || ''} onChange={this.handleInputChange} />
+            {this.state.errors.quantity !== '' && <span className='error'>{this.state.errors.quantity}</span>}
           </div>
         </div>
         <div className="form_group">
@@ -426,7 +419,7 @@ class ContactForm extends Component {
             />
           </div>
         <div className="btn_wrap">
-          <button className="button" type="submit"><span className="text">Submit</span><Loader /></button>
+          <button className="button primary" type="submit"><span className="text">Submit</span><Loader /></button>
           {this.state.mainFormMsg && <span className={`form-msg ${this.state.mainFormState}`}>{ this.state.mainFormMsg }</span>}
         </div>
       </form>
@@ -434,4 +427,4 @@ class ContactForm extends Component {
   }
 }
 
-export default ContactForm;
+export default LandingPageForm;
