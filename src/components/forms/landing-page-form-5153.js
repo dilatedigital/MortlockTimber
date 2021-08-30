@@ -223,8 +223,8 @@ class LandingPageForm extends Component {
           }, 800); 
 
           setTimeout(() => {
-			window.location = "https://www.mortlock.com.au/jarrah-timber-thank-you/";
-          }, 1000);
+            this.setState({ mainFormMsg: '', mainFormState: '' });
+          }, 10000);
         } else if(res.data.status === 'validation_failed') {
           setTimeout(() => {
             this.setState({
