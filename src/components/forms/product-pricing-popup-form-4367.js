@@ -234,8 +234,8 @@ class ProductPricingPopupForm extends Component {
           }, 800); 
 
           setTimeout(() => {
-            this.setState({ mainFormMsg: '', mainFormState: '' });
-          }, 4000);
+			window.location = "https://www.mortlock.com.au/thank-you-product-pricing-popup/";
+          }, 1000);
         } else if(res.data.status === 'validation_failed') {
           setTimeout(() => {
             this.setState({
