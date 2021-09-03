@@ -34,11 +34,60 @@ class Post extends Component {
       pricing_title: this.props.data.wordpressPost.acf.pricing_title,
       pricing_description: this.props.data.wordpressPost.acf.pricing_description,
       pricing_image: this.props.data.allWordpressAcfOptions.edges[0].node.options.pricing_image,
-      pricing_guide_download_link: this.props.data.wordpressPost.acf.pricing_guide_download_link,
+      pricing_guide_download_link: this.props.data.allWordpressAcfOptions.edges[0].node.options.pricing_guide_download_link,
+    }
+    
+    const productPricingClassicplank = {
+      pricing_title: this.props.data.wordpressPost.acf.pricing_title,
+      pricing_description: this.props.data.wordpressPost.acf.pricing_description,
+      pricing_image: this.props.data.allWordpressAcfOptions.edges[0].node.options.pricing_image,
+      pricing_guide_download_link: this.props.data.allWordpressAcfOptions.edges[0].node.options.classicplank_pricing_guide_download_link,
+    }
+    
+    const productPricingMarineplank = {
+      pricing_title: this.props.data.wordpressPost.acf.pricing_title,
+      pricing_description: this.props.data.wordpressPost.acf.pricing_description,
+      pricing_image: this.props.data.allWordpressAcfOptions.edges[0].node.options.pricing_image,
+      pricing_guide_download_link: this.props.data.allWordpressAcfOptions.edges[0].node.options.marineplank_pricing_guide_download_link,
+    }
+    
+    const productPricingMetroplank = {
+      pricing_title: this.props.data.wordpressPost.acf.pricing_title,
+      pricing_description: this.props.data.wordpressPost.acf.pricing_description,
+      pricing_image: this.props.data.allWordpressAcfOptions.edges[0].node.options.pricing_image,
+      pricing_guide_download_link: this.props.data.allWordpressAcfOptions.edges[0].node.options.metroplank_pricing_guide_download_link,
+    }
+    
+    const productPricingProplank = {
+      pricing_title: this.props.data.wordpressPost.acf.pricing_title,
+      pricing_description: this.props.data.wordpressPost.acf.pricing_description,
+      pricing_image: this.props.data.allWordpressAcfOptions.edges[0].node.options.pricing_image,
+      pricing_guide_download_link: this.props.data.allWordpressAcfOptions.edges[0].node.options.proplank_pricing_guide_download_link,
+    }
+    
+    const productPricingShouSugiBan = {
+      pricing_title: this.props.data.wordpressPost.acf.pricing_title,
+      pricing_description: this.props.data.wordpressPost.acf.pricing_description,
+      pricing_image: this.props.data.allWordpressAcfOptions.edges[0].node.options.pricing_image,
+      pricing_guide_download_link: this.props.data.allWordpressAcfOptions.edges[0].node.options.shou_sugi_ban_pricing_guide_download_link,
+    }
+    
+    const productPricingTrendplank = {
+      pricing_title: this.props.data.wordpressPost.acf.pricing_title,
+      pricing_description: this.props.data.wordpressPost.acf.pricing_description,
+      pricing_image: this.props.data.allWordpressAcfOptions.edges[0].node.options.pricing_image,
+      pricing_guide_download_link: this.props.data.allWordpressAcfOptions.edges[0].node.options.trendplank_pricing_guide_download_link,
+    }
+    
+    const productPricingVacoa = {
+      pricing_title: this.props.data.wordpressPost.acf.pricing_title,
+      pricing_description: this.props.data.wordpressPost.acf.pricing_description,
+      pricing_image: this.props.data.allWordpressAcfOptions.edges[0].node.options.pricing_image,
+      pricing_guide_download_link: this.props.data.allWordpressAcfOptions.edges[0].node.options.vacoa_pricing_guide_download_link,
     }
 	
     const requestSample = {
-      request_sample_brochure: this.props.data.wordpressPost.acf.request_sample_brochure,
+      request_sample_brochure: this.props.data.allWordpressAcfOptions.edges[0].node.options.sample_brochure_link,
     }
 	
     const socialSharers = (event, el) => {
@@ -110,13 +159,13 @@ class Post extends Component {
                                       <p dangerouslySetInnerHTML={{ __html: this.props.data.wordpressPost.acf.pricing_description }} />
                                       <div className = "pricing_formwrap" >
 										{pricingProduct == 'general' ? ( <ProductPricingForm gtag={this.props.gtag} finishes={this.props.finishes} battensize={this.props.battensize} data={productPricing} pageID={this.props.pageID} location={this.props.location} /> ) 
-									  : pricingProduct == 'classicplank' ? ( <ProductPricingFormClassicplank gtag={this.props.gtag} finishes={this.props.finishes} battensize={this.props.battensize} data={productPricing} pageID={this.props.pageID} location={this.props.location} /> )
-									  : pricingProduct == 'marineplank' ? ( <ProductPricingFormMarineplank gtag={this.props.gtag} finishes={this.props.finishes} battensize={this.props.battensize} data={productPricing} pageID={this.props.pageID} location={this.props.location} /> )
-									  : pricingProduct == 'metroplank' ? ( <ProductPricingFormMetroplank gtag={this.props.gtag} finishes={this.props.finishes} battensize={this.props.battensize} data={productPricing} pageID={this.props.pageID} location={this.props.location} /> )
-									  : pricingProduct == 'proplank' ? ( <ProductPricingFormProplank gtag={this.props.gtag} finishes={this.props.finishes} battensize={this.props.battensize} data={productPricing} pageID={this.props.pageID} location={this.props.location} /> )
-									  : pricingProduct == 'shousugiban' ? ( <ProductPricingFormShousugiban gtag={this.props.gtag} finishes={this.props.finishes} battensize={this.props.battensize} data={productPricing} pageID={this.props.pageID} location={this.props.location} /> )
-									  : pricingProduct == 'trendplank' ? ( <ProductPricingFormTrendplank gtag={this.props.gtag} finishes={this.props.finishes} battensize={this.props.battensize} data={productPricing} pageID={this.props.pageID} location={this.props.location} /> )
-									  : pricingProduct == 'vacoa' ? ( <ProductPricingFormVacoa gtag={this.props.gtag} finishes={this.props.finishes} battensize={this.props.battensize} data={productPricing} pageID={this.props.pageID} location={this.props.location} /> )
+									  : pricingProduct == 'classicplank' ? ( <ProductPricingFormClassicplank gtag={this.props.gtag} finishes={this.props.finishes} battensize={this.props.battensize} data={productPricingClassicplank} pageID={this.props.pageID} location={this.props.location} /> )
+									  : pricingProduct == 'marineplank' ? ( <ProductPricingFormMarineplank gtag={this.props.gtag} finishes={this.props.finishes} battensize={this.props.battensize} data={productPricingMarineplank} pageID={this.props.pageID} location={this.props.location} /> )
+									  : pricingProduct == 'metroplank' ? ( <ProductPricingFormMetroplank gtag={this.props.gtag} finishes={this.props.finishes} battensize={this.props.battensize} data={productPricingMetroplank} pageID={this.props.pageID} location={this.props.location} /> )
+									  : pricingProduct == 'proplank' ? ( <ProductPricingFormProplank gtag={this.props.gtag} finishes={this.props.finishes} battensize={this.props.battensize} data={productPricingProplank} pageID={this.props.pageID} location={this.props.location} /> )
+									  : pricingProduct == 'shousugiban' ? ( <ProductPricingFormShousugiban gtag={this.props.gtag} finishes={this.props.finishes} battensize={this.props.battensize} data={productPricingShouSugiBan} pageID={this.props.pageID} location={this.props.location} /> )
+									  : pricingProduct == 'trendplank' ? ( <ProductPricingFormTrendplank gtag={this.props.gtag} finishes={this.props.finishes} battensize={this.props.battensize} data={productPricingTrendplank} pageID={this.props.pageID} location={this.props.location} /> )
+									  : pricingProduct == 'vacoa' ? ( <ProductPricingFormVacoa gtag={this.props.gtag} finishes={this.props.finishes} battensize={this.props.battensize} data={productPricingVacoa} pageID={this.props.pageID} location={this.props.location} /> )
 									  : pricingProduct == 'quote' ? ( <RequestAQuote location={this.props.location.href} /> )
 									  : pricingProduct == 'sample' ? ( <SampleRequest pageID={this.props.wpPageId} data={requestSample} location={this.props.location} gtag={this.props.gtag} /> )									  
 									  : ( <ProductPricingForm gtag={this.props.gtag} finishes={this.props.finishes} battensize={this.props.battensize} data={productPricing} pageID={this.props.pageID} location={this.props.location} /> )  }
@@ -225,12 +274,6 @@ class Post extends Component {
 				pricing_product
 				pricing_title
 				pricing_description
-				pricing_guide_download_link {
-				  link
-				}
-				request_sample_brochure{
-					link
-				}
 			}
     }
     allWordpressPost(sort: {fields: [date], order:DESC}, limit: 2) {
@@ -273,7 +316,33 @@ class Post extends Component {
             }
           }
         }
-        
+				pricing_guide_download_link {
+				  link
+				}
+				sample_brochure_link{
+					link
+				}
+				classicplank_pricing_guide_download_link {
+				  link
+				}
+				marineplank_pricing_guide_download_link {
+				  link
+				}
+				metroplank_pricing_guide_download_link {
+				  link
+				}
+				proplank_pricing_guide_download_link {
+				  link
+				}
+				shou_sugi_ban_pricing_guide_download_link {
+				  link
+				}
+				trendplank_pricing_guide_download_link {
+				  link
+				}
+				vacoa_pricing_guide_download_link {
+				  link
+				}
         }
       }
       }
