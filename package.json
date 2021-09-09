@@ -15,6 +15,7 @@
     "gatsby-plugin-alias-imports": "^1.0.5",
     "gatsby-plugin-canonical-urls": "^2.10.0",
     "gatsby-plugin-facebook-pixel": "^1.0.5",
+    "gatsby-plugin-force-trailing-slashes": "^1.0.5",
     "gatsby-plugin-google-tagmanager": "^2.3.12",
     "gatsby-plugin-manifest": "^2.4.22",
     "gatsby-plugin-meta-redirect": "^1.1.1",
