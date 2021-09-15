@@ -7932,6 +7932,18 @@ form.newsletter__form {
     margin-right: 15px;
 }
 
+.newsletter-text-column p {
+    color: #312f30;
+}
+
+.newsletter__form input[type=email], .newsletter__form input[type=text] {
+    border-color: #312f30;
+}
+
+.newsletter__form input[type=email]::placeholder, .newsletter__form input[type=text]::placeholder{
+    color:#000;
+}
+
 @media only screen and (min-width: 1500px){
 .pricing-related-articles .article .article__date {
     left: -12px;
