@@ -308,7 +308,7 @@ const Page = props => {
                     to={
                       index === 0
                         ? content.pageContext.actualPath
-                        : `https://www.mortlock.com.au${content.pageContext.actualPath}${index + 1}`
+                        : `https://www.mortlock.com.au${content.pageContext.actualPath}${index + 1}/`
                     }
                   >
                     {index + 1}

@@ -123,7 +123,7 @@ const PricingNewsSlider = ({ ...props }) => {
             </button>
           </div>
           <span className="link">
-            <Link to="/news">view all</Link>
+            <Link to="/news/">view all</Link>
           </span>
         </div>
       </div>
