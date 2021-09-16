@@ -266,7 +266,7 @@ class Page extends Component {
                         to={
                           index === 0
                             ? data.pageContext.actualPath
-                            : `https://www.mortlock.com.au${data.pageContext.actualPath}${index + 1}`
+                            : `https://www.mortlock.com.au${data.pageContext.actualPath}${index + 1}/`
                         }
                       >
                         {index + 1}
