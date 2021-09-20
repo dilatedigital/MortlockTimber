@@ -139,7 +139,7 @@ class ProductPricingFormVacoa extends Component {
     this.setState({ submitActive: true })
 
     const formLink =
-      "https://site.mortlock.com.au/wp-json/contact-form-7/v1/contact-forms/8509/feedback"
+      "https://site.mortlock.com.au/wp-json/contact-form-7/v1/contact-forms/12055/feedback"
     let isFormValid = false
     let elements = document.querySelectorAll(".pricing__form .noEmpty")
 
