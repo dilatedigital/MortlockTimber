@@ -135,7 +135,8 @@ const Project = ({ ...props }) => {
                   >
                     <span className="project__info">
                       <span className="title">{info.info_title}</span>
-                      <span className="info">{info.info_description}</span>
+                      {info.info_link ? (<a href={info.info_link}><span className="info">{info.info_description}</span></a>)
+                       : (<span className="info">{info.info_description}</span>)}
                     </span>
                   </div>
                 ) : null
@@ -152,8 +153,9 @@ const Project = ({ ...props }) => {
                         key={index}
                       >
                         <span className="project__info">
-                          <span className="title">{info.info_title}</span>
-                          <span className="info">{info.info_description}</span>
+                      <span className="title">{info.info_title}</span>
+                      {info.info_link ? (<a href={info.info_link}><span className="info">{info.info_description}</span></a>)
+                       : (<span className="info">{info.info_description}</span>)}
                         </span>
                       </div>
                     ) : null
@@ -384,6 +386,7 @@ export const pageQuery = graphql`
         project_info {
           info_title
           info_description
+          info_link
         }
         project_video_image {
           link
