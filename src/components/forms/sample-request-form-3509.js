@@ -88,7 +88,7 @@ class SampleRequest extends Component {
     setTimeout(() => {
       if ((sessionStorage.getItem("referrer")).includes("mortlock.com.au")){
       this.setState({
-        external_referral_site: "None",
+        external_referral_site: "Mortlock site",
       })
       }else{
       this.setState({
