@@ -7944,6 +7944,57 @@ form.newsletter__form {
     color:#000;
 }
 
+.team-members .tm-heading h2 {
+    padding-top: 60px;
+    text-align: center;
+    line-height: 1.5em;
+    padding-bottom: 40px;
+  margin-bottom: 0;
+}
+
+.team-members .tm-container {
+    display: flex;
+    flex-wrap: wrap;
+  width: 100%;
+}
+.team-members .team-member{float:left;width:25%;padding-left:3px;padding-right:3px;min-height:1px;-webkit-box-sizing:border-box;-moz-box-sizing:border-box;box-sizing:border-box}
+.team-members .team-member:nth-child(4n+4) .profile-content{left:auto;right:0}
+.team-members .team-member.open{position:relative;z-index:50}
+.team-members .team-member .each-profile{height:290px;margin-bottom: 0;position:relative;}
+.team-members .team-member .each-profile .imagebox{height:290px;overflow:hidden;}
+.team-members .team-member .each-profile .imagebox img{width: 100%!important;display:block;}
+.team-members .team-member .each-profile .profile-content{zoom:1;z-index:5;padding:0 20px;overflow:hidden;width:100%;height:80px;position:absolute;left:0;bottom:0;z-index:10; transition:height .45s cubic-bezier(.19,1,.22,1),width .45s cubic-bezier(.19,1,.22,1) .45s,padding .65s cubic-bezier(.19,1,.22,1),background .65s cubic-bezier(.19,1,.22,1); cursor:pointer;-webkit-box-sizing:border-box;-moz-box-sizing:border-box;box-sizing:border-box;background: linear-gradient(0deg, rgba(0,0,0,0.35) 0%, rgba(0,0,0,0) 100%); border-bottom: 3px solid #a2764f;}
+.team-members .team-member .each-profile .profile-content .name{zoom:1;display:block;padding-top:14px;margin-right:-20px;padding-bottom:6px;font-size:21px;line-height:21px;color:#fff;position:relative;z-index:20;transition:height .45s cubic-bezier(.19,1,.22,1),width .45s cubic-bezier(.19,1,.22,1) .45s,padding .65s cubic-bezier(.19,1,.22,1),background .65s cubic-bezier(.19,1,.22,1)}
+.team-members .team-member .each-profile .profile-content .jobtitle{font-size:15px;line-height:15px;color:#fff;font-weight: 100;}
+.team-members .team-member .each-profile .profile-content .jobdesc{zoom:1;filter:alpha(opacity=0);opacity:0;padding-top:20px;width:100%;font-size:16px;line-height:21px;color:#fff;-webkit-transition:opacity 1s ease-in-out;-moz-transition:opacity 1s ease-in-out;-ms-transition:opacity 1s ease-in-out;-o-transition:opacity 1s ease-in-out;transition:opacity 1s ease-in-out}
+.team-members .team-member .each-profile .profile-content .read-more{position:absolute;top:200%;font-weight:700;text-decoration:none;font-size:14px;color:#fff;transition:all .65s cubic-bezier(.19,1,.22,1)}
+.team-members .team-member .each-profile:hover .profile-content{height:130px;padding:0 20px 56px;background:rgba(35, 35, 35, 0.65)}
+.team-members .team-member .each-profile:hover .profile-content .read-more{top:70%;display:block}
+.team-members .team-member.open .each-profile .profile-content{z-index:10;padding:0 20px 56px;width:calc(200% + 20px);background:rgba(35, 35, 35, 0.90);overflow:hidden; transition:height .45s cubic-bezier(.19,1,.22,1) .45s,padding .65s cubic-bezier(.19,1,.22,1) .45s,width .45s cubic-bezier(.19,1,.22,1),background .65s cubic-bezier(.19,1,.22,1) .65s }
+.team-members .team-member.open .each-profile .profile-content .name{padding-top:28px}
+.team-members .team-member.open .each-profile .profile-content .jobdesc{filter:alpha(opacity=100);opacity:1}
+.team-members .team-member.open .each-profile .profile-content .jobdesc a{color:#fff}
+.team-members .team-member.open .each-profile .profile-content .read-more{display:none}
+.team-members .team-member.open .each-profile .closebtn{display:block; z-index:1000;}
+.team-members .team-member .each-profile .closebtn{display:none;position:absolute;top:15px;right:15px;z-index:0;width:25px;height:25px;overflow:hidden;font-size:0}
+.team-members .team-member .each-profile .closebtn:before,.team-members .team-member .each-profile .closebtn:after{content:'';position:absolute;width:100%;top:50%;left:0;background:#fff;height:2px;margin-top:-1px}
+.team-members .team-member .each-profile .closebtn:before{-webkit-transform:rotate(45deg);-moz-transform:rotate(45deg);-ms-transform:rotate(45deg);-o-transform:rotate(45deg);transform:rotate(45deg)}
+.team-members .team-member .each-profile .closebtn:after{-webkit-transform:rotate(-45deg);-moz-transform:rotate(-45deg);-ms-transform:rotate(-45deg);-o-transform:rotate(-45deg);transform:rotate(-45deg)}
+.team-members .team-member.open .each-profile .profile-content {
+    height: 100%!important;
+}
+.team-members .team-member:nth-child(4n+4) .profile-content {
+    left: auto;
+    right: 0;
+}
+.team-members .team-member.col-sm-3 {
+    padding: 10px;
+}
+
+.team-members {
+    margin-bottom: 80px;
+}
+
 @media only screen and (min-width: 1500px){
 .pricing-related-articles .article .article__date {
     left: -12px;
@@ -8043,6 +8094,20 @@ font-size: 18px;
 .contact__wrapper.pricing-related-articles {
     padding: 30px 0 70px;
 }
+}
+
+@media only screen and (max-width: 1300px) {
+.team-members .team-member:nth-child(3n+3) .profile-content {
+    left: auto;
+    right: 0;
+}
+  
+.team-members .team-member:nth-child(4n+4) .profile-content {
+    left: 0;
+    right: auto;
+}
+  
+.team-members .team-member.col-sm-3 {width: 33.33%;max-width: 33.33%;flex-basis: 33.33%;}
 }
 
 @media only screen and (max-width: 1250px) {
@@ -8184,6 +8249,20 @@ font-size: 18px;
 form.newsletter__form {
     max-width: 100%;
 }
+}
+
+@media only screen and (max-width: 950px) {
+.team-members .team-member:nth-child(3n+3) .profile-content {
+    left: 0;
+    right: auto;
+}
+  
+.team-members .team-member:nth-child(2n+2) .profile-content {
+    left: auto;
+    right: 0;
+}
+  
+.team-members .team-member.col-sm-3 {width: 50%;max-width: 50%;flex-basis: 50%;}
 }
 
 @media only screen and (max-width: 900px) {
@@ -8586,6 +8665,42 @@ padding: 0 15px;
 
 .newsletter__form button.button {
     width: 100%;
+}
+  
+.team-members .team-member:nth-child(2n+2) .profile-content {
+    left: 0;
+    right: auto;
+}
+  
+.team-members .team-member.col-sm-3 {width: 100%;max-width: 100%;flex-basis: 100%;}
+  
+.team-members .team-member.open .each-profile .profile-content {
+    width: 100%;
+    height: auto!important;
+    padding-bottom: 30px!important;
+  position:relative;
+}
+  
+.team-members .team-member .each-profile {
+    height: auto;
+}
+  
+.team-members .team-member .each-profile .profile-content {
+    position: relative;
+    background: #a2764f;
+}
+  
+.team-members .team-member .each-profile:hover .profile-content {
+    padding: 10px 20px 56px;
+    background: #a2764f;
+}
+  
+.team-members .team-member.open .each-profile .profile-content .jobdesc p {
+    margin-bottom: 0;
+}
+  
+.team-members .team-member.col-sm-3 {
+    padding: 10px 30px;
 }
 }
 

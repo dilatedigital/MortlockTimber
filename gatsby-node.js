@@ -98,6 +98,7 @@ createRedirect({ fromPath: '/pricing-new/', toPath: '/product-pricing-guide/', i
   const homepageTemplate = path.resolve(`./src/templates/template-homepage.js`)
   const contactTemplate = path.resolve(`./src/templates/template-contact.js`)
   const aboutPageTemplate = path.resolve(`./src/templates/template-about.js`)
+  const meetTheTeamTemplate = path.resolve(`./src/templates/template-meet-the-team.js`)
   const productSingleTemplate = path.resolve(
     `./src/templates/template-product-single.js`
   )
@@ -153,6 +154,15 @@ createRedirect({ fromPath: '/pricing-new/', toPath: '/product-pricing-guide/', i
         createPage({
           path: edge.node.path,
           component: slash(aboutPageTemplate),
+          context: {
+            id: edge.node.id,
+          },
+        })
+        break
+      case "template-meet-the-team.php":
+        createPage({
+          path: edge.node.path,
+          component: slash(meetTheTeamTemplate),
           context: {
             id: edge.node.id,
           },
