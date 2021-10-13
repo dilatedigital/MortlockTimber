@@ -22,8 +22,10 @@ class Page extends Component {
     const messageBlock = {
       message_description: this.props.data.wordpressPage.acf
         .message_description,
-	  message_buttons: this.props.data.wordpressPage.acf
-        .message_buttons,
+	  message_button_link: this.props.data.wordpressPage.acf
+        .message_button_link,
+	  message_button_text: this.props.data.wordpressPage.acf
+        .message_button_text,
     }    
     
     const contentBlock = {
@@ -31,8 +33,14 @@ class Page extends Component {
       content_block_description: this.props.data.wordpressPage.acf
         .content_block_description,
       content_block_image: this.props.data.wordpressPage.acf.content_block_image,
-	  content_block_buttons: this.props.data.wordpressPage.acf
-        .content_block_buttons,
+	  content_block_button_one_text: this.props.data.wordpressPage.acf
+        .content_block_button_one_text,
+	  content_block_button_one_link: this.props.data.wordpressPage.acf
+        .content_block_button_one_link,
+	  content_block_button_two_text: this.props.data.wordpressPage.acf
+        .content_block_button_two_text,
+	  content_block_button_two_link: this.props.data.wordpressPage.acf
+        .content_block_button_two_link,
     }
 
     const articlesSectionTitle = this.props.data.wordpressPage.acf
@@ -68,13 +76,8 @@ class Page extends Component {
 				  <div className="col-sm-12">
 					<div className="pricing__text" >
 					  <p dangerouslySetInnerHTML={{ __html: messageBlock.message_description }} />
-                { messageBlock.message_buttons ?
-                  <div className="inner__bannerbuttons">
-                    {messageBlock.message_buttons.map((button, index) => (
-                      (index === 1) ? 
-                      <Button type="external" link={button.message_button_link} text={button.message_button_text} style={button.message_button_style} key={index} /> : 
-                      <Button link={button.message_button_link} text={button.message_button_text} style={button.message_button_style} key={index} /> 
-                    ))}
+            {messageBlock.message_button_link ? <div class="inner__bannerbuttons">
+                  {messageBlock.message_button_link ? <a class="button secondary" href={"https://" + messageBlock.message_button_link}>{messageBlock.message_button_text}</a> : null }
                   </div> : null }
 					</div>
 				  </div>
@@ -92,13 +95,9 @@ class Page extends Component {
 					<div className="pricing__text" >
 					  <h2 dangerouslySetInnerHTML={{ __html: contentBlock.content_block_title }} />
 					  <p dangerouslySetInnerHTML={{ __html: contentBlock.content_block_description }} />
-                { contentBlock.content_block_buttons ?
-                  <div className="inner__bannerbuttons">
-                    {contentBlock.content_block_buttons.map((button, index) => (
-                      (index === 1) ? 
-                      <Button type="external" link={button.content_block_button_link} text={button.content_block_button_text} style={button.content_block_button_style} key={index} /> : 
-                      <Button link={button.content_block_button_link} text={button.content_block_button_text} style={button.content_block_button_style} key={index} /> 
-                    ))}
+            {contentBlock.content_block_button_one_link ? <div class="inner__bannerbuttons">
+                  {contentBlock.content_block_button_one_link ? <a class="button primary" href={"https://" + contentBlock.content_block_button_one_link}>{contentBlock.content_block_button_one_text}</a> : null }
+      {contentBlock.content_block_button_two_link ? <a href={"https://" + contentBlock.content_block_button_two_link} class="button blackoutline">{contentBlock.content_block_button_two_text}</a> : null }
                   </div> : null }
 					</div>
 				  </div>
@@ -152,13 +151,8 @@ export const pageQuery = graphql`
 				main_banner_sub_heading
         show_message_block
         message_description
-        message_buttons {
-				  message_button_link {
-          link
-        }
-				  message_button_text
-				  message_button_style
-				}
+        message_button_link 
+        message_button_text
         show_content_block
 				content_block_title
 				content_block_image {
@@ -171,19 +165,16 @@ export const pageQuery = graphql`
 				  }
 				}
 				content_block_description
-				content_block_buttons {
-				  content_block_button_link {
-          link
-        }
-				  content_block_button_text
-				  content_block_button_style
-				}
+        content_block_button_one_text
+        content_block_button_one_link
+        content_block_button_two_text
+        content_block_button_two_link
 				show_articles
 				articles_section_title
 			  }
     }
 
-    allWordpressPost {
+    allWordpressPost{
       edges {
         node {
           title
