@@ -77,7 +77,7 @@ class Page extends Component {
 					<div className="pricing__text" >
 					  <p dangerouslySetInnerHTML={{ __html: messageBlock.message_description }} />
             {messageBlock.message_button_link ? <div class="inner__bannerbuttons">
-                  {messageBlock.message_button_link ? <a class="button secondary" href={"https://" + messageBlock.message_button_link}>{messageBlock.message_button_text}</a> : null }
+                  {messageBlock.message_button_link ? <a class="button secondary" href={"https://" + messageBlock.message_button_link} target="_blank">{messageBlock.message_button_text}</a> : null }
                   </div> : null }
 					</div>
 				  </div>
