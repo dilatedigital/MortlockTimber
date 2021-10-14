@@ -232,7 +232,7 @@ class ProductPricingFormProplank extends Component {
             }, 800)
 
             setTimeout(() => {
-			window.location = "https://www.mortlock.com.au/thank-you-proplank-pricing/";
+			window.location = "https://www.mortlock.com.au/proplank-pricing-thank-you/";
           }, 1000);
         } else if (res.data.status === "validation_failed") {
             setTimeout(() => {

@@ -221,7 +221,7 @@ class ContactForm extends Component {
             })
           }, 800); 
           setTimeout(() => {
-			window.location = "https://www.mortlock.com.au/thank-you-contact-form/";
+			window.location = "https://www.mortlock.com.au/contact-form-thank-you-page/";
           }, 1000);
         } else if(res.data.status === 'validation_failed') {
           setTimeout(() => {

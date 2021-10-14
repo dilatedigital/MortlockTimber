@@ -232,7 +232,7 @@ class ProductPricingFormCeilingTiles extends Component {
             }, 800)
 
             setTimeout(() => {
-			window.location = "https://www.mortlock.com.au/thank-you-ceiling-tiles-pricing/";
+			window.location = "https://www.mortlock.com.au/ceiling-tiles-pricing-thank-you/";
           }, 1000);
         } else if (res.data.status === "validation_failed") {
             setTimeout(() => {

@@ -232,7 +232,7 @@ class ProductPricingFormShousugiban extends Component {
             }, 800)
 
             setTimeout(() => {
-			window.location = "https://www.mortlock.com.au/thank-you-shou-sugi-ban-pricing/";
+			window.location = "https://www.mortlock.com.au/shou-sugi-ban-pricing-thank-you/";
           }, 1000);
         } else if (res.data.status === "validation_failed") {
             setTimeout(() => {

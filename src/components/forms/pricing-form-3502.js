@@ -252,7 +252,7 @@ class PricingForm extends Component {
           }, 800);
 
           setTimeout(() => {
-			window.location = "https://www.mortlock.com.au/thank-you-pricing-form/";
+			window.location = "https://www.mortlock.com.au/pricing-thank-you/";
           }, 1000);
         } else if(res.data.status === 'validation_failed') {
           setTimeout(() => {

@@ -258,7 +258,7 @@ class SampleRequest extends Component {
               scrollTo("#request-a-sample")
             }, 800);
           setTimeout(() => {
-			window.location = "https://www.mortlock.com.au/thank-you-sample-request-form/";
+			window.location = "https://www.mortlock.com.au/sample-request-thank-you-page/";
           }, 50);
           } else if (res.data.status === "validation_failed") {
             setTimeout(() => {

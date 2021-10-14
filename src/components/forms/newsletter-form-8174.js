@@ -199,7 +199,7 @@ class NewsletterForm extends Component {
           }, 800); 
 
           setTimeout(() => {
-			window.location = "https://www.mortlock.com.au/thank-you-newsletter/";
+			window.location = "https://www.mortlock.com.au/newsletter-thank-you/";
           }, 1000);
         } else if(res.data.status === 'validation_failed') {
           setTimeout(() => {
