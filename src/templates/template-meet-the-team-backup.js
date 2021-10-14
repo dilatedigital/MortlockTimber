@@ -69,9 +69,12 @@ class Page extends Component {
               <div className="imagebox">
                 { team_member.member_photo && <Img fluid={team_member.member_photo.localFile.childImageSharp.fluid} alt="Mortlock Timber" /> }
               </div>
-              <div className="profile-content no-description">
+              <div className="profile-content">
                 <div className="name">{team_member.member_name}</div>
                 <div className="jobtitle">{team_member.member_designation}</div>
+                { team_member.member_introduction && <div className="jobdesc" dangerouslySetInnerHTML={{ __html: team_member.member_introduction }} /> }
+                <div id={'read-more-' + index } className="read-more" onClick={this.openInfo}>Read more</div>
+                <div id={'close-' + index } className="closebtn" onClick={this.closeInfo}>x</div>
                </div>
               </div>
             </div>
