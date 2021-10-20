@@ -1,0 +1,16 @@
+## cache TTL inc -- fd
+[[headers]]
+  for = "*.jpg"
+  [headers.values]
+    Cache-Control = "public, max-age=604800" # secs = 7 days
+[[headers]]
+  for = "*.webp"
+  [headers.values]
+    Cache-Control = "public, max-age=604800" # secs = 7 days
+
+## Simple redirect -- fd
+[[redirects]]
+  from = "/test"
+  to = "/contact-us"
+  status = 200
+  force = true # ensure that we always redirect
