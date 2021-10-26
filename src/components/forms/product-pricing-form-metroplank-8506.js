@@ -81,17 +81,28 @@ class ProductPricingFormMetroplank extends Component {
     setTimeout(() => {
       if ((sessionStorage.getItem("referrer")).includes("mortlock.com.au")){
       this.setState({
-        external_referral_site: "NMortlock site",
+        external_referral_site: "Mortlock site",
       })
-      }else{
+      }
+      else if((sessionStorage.getItem("referrer")) === "" || (sessionStorage.getItem("referrer")) === null || (sessionStorage.getItem("referrer")) == undefined){
+       this.setState({
+        external_referral_site: "Direct Visitor",
+      })       
+      } else{
       this.setState({
         external_referral_site: sessionStorage.getItem("referrer"),
       })	      
       }
       this.setState({ landing_page: sessionStorage.getItem("landing") })
+      if((sessionStorage.getItem("presubmission")) === "" || (sessionStorage.getItem("presubmission")) === null || (sessionStorage.getItem("presubmission")) == undefined){
+       this.setState({
+        pre_submission_page: "No Previous Page",
+      })       
+      } else{
       this.setState({
-        pre_submission_page: sessionStorage.getItem("referrer"),
-      })
+        pre_submission_page: sessionStorage.getItem("presubmission"),
+      })	      
+      }
       console.log(sessionStorage.getItem("landing"))
     }, 300)
   }

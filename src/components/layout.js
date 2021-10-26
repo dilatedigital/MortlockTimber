@@ -7,7 +7,10 @@ import "../assets/scss/global.scss"
 
 const Layout = ({ children, ...props }) => {
   useEffect(() => {
-    sessionStorage.setItem("referrer", document.referrer)
+    sessionStorage.setItem("presubmission", document.referrer)
+    if (!sessionStorage.getItem("referrer")) {
+      sessionStorage.setItem("referrer", document.referrer)
+    }
     if (!sessionStorage.getItem("landing")) {
       sessionStorage.setItem("landing", window.location.pathname)
     }
