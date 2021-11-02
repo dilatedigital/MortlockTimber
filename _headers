@@ -1,0 +1,4 @@
+/*.jpg
+  cache-control: public, max-age=604800
+/*.webp
+  cache-control: public, max-age=604800

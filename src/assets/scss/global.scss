@@ -5514,7 +5514,7 @@ ul.block-icons {
     &:before {
       content: "";
       position: absolute;
-      left: -9999px;
+      left: 0; //fd: -9999px;
       bottom: 0;
       right: -400px;
       background: $primary-color;
