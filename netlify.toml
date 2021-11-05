@@ -1,0 +1,31 @@
+## cache TTL inc -- fd
+[[headers]]
+  for = "*.jpg"
+  [headers.values]
+    Cache-Control = "public, max-age=604800" # secs = 7 days
+[[headers]]
+  for = "*.webp"
+  [headers.values]
+    Cache-Control = "public, max-age=604800" # secs = 7 days
+
+## Simple redirects -- fd
+[[redirects]]
+  from = "/jarrah-timber-decking/"
+  to = "/timber-decking/jarrah"
+  status = 200
+  force = true # ensure that we always redirect
+[[redirects]]
+  from = "/timber-wall/trend-plank/"
+  to = "/timber-cladding/trend-plank/"
+  status = 200
+  force = true
+[[redirects]]
+  from = "/timber-wall/shou-sugi-ban/"
+  to = "/timber-cladding/shou-sugi-ban/"
+  status = 200
+  force = true
+[[redirects]]
+  from = "/vacoa-cladding/"
+  to = "/timber-cladding/vacoa-cladding/"
+  status = 200
+  force = true
