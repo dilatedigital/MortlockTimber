@@ -37,12 +37,9 @@ class Page extends Component {
 
     const productPricing = {
       pricing_title: this.props.data.wordpressPage.acf.pricing_title,
-      pricing_description: this.props.data.wordpressPage.acf
-        .pricing_description,
-      pricing_image: this.props.data.wordpressPage.acf.pricing_image,
-      pricing_guide_download_link: this.props.data.wordpressPage.acf
-        .pricing_guide_download_link,
-		
+      pricing_description: this.props.data.wordpressPage.acf.pricing_description,
+      pricing_image: this.props.data.allWordpressAcfOptions.edges[0].node.options.pricing_image,
+      pricing_guide_download_link: this.props.data.allWordpressAcfOptions.edges[0].node.options.pricing_guide_download_link,
     }
 
     const requestSample = {
@@ -50,8 +47,7 @@ class Page extends Component {
         .request_sample_image,
       request_block_heading: this.props.data.wordpressPage.acf
         .request_block_heading,
-      request_sample_brochure: this.props.data.wordpressPage.acf
-        .request_sample_brochure,
+      request_sample_brochure: this.props.data.allWordpressAcfOptions.edges[0].node.options.sample_brochure_link,
       request_sample_description: this.props.data.wordpressPage.acf
         .request_sample_description,
     }
@@ -356,6 +352,30 @@ export const pageQuery = graphql`
             }
           }
         }
+      }
+    }
+    allWordpressAcfOptions {
+      edges {
+      node {
+        options {
+        pricing_form_description_bottom
+        pricing_image{
+          localFile {
+            childImageSharp {
+              fluid(maxWidth: 500) {
+                ...GatsbyImageSharpFluid_withWebp
+              }
+            }
+          }
+        }
+				pricing_guide_download_link {
+				  link
+				}
+				sample_brochure_link{
+					link
+				}
+        }
+      }
       }
     }
   }

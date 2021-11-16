@@ -15,6 +15,7 @@ import ProductPricingFormProplank from "../components/forms/product-pricing-form
 import ProductPricingFormShousugiban from "../components/forms/product-pricing-form-shousugiban-8508";
 import ProductPricingFormTrendplank from "../components/forms/product-pricing-form-trendplank-8509";
 import ProductPricingFormVacoa from "../components/forms/product-pricing-form-vacoa-12055";
+import ProductPricingFormCeilingTiles from "../components/forms/product-pricing-form-timber-ceiling-tiles-14661";
 import RequestAQuote from "../components/forms/request-quote-form-3495";
 import SampleRequest from "../components/forms/sample-request-form-3509";
 
@@ -84,6 +85,13 @@ class Post extends Component {
       pricing_description: this.props.data.wordpressPost.acf.pricing_description,
       pricing_image: this.props.data.allWordpressAcfOptions.edges[0].node.options.pricing_image,
       pricing_guide_download_link: this.props.data.allWordpressAcfOptions.edges[0].node.options.vacoa_pricing_guide_download_link,
+    }
+    
+    const productPricingCeilingTiles = {
+      pricing_title: this.props.data.wordpressPost.acf.pricing_title,
+      pricing_description: this.props.data.wordpressPost.acf.pricing_description,
+      pricing_image: this.props.data.allWordpressAcfOptions.edges[0].node.options.pricing_image,
+      pricing_guide_download_link: this.props.data.allWordpressAcfOptions.edges[0].node.options.ceiling_tiles_pricing_guide_download_link,
     }
 	
     const requestSample = {
@@ -166,6 +174,7 @@ class Post extends Component {
 									  : pricingProduct == 'shousugiban' ? ( <ProductPricingFormShousugiban gtag={this.props.gtag} finishes={this.props.finishes} battensize={this.props.battensize} data={productPricingShouSugiBan} pageID={this.props.pageID} location={this.props.location} /> )
 									  : pricingProduct == 'trendplank' ? ( <ProductPricingFormTrendplank gtag={this.props.gtag} finishes={this.props.finishes} battensize={this.props.battensize} data={productPricingTrendplank} pageID={this.props.pageID} location={this.props.location} /> )
 									  : pricingProduct == 'vacoa' ? ( <ProductPricingFormVacoa gtag={this.props.gtag} finishes={this.props.finishes} battensize={this.props.battensize} data={productPricingVacoa} pageID={this.props.pageID} location={this.props.location} /> )
+									  : pricingProduct == 'ceilingtiles' ? ( <ProductPricingFormCeilingTiles gtag={this.props.gtag} finishes={this.props.finishes} battensize={this.props.battensize} data={productPricingCeilingTiles} pageID={this.props.pageID} location={this.props.location} /> )
 									  : pricingProduct == 'quote' ? ( <RequestAQuote location={this.props.location.href} /> )
 									  : pricingProduct == 'sample' ? ( <SampleRequest pageID={this.props.wpPageId} data={requestSample} location={this.props.location} gtag={this.props.gtag} /> )									  
 									  : ( <ProductPricingForm gtag={this.props.gtag} finishes={this.props.finishes} battensize={this.props.battensize} data={productPricing} pageID={this.props.pageID} location={this.props.location} /> )  }
@@ -341,6 +350,9 @@ class Post extends Component {
 				  link
 				}
 				vacoa_pricing_guide_download_link {
+				  link
+				}
+				ceiling_tiles_pricing_guide_download_link {
 				  link
 				}
         }

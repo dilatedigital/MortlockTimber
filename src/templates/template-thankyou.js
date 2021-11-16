@@ -26,7 +26,7 @@ class Page extends Component {
         .message_button_link,
 	  message_button_text: this.props.data.wordpressPage.acf
         .message_button_text,
-    }    
+    }   
     
     const contentBlock = {
       content_block_title: this.props.data.wordpressPage.acf.content_block_title,
@@ -45,6 +45,8 @@ class Page extends Component {
 
     const articlesSectionTitle = this.props.data.wordpressPage.acf
       .articles_section_title
+    
+    const postID = this.props.data.wordpressPage.wordpress_id
 				
     return (
       <Layout>
@@ -76,9 +78,42 @@ class Page extends Component {
 				  <div className="col-sm-12">
 					<div className="pricing__text" >
 					  <p dangerouslySetInnerHTML={{ __html: messageBlock.message_description }} />
-            {messageBlock.message_button_link ? <div class="inner__bannerbuttons">
-                  {messageBlock.message_button_link ? <a class="button secondary" href={"https://" + messageBlock.message_button_link} target="_blank">{messageBlock.message_button_text}</a> : null }
-                  </div> : null }
+{postID === 14174 ? ( this.props.data.allWordpressAcfOptions.edges[0].node.options.classicplank_pricing_guide_download_link.link ? <div class="inner__bannerbuttons">
+                  {this.props.data.allWordpressAcfOptions.edges[0].node.options.classicplank_pricing_guide_download_link.link ? <a class="button secondary" href={this.props.data.allWordpressAcfOptions.edges[0].node.options.classicplank_pricing_guide_download_link.link} target="_blank" rel="noreferrer">{messageBlock.message_button_text}</a> : null }
+                  </div> : null ) 
+									  : postID === 14178 ? ( this.props.data.allWordpressAcfOptions.edges[0].node.options.marineplank_pricing_guide_download_link.link ? <div class="inner__bannerbuttons">
+                  {this.props.data.allWordpressAcfOptions.edges[0].node.options.marineplank_pricing_guide_download_link.link ? <a class="button secondary" href={this.props.data.allWordpressAcfOptions.edges[0].node.options.marineplank_pricing_guide_download_link.link} target="_blank" rel="noreferrer">{messageBlock.message_button_text}</a> : null }
+                  </div> : null )
+									  : postID === 14182 ? ( this.props.data.allWordpressAcfOptions.edges[0].node.options.metroplank_pricing_guide_download_link.link ? <div class="inner__bannerbuttons">
+                  {this.props.data.allWordpressAcfOptions.edges[0].node.options.metroplank_pricing_guide_download_link.link ? <a class="button secondary" href={this.props.data.allWordpressAcfOptions.edges[0].node.options.metroplank_pricing_guide_download_link.link} target="_blank" rel="noreferrer">{messageBlock.message_button_text}</a> : null }
+                  </div> : null )
+									  : postID === 14142 ? ( this.props.data.allWordpressAcfOptions.edges[0].node.options.proplank_pricing_guide_download_link.link ? <div class="inner__bannerbuttons">
+                  {this.props.data.allWordpressAcfOptions.edges[0].node.options.proplank_pricing_guide_download_link.link ? <a class="button secondary" href={this.props.data.allWordpressAcfOptions.edges[0].node.options.proplank_pricing_guide_download_link.link} target="_blank" rel="noreferrer" data="proplank">{messageBlock.message_button_text}</a> : null }
+                  </div> : null )
+									  : postID === 14185 ? ( this.props.data.allWordpressAcfOptions.edges[0].node.options.shou_sugi_ban_pricing_guide_download_link.link ? <div class="inner__bannerbuttons">
+                  {this.props.data.allWordpressAcfOptions.edges[0].node.options.shou_sugi_ban_pricing_guide_download_link.link ? <a class="button secondary" href={this.props.data.allWordpressAcfOptions.edges[0].node.options.shou_sugi_ban_pricing_guide_download_link.link} target="_blank" rel="noreferrer">{messageBlock.message_button_text}</a> : null }
+                  </div> : null )
+									  : postID === 14188 ? ( this.props.data.allWordpressAcfOptions.edges[0].node.options.trendplank_pricing_guide_download_link.link ? <div class="inner__bannerbuttons">
+                  {this.props.data.allWordpressAcfOptions.edges[0].node.options.trendplank_pricing_guide_download_link.link ? <a class="button secondary" href={this.props.data.allWordpressAcfOptions.edges[0].node.options.trendplank_pricing_guide_download_link.link} target="_blank" rel="noreferrer">{messageBlock.message_button_text}</a> : null }
+                  </div> : null )
+									  : postID === 14191 ? ( this.props.data.allWordpressAcfOptions.edges[0].node.options.vacoa_pricing_guide_download_link.link ? <div class="inner__bannerbuttons">
+                  {this.props.data.allWordpressAcfOptions.edges[0].node.options.vacoa_pricing_guide_download_link.link ? <a class="button secondary" href={this.props.data.allWordpressAcfOptions.edges[0].node.options.vacoa_pricing_guide_download_link.link} target="_blank" rel="noreferrer">{messageBlock.message_button_text}</a> : null }
+                  </div> : null )
+									  : postID === 15800 ? ( this.props.data.allWordpressAcfOptions.edges[0].node.options.ceiling_tiles_pricing_guide_download_link.link ? <div class="inner__bannerbuttons">
+                  {this.props.data.allWordpressAcfOptions.edges[0].node.options.ceiling_tiles_pricing_guide_download_link.link ? <a class="button secondary" href={this.props.data.allWordpressAcfOptions.edges[0].node.options.ceiling_tiles_pricing_guide_download_link.link} target="_blank" rel="noreferrer">{messageBlock.message_button_text}</a> : null }
+                  </div> : null )
+									  : postID === 14206 ? ( this.props.data.allWordpressAcfOptions.edges[0].node.options.pricing_guide_download_link.link ? <div class="inner__bannerbuttons">
+                  {this.props.data.allWordpressAcfOptions.edges[0].node.options.pricing_guide_download_link.link ? <a class="button secondary" href={this.props.data.allWordpressAcfOptions.edges[0].node.options.pricing_guide_download_link.link} target="_blank" rel="noreferrer">{messageBlock.message_button_text}</a> : null }
+                  </div> : null )
+									  : postID === 14212 ? ( this.props.data.allWordpressAcfOptions.edges[0].node.options.pricing_guide_download_link.link ? <div class="inner__bannerbuttons">
+                  {this.props.data.allWordpressAcfOptions.edges[0].node.options.pricing_guide_download_link.link ? <a class="button secondary" href={this.props.data.allWordpressAcfOptions.edges[0].node.options.pricing_guide_download_link.link} target="_blank" rel="noreferrer">{messageBlock.message_button_text}</a> : null }
+                  </div> : null ) 
+									  : postID === 14214 ? ( this.props.data.allWordpressAcfOptions.edges[0].node.options.pricing_guide_download_link.link ? <div class="inner__bannerbuttons">
+                  {this.props.data.allWordpressAcfOptions.edges[0].node.options.pricing_guide_download_link.link ? <a class="button secondary" href={this.props.data.allWordpressAcfOptions.edges[0].node.options.pricing_guide_download_link.link} target="_blank" rel="noreferrer">{messageBlock.message_button_text}</a> : null }
+                  </div> : null )									  
+									  : ( messageBlock.message_button_link ? <div class="inner__bannerbuttons">
+                  {messageBlock.message_button_link ? <a class="button secondary" href={"https://" + messageBlock.message_button_link} target="_blank" rel="noreferrer">{messageBlock.message_button_text}</a> : null }
+                  </div> : null )  }
 					</div>
 				  </div>
 				</div>
@@ -95,8 +130,11 @@ class Page extends Component {
 					<div className="pricing__text" >
 					  <h2 dangerouslySetInnerHTML={{ __html: contentBlock.content_block_title }} />
 					  <p dangerouslySetInnerHTML={{ __html: contentBlock.content_block_description }} />
+        
             {contentBlock.content_block_button_one_link ? <div class="inner__bannerbuttons">
-                  {contentBlock.content_block_button_one_link ? <a class="button primary" href={"https://" + contentBlock.content_block_button_one_link}>{contentBlock.content_block_button_one_text}</a> : null }
+{postID === 14216 ? ( this.props.data.allWordpressAcfOptions.edges[0].node.options.pricing_guide_download_link.link ? <a class="button primary" href={this.props.data.allWordpressAcfOptions.edges[0].node.options.pricing_guide_download_link.link}>{contentBlock.content_block_button_one_text}</a> : null ) 
+									  : postID === 14343 ? ( this.props.data.allWordpressAcfOptions.edges[0].node.options.pricing_guide_download_link.link ? <a class="button primary" href={this.props.data.allWordpressAcfOptions.edges[0].node.options.pricing_guide_download_link.link}>{contentBlock.content_block_button_one_text}</a> : null )									  
+									  : ( contentBlock.content_block_button_one_link ? <a class="button primary" href={"https://" + contentBlock.content_block_button_one_link}>{contentBlock.content_block_button_one_text}</a> : null )  }
       {contentBlock.content_block_button_two_link ? <a href={"https://" + contentBlock.content_block_button_two_link} class="button blackoutline">{contentBlock.content_block_button_two_text}</a> : null }
                   </div> : null }
 					</div>
@@ -194,6 +232,54 @@ export const pageQuery = graphql`
             }
           }
         }
+      }
+    }
+    allWordpressAcfOptions {
+      edges {
+      node {
+        options {
+        pricing_form_description_bottom
+        pricing_image{
+          localFile {
+            childImageSharp {
+              fluid(maxWidth: 500) {
+                ...GatsbyImageSharpFluid_withWebp
+              }
+            }
+          }
+        }
+				pricing_guide_download_link {
+				  link
+				}
+				sample_brochure_link{
+					link
+				}
+				classicplank_pricing_guide_download_link {
+				  link
+				}
+				marineplank_pricing_guide_download_link {
+				  link
+				}
+				metroplank_pricing_guide_download_link {
+				  link
+				}
+				proplank_pricing_guide_download_link {
+				  link
+				}
+				shou_sugi_ban_pricing_guide_download_link {
+				  link
+				}
+				trendplank_pricing_guide_download_link {
+				  link
+				}
+				vacoa_pricing_guide_download_link {
+				  link
+				}
+				ceiling_tiles_pricing_guide_download_link {
+				  link
+				}
+        }
+      }
       }
     }
   }

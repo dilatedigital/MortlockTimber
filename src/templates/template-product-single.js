@@ -116,23 +116,77 @@ class Page extends Component {
       faq_title: this.props.data.wordpressPage.acf.faq_title,
       faqs: this.props.data.wordpressPage.acf.faqs,
     }
-
+    
     const productPricing = {
       pricing_title: this.props.data.wordpressPage.acf.pricing_title,
-      pricing_description: this.props.data.wordpressPage.acf
-        .pricing_description,
-      pricing_image: this.props.data.wordpressPage.acf.pricing_image,
-      pricing_guide_download_link: this.props.data.wordpressPage.acf
-        .pricing_guide_download_link,
+      pricing_description: this.props.data.wordpressPage.acf.pricing_description,
+      pricing_image: this.props.data.allWordpressAcfOptions.edges[0].node.options.pricing_image,
+      pricing_guide_download_link: this.props.data.allWordpressAcfOptions.edges[0].node.options.pricing_guide_download_link,
     }
+    
+    const productPricingClassicplank = {
+      pricing_title: this.props.data.wordpressPage.acf.pricing_title,
+      pricing_description: this.props.data.wordpressPage.acf.pricing_description,
+      pricing_image: this.props.data.allWordpressAcfOptions.edges[0].node.options.pricing_image,
+      pricing_guide_download_link: this.props.data.allWordpressAcfOptions.edges[0].node.options.classicplank_pricing_guide_download_link,
+    }
+    
+    const productPricingMarineplank = {
+      pricing_title: this.props.data.wordpressPage.acf.pricing_title,
+      pricing_description: this.props.data.wordpressPage.acf.pricing_description,
+      pricing_image: this.props.data.allWordpressAcfOptions.edges[0].node.options.pricing_image,
+      pricing_guide_download_link: this.props.data.allWordpressAcfOptions.edges[0].node.options.marineplank_pricing_guide_download_link,
+    }
+    
+    const productPricingMetroplank = {
+      pricing_title: this.props.data.wordpressPage.acf.pricing_title,
+      pricing_description: this.props.data.wordpressPage.acf.pricing_description,
+      pricing_image: this.props.data.allWordpressAcfOptions.edges[0].node.options.pricing_image,
+      pricing_guide_download_link: this.props.data.allWordpressAcfOptions.edges[0].node.options.metroplank_pricing_guide_download_link,
+    }
+    
+    const productPricingProplank = {
+      pricing_title: this.props.data.wordpressPage.acf.pricing_title,
+      pricing_description: this.props.data.wordpressPage.acf.pricing_description,
+      pricing_image: this.props.data.allWordpressAcfOptions.edges[0].node.options.pricing_image,
+      pricing_guide_download_link: this.props.data.allWordpressAcfOptions.edges[0].node.options.proplank_pricing_guide_download_link,
+    }
+    
+    const productPricingShouSugiBan = {
+      pricing_title: this.props.data.wordpressPage.acf.pricing_title,
+      pricing_description: this.props.data.wordpressPage.acf.pricing_description,
+      pricing_image: this.props.data.allWordpressAcfOptions.edges[0].node.options.pricing_image,
+      pricing_guide_download_link: this.props.data.allWordpressAcfOptions.edges[0].node.options.shou_sugi_ban_pricing_guide_download_link,
+    }
+    
+    const productPricingTrendplank = {
+      pricing_title: this.props.data.wordpressPage.acf.pricing_title,
+      pricing_description: this.props.data.wordpressPage.acf.pricing_description,
+      pricing_image: this.props.data.allWordpressAcfOptions.edges[0].node.options.pricing_image,
+      pricing_guide_download_link: this.props.data.allWordpressAcfOptions.edges[0].node.options.trendplank_pricing_guide_download_link,
+    }
+    
+    const productPricingVacoa = {
+      pricing_title: this.props.data.wordpressPage.acf.pricing_title,
+      pricing_description: this.props.data.wordpressPage.acf.pricing_description,
+      pricing_image: this.props.data.allWordpressAcfOptions.edges[0].node.options.pricing_image,
+      pricing_guide_download_link: this.props.data.allWordpressAcfOptions.edges[0].node.options.vacoa_pricing_guide_download_link,
+    }
+    
+    const productPricingCeilingTiles = {
+      pricing_title: this.props.data.wordpressPage.acf.pricing_title,
+      pricing_description: this.props.data.wordpressPage.acf.pricing_description,
+      pricing_image: this.props.data.allWordpressAcfOptions.edges[0].node.options.pricing_image,
+      pricing_guide_download_link: this.props.data.allWordpressAcfOptions.edges[0].node.options.ceiling_tiles_pricing_guide_download_link,
+    }
+
 
     const requestSample = {
       request_sample_image: this.props.data.wordpressPage.acf
         .request_sample_image,
       request_block_heading: this.props.data.wordpressPage.acf
         .request_block_heading,
-      request_sample_brochure: this.props.data.wordpressPage.acf
-        .request_sample_brochure,
+      request_sample_brochure: this.props.data.allWordpressAcfOptions.edges[0].node.options.sample_brochure_link,
       request_sample_description: this.props.data.wordpressPage.acf
         .request_sample_description,
       request_sample_heading: this.props.data.wordpressPage.acf
@@ -360,15 +414,15 @@ class Page extends Component {
             <ProductFaq data={productFAQ} />
           </div>
         </div>
-        <PricingBlock
-          pageID={postID}
-          id={submenus[2]}
-          data={productPricing}
-          finishes={timber_species}
-          battensize={batten_size}
-          location={this.props.location.href}
-          gtag={requestPricingTag}
-        />
+{postID === 573 ? ( <PricingBlock pageID={postID} id={submenus[2]} data={productPricingClassicplank} finishes={timber_species} battensize={batten_size} location={this.props.location.href} gtag={requestPricingTag} /> ) 
+              : postID === 561 ? ( <PricingBlock pageID={postID} id={submenus[2]} data={productPricingMarineplank} finishes={timber_species} battensize={batten_size} location={this.props.location.href} gtag={requestPricingTag} /> )
+              : postID === 567 ? ( <PricingBlock pageID={postID} id={submenus[2]} data={productPricingMetroplank} finishes={timber_species} battensize={batten_size} location={this.props.location.href} gtag={requestPricingTag} /> )
+              : postID === 339 ? ( <PricingBlock pageID={postID} id={submenus[2]} data={productPricingProplank} finishes={timber_species} battensize={batten_size} location={this.props.location.href} gtag={requestPricingTag} /> )
+              : postID === 4205 ? ( <PricingBlock pageID={postID} id={submenus[2]} data={productPricingShouSugiBan} finishes={timber_species} battensize={batten_size} location={this.props.location.href} gtag={requestPricingTag} /> )
+              : postID === 4209 ? ( <PricingBlock pageID={postID} id={submenus[2]} data={productPricingTrendplank} finishes={timber_species} battensize={batten_size} location={this.props.location.href} gtag={requestPricingTag} /> )
+              : postID === 12050 ? ( <PricingBlock pageID={postID} id={submenus[2]} data={productPricingVacoa} finishes={timber_species} battensize={batten_size} location={this.props.location.href} gtag={requestPricingTag} /> )
+              : postID === 14562 ? ( <PricingBlock pageID={postID} id={submenus[2]} data={productPricingCeilingTiles} finishes={timber_species} battensize={batten_size} location={this.props.location.href} gtag={requestPricingTag} /> )
+              : ( <PricingBlock pageID={postID} id={submenus[2]} data={productPricing} finishes={timber_species} battensize={batten_size} location={this.props.location.href} gtag={requestPricingTag} /> )  }
         <RequestSample
           wpPageId={postID}
           data={requestSample}
@@ -624,6 +678,54 @@ export const pageQuery = graphql`
             }
           }
         }
+      }
+    }
+    allWordpressAcfOptions {
+      edges {
+      node {
+        options {
+        pricing_form_description_bottom
+        pricing_image{
+          localFile {
+            childImageSharp {
+              fluid(maxWidth: 500) {
+                ...GatsbyImageSharpFluid_withWebp
+              }
+            }
+          }
+        }
+				pricing_guide_download_link {
+				  link
+				}
+				sample_brochure_link{
+					link
+				}
+				classicplank_pricing_guide_download_link {
+				  link
+				}
+				marineplank_pricing_guide_download_link {
+				  link
+				}
+				metroplank_pricing_guide_download_link {
+				  link
+				}
+				proplank_pricing_guide_download_link {
+				  link
+				}
+				shou_sugi_ban_pricing_guide_download_link {
+				  link
+				}
+				trendplank_pricing_guide_download_link {
+				  link
+				}
+				vacoa_pricing_guide_download_link {
+				  link
+				}
+				ceiling_tiles_pricing_guide_download_link {
+				  link
+				}
+        }
+      }
       }
     }
   }
