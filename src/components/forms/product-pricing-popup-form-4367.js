@@ -196,6 +196,7 @@ class ProductPricingPopupForm extends Component {
       bodyFormData.append('leadsource', this.state.fields.leadsource)
       bodyFormData.append('pageURL', this.state.fields.pageURL)
       bodyFormData.append('interest', this.state.fields.interest)
+      bodyFormData.append("downloadpdf", this.props.data.pricing_guide_download_link.link)
       bodyFormData.append(
         "external_referral_site",
         this.state.external_referral_site
