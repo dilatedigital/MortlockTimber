@@ -32,7 +32,7 @@ class Page extends Component {
       download_zip_file_timber_ceilings: this.props.data.allWordpressPage.edges[0].node.acf.download_zip_file_timber_ceilings,
       download_zip_file_timber_walls: this.props.data.allWordpressPage.edges[0].node.acf.download_zip_file_timber_walls,
       download_zip_shou_sugi_ban: this.props.data.allWordpressPage.edges[0].node.acf.download_zip_shou_sugi_ban,
-      download_mortlock_product_pricing_specification_guide: this.props.data.allWordpressPage.edges[0].node.acf.download_mortlock_product_pricing_specification_guide
+      download_mortlock_product_pricing_specification_guide: this.props.data.allWordpressAcfOptions.edges[0].node.options.pricing_guide_download_link
     }
 	
     const pricingIntro = {
@@ -474,6 +474,54 @@ export const pageQuery = graphql`
             }
           }
         }
+      }
+    }
+    allWordpressAcfOptions {
+      edges {
+      node {
+        options {
+        pricing_form_description_bottom
+        pricing_image{
+          localFile {
+            childImageSharp {
+              fluid(maxWidth: 500) {
+                ...GatsbyImageSharpFluid_withWebp
+              }
+            }
+          }
+        }
+				pricing_guide_download_link {
+				  link
+				}
+				sample_brochure_link{
+					link
+				}
+				classicplank_pricing_guide_download_link {
+				  link
+				}
+				marineplank_pricing_guide_download_link {
+				  link
+				}
+				metroplank_pricing_guide_download_link {
+				  link
+				}
+				proplank_pricing_guide_download_link {
+				  link
+				}
+				shou_sugi_ban_pricing_guide_download_link {
+				  link
+				}
+				trendplank_pricing_guide_download_link {
+				  link
+				}
+				vacoa_pricing_guide_download_link {
+				  link
+				}
+				ceiling_tiles_pricing_guide_download_link {
+				  link
+				}
+        }
+      }
       }
     }
   }
