@@ -21,20 +21,6 @@ createRedirect({ fromPath: '/vacoa-timber-cladding/', toPath: '/vacoa-cladding/'
 createRedirect({ fromPath: '/news/do-i-have-to-maintain-shou-sugi-ban-charred-timber/', toPath: '/news/how-to-maintain-shou-sugi-ban-cladding-for-maximum-durability/', isPermanent: true, redirectInBrowser: true })
 createRedirect({ fromPath: '/pricing-new/', toPath: '/product-pricing-guide/', isPermanent: true, redirectInBrowser: true })
 createRedirect({ fromPath: '/timber-ceilings/proplank-timber-battens/', toPath: '/timber-battens/', isPermanent: true, redirectInBrowser: true })
-createRedirect({ fromPath: '/news/5-ideas-for-the-perfect-outdoor-entertaining-area/', toPath: '/news/outdoor-entertaining-ideas/', isPermanent: true, redirectInBrowser: true })
-createRedirect({ fromPath: '/news/composite-vs-real-timber-decking-pros-and-cons/', toPath: '/news/timber-vs-composite-decking/', isPermanent: true, redirectInBrowser: true })
-createRedirect({ fromPath: '/news/how-much-do-click-in-timber-batten-ceilings-and-walls-cost/', toPath: '/news/timber-ceiling-cost/', isPermanent: true, redirectInBrowser: true })
-createRedirect({ fromPath: '/news/how-much-does-shou-sugi-ban-charred-timber-cost/', toPath: '/news/charred-timber-cladding-cost/', isPermanent: true, redirectInBrowser: true })
-createRedirect({ fromPath: '/news/how-to-create-the-ultimate-outdoor-dining-area/', toPath: '/news/outdoor-dining-area/', isPermanent: true, redirectInBrowser: true })
-createRedirect({ fromPath: '/news/how-to-maintain-shou-sugi-ban-cladding-for-maximum-durability/', toPath: '/news/shou-sugi-ban-maintenance-guide/', isPermanent: true, redirectInBrowser: true })
-createRedirect({ fromPath: '/news/incredible-timber-features-to-complement-every-architectural-design/', toPath: '/news/architectural-timber-design/', isPermanent: true, redirectInBrowser: true })
-createRedirect({ fromPath: '/news/jarrah-merbau-blackbutt-and-more-choosing-the-best-timber-for-decking/', toPath: '/news/best-timber-for-decking/', isPermanent: true, redirectInBrowser: true })
-createRedirect({ fromPath: '/news/keeping-your-timber-deck-properly-maintained-will-keep-it-stunning-for-years-to-come/', toPath: '/news/timber-decking-maintenance-guide/', isPermanent: true, redirectInBrowser: true })
-createRedirect({ fromPath: '/news/random-or-set-lengths-problems-benefits-and-everything-else-you-need-to-know/', toPath: '/news/cut-to-length-timber/', isPermanent: true, redirectInBrowser: true })
-createRedirect({ fromPath: '/news/timber-decking-how-much-does-it-really-cost/', toPath: '/news/timber-decking-cost/', isPermanent: true, redirectInBrowser: true })
-createRedirect({ fromPath: '/news/timbers-making-a-comeback-why-are-so-many-public-projects-featuring-wood-so-heavily/', toPath: '/news/advantages-of-timber-building-material/', isPermanent: true, redirectInBrowser: true })
-createRedirect({ fromPath: '/news/what-is-end-matched-timber-and-what-are-the-benefits/', toPath: '/news/end-matched-tongue-and-groove-timber-paneling/', isPermanent: true, redirectInBrowser: true })
-createRedirect({ fromPath: '/news/why-does-timber-move-what-issues-does-timber-movement-cause/', toPath: '/news/timber-movement/', isPermanent: true, redirectInBrowser: true })
   // The “graphql” function allows us to run arbitrary
   // queries against the local Gatsby GraphQL schema. Think of
   // it like the site has a built-in database constructed
