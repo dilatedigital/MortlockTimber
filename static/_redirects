@@ -2,7 +2,7 @@
 /products/timber-cladding /timber-cladding/ 301!
 /builders / 301!
 /portfolio/timber-decking /timber-decking/ 301!
-/product/trendplank /timber-wall/trend-plank/ 301!
+/product/trendplank /timber-cladding/trend-plank/ 301!
 /portfolio/timber-cladding / 301!
 /clarendon / 301!
 /resources / 301!
@@ -80,7 +80,7 @@
 /mortlock-timber-legal-email-disclaimer /news/ 301!
 /design-for-durability-low-maintenence /news/ 301!
 /resources/maintenance/internal-timber-products /news/ 301!
-/trendplank_timber-cladding_revit /timber-wall/trend-plank/ 301!
+/trendplank_timber-cladding_revit /timber-cladding/trend-plank/ 301!
 /tag/proplank /timber-decking/proplank-timber-battens/ 301!
 /product/classicplank /timber-decking/classicplank-timber-decking/ 301!
 /timber_species_type/jarrah / 301!
@@ -111,8 +111,8 @@
 /testimonial / 301!
 /product/hardwood-timber / 301!
 /products/ceiling-lining / 301!
-/product/trendplan /timber-wall/trend-plank/ 301!
-/product/shou-sugi-ban /timber-wall/shou-sugi-ban/ 301!
+/product/trendplan /timber-cladding/trend-plank/ 301!
+/product/shou-sugi-ban /timber-cladding/shou-sugi-ban/ 301!
 /products/timber-cladding /timber-decking/ 301!
 /product/fijian-mahogany-decking / 301!
 /products/timber-decking /timber-decking/ 301!
@@ -147,7 +147,7 @@
 /testimonial/jesse-searls-founder-of-the-surreal-foundry-cycleworks / 301!
 /testimonial/darrell-playle-rusty-nail-designs / 301!
 /wp-content/uploads/2018/09/doc-1624-pollinate-health-report-february-2018-1.pdf?$ / 301!
-/products-category/shou-sugi-ban-cladding /timber-wall/shou-sugi-ban/ 301!
+/products-category/shou-sugi-ban-cladding /timber-cladding/shou-sugi-ban/ 301!
 /seascape-rise-by-adrian-zorzi / 301!
 /timber_species_type/hemlock / 301!
 /faq/how-do-you-prevent-colour-leaching-from-vertical-cladding / 301!
@@ -222,9 +222,7 @@
 /news/wood-is-good-for-human-health /information/wood-is-good-for-human-health/ 301!
 /timber-cladding/proplank-timber-battens/ /timber-ceilings/proplank-timber-battens/ 301!
 /resubmit-enquiry/ /request-a-quote/ 301!
-/timber-cladding/shou-sugi-ban/ /timber-wall/shou-sugi-ban/ 301!
-/timber-cladding/trend-plank/ /timber-wall/trend-plank/ 301!
-/timber-cladding/trendplank-timber-cladding/ /timber-wall/trend-plank/ 301!
+/timber-cladding/trendplank-timber-cladding/ /timber-cladding/trend-plank/ 301!
 /project/augusta-residence-2/ /project/augusta-residence/ 301!
 /project/ruskin-st-elwood-2/ /project/ruskin-st-elwood/ 301!
 /project/botanical-apartments-2/ /project/botanical-apartments/ 301!
