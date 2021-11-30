@@ -72,3 +72,6 @@ yarn.lock
 #VS Code config file
 
 *.code-workspace
+
+#backup files
+*.fd

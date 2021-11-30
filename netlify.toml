@@ -29,3 +29,8 @@
   to = "/timber-cladding/vacoa-cladding/"
   status = 301
   force = true
+[[redirects]]
+  from = "/news/traditional-techniques-inspiring-modern-marvels-shou-sugi-ban/"
+  to = "/news/what-is-shou-sugi-ban/"
+  status = 301
+  force = true
