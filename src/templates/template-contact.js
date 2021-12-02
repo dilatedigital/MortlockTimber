@@ -277,12 +277,28 @@ const markers = [
   },
   {
     name: 'Warehouse & Freight Distribution VIC',
+    location: 'Epping, Melbourne',
+    position: {
+      lat: -37.639252,
+      lng: 144.998999
+    }
+  },
+{
+    name: 'Warehouse & Freight Distribution VIC',
+    location: 'Clayton, Melbourne',
+    position: {
+      lat: -37.921439,
+      lng: 145.116768
+    }
+  },
+  /*{
+    name: 'Warehouse & Freight Distribution VIC',
     location: 'Spotswood, Melbourne, 3105',
     position: {
       lat: -37.828910,
       lng: 144.881285
     }
-  },
+  },*/
   {
     name: 'Warehouse & Freight Distribution TAS',
     location: 'East Devonport TAS 7310',
