@@ -324,7 +324,7 @@ class ProductPricingFormShousugiban extends Component {
         <>
           <form
             className={submitActive ? "pricing__form loading shousugiban-pricing-form" : "pricing__form shousugiban-pricing-form"}
-            id="pricing__form"
+            id="shousugiban-pricing-form"
             type="POST"
             onSubmit={this.handleSubmit}
             noValidate

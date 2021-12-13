@@ -324,7 +324,7 @@ class ProductPricingFormVacoa extends Component {
         <>
           <form
             className={submitActive ? "pricing__form loading vacoa-pricing-form" : "pricing__form vacoa-pricing-form"}
-            id="pricing__form"
+            id="vacoa-pricing-form"
             type="POST"
             onSubmit={this.handleSubmit}
             noValidate

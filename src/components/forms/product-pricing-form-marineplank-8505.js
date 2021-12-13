@@ -324,7 +324,7 @@ class ProductPricingFormMarineplank extends Component {
         <>
           <form
             className={submitActive ? "pricing__form loading marineplank-pricing-form" : "pricing__form marineplank-pricing-form"}
-            id="pricing__form"
+            id="marineplank-pricing-form"
             type="POST"
             onSubmit={this.handleSubmit}
             noValidate

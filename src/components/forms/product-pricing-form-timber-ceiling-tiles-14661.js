@@ -323,8 +323,8 @@ class ProductPricingFormCeilingTiles extends Component {
       return (
         <>
           <form
-            className={submitActive ? "pricing__form loading vacoa-pricing-form" : "pricing__form vacoa-pricing-form"}
-            id="pricing__form"
+            className={submitActive ? "pricing__form loading ceiling-tiles-pricing-form" : "pricing__form ceiling-tiles-pricing-form"}
+            id="ceiling-tiles-pricing-form"
             type="POST"
             onSubmit={this.handleSubmit}
             noValidate

@@ -324,7 +324,7 @@ class ProductPricingFormMetroplank extends Component {
         <>
           <form
             className={submitActive ? "pricing__form loading metroplank-pricing-form" : "pricing__form metroplank-pricing-form"}
-            id="pricing__form"
+            id="metroplank-pricing-form"
             type="POST"
             onSubmit={this.handleSubmit}
             noValidate

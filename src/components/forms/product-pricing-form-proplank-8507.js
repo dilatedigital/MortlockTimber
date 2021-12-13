@@ -324,7 +324,7 @@ class ProductPricingFormProplank extends Component {
         <>
           <form
             className={submitActive ? "pricing__form loading proplank-pricing-form" : "pricing__form proplank-pricing-form"}
-            id="pricing__form"
+            id="proplank-pricing-form"
             type="POST"
             onSubmit={this.handleSubmit}
             noValidate

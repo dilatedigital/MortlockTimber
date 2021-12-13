@@ -324,7 +324,7 @@ class ProductPricingFormTrendplank extends Component {
         <>
           <form
             className={submitActive ? "pricing__form loading trendplank-pricing-form" : "pricing__form trendplank-pricing-form"}
-            id="pricing__form"
+            id="trendplank-pricing-form"
             type="POST"
             onSubmit={this.handleSubmit}
             noValidate
