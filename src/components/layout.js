@@ -19,21 +19,31 @@ document.addEventListener('copy', (event) => {
   event.clipboardData.setData('text', document.getSelection() + pagelink);
   event.preventDefault();
 });
-    // if (!sessionStorage.getItem("mtServerdownPopup")) {
-      // sessionStorage.setItem("mtServerdownPopup", "seen")
-  // document.getElementById("mt-popup-overlay").style.display = 'block';
-  // document.getElementById("mt-popup-container").style.display = 'block';	  
-    // }
-// document.getElementById("mt-popup-close").addEventListener('click', function() {
-  // document.getElementById("mt-popup-overlay").style.display = 'none';
-  // document.getElementById("mt-popup-container").style.display = 'none';
-// })	
+    
+  	/* Christmas popup message 1/2 - starts */
+  	if (!sessionStorage.getItem("mtServerdownPopup")) {
+  		sessionStorage.setItem("mtServerdownPopup", "seen");
+  		document.getElementById("mt-popup-overlay").style.display = 'block';
+  		document.getElementById("mt-popup-container").style.display = 'block';	  
+  	}
+   
+	document.getElementById("mt-popup-close").addEventListener('click', function() {
+ 	 	document.getElementById("mt-popup-overlay").style.display = 'none';
+  		document.getElementById("mt-popup-container").style.display = 'none';
+ 	})	
 
-// document.getElementById("mt-popup-overlay").addEventListener('click', function() {
-  // document.getElementById("mt-popup-overlay").style.display = 'none';
-  // document.getElementById("mt-popup-container").style.display = 'none';
-// })	
-	
+	document.getElementById("mt-popup-overlay").addEventListener('click', function() {
+  		document.getElementById("mt-popup-overlay").style.display = 'none';
+  		document.getElementById("mt-popup-container").style.display = 'none';
+	})	
+	/* Christmas popup message 1/2 - ends */
+  
+  /*
+   <!--	<p>If you submitted an enquiry with Mortlock Timber on the <strong>30th or 31st of January</strong>, your enquiry did not reach our Sales team despite the success message due to a technical malfunction.</p> -->
+		<!--	<p>Please re-submit your enquiry again below and we will get back to your enquiry urgently.</p> -->
+		<!--	<a href="/resubmit-enquiry/" class="button" tabindex="0" role="button">Resubmit Enquiry</a> -->
+        */
+  
     //console.log(sessionStorage.getItem("referrer"))
   }, [])
   //console.log(props)
@@ -47,9 +57,9 @@ document.addEventListener('copy', (event) => {
 			<span id="mt-popup-close">x</span>
 			<div class="mt-popup-content">
 			<h5>ATTENTION CUSTOMERS</h5>
-			<p>If you submitted an enquiry with Mortlock Timber on the <strong>30th or 31st of January</strong>, your enquiry did not reach our Sales team despite the success message due to a technical malfunction.</p>
-			<p>Please re-submit your enquiry again below and we will get back to your enquiry urgently.</p>
-			<a href="/resubmit-enquiry/" class="button" tabindex="0" role="button">Resubmit Enquiry</a>
+			<p>Please note that we are closed for the Christmas break from the <strong>23rd of December</strong> up to the <strong>10th of January</strong>. We will respond to your enquiry as soon as possible in the new year.</p>
+            <p>Merry Christmas and Happy New Year!</p>
+		
 			</div>
 	  </div>
 		<script type="application/ld+json" dangerouslySetInnerHTML={{__html: '{ "@context": "https://schema.org", "@type": "WebSite", "name": "Mortlock Timber", "url": "https://www.mortlock.com.au/", "potentialAction": { "@type": "SearchAction", "query-input": "required name=query", "target": "https://www.mortlock.com.au/search?q={query}" } }'}}></script>
