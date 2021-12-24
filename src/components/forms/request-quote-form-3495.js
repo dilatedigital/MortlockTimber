@@ -458,7 +458,7 @@ class RequestAQuote extends Component {
         <div className="form_group">
           <label htmlFor="message">Comments/Enquiry</label>
           <div className="form_input">
-            <textarea aria-label="Message" id="message" placeholder="Please describe your requirments here..." name="message" value={this.state.fields.message || ''} onChange={ this.handleInputChange } />
+            <textarea aria-label="Message" id="message" placeholder="Please describe your requirements here..." name="message" value={this.state.fields.message || ''} onChange={ this.handleInputChange } />
           </div>
         </div>
         <div className="form_group">
