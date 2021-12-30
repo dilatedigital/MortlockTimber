@@ -21,8 +21,8 @@ class SampleRequest extends Component {
         address: "",
         suburb: "",
         state: "",
+        quantity: "",
         postcode: "",
-        projectsize: "",
         sample: "",
         message: "",
         interest: "Unsure",
@@ -45,8 +45,8 @@ class SampleRequest extends Component {
         address: "",
         suburb: "",
         state: "",
+        quantity: "",
         postcode: "",
-        projectsize: "",
         sampleoptions: "",
         message: "",
         external_referral_site: "",
@@ -187,8 +187,6 @@ class SampleRequest extends Component {
       var leadInfo =
         "1) Message :-   " +
         this.state.fields.message +
-        "     2) Project size M2?:-   " +
-        this.state.fields.projectsize +
         "     3) SAMPLE OPTIONS?:-   " +
         this.state.fields.sample
       var bodyFormData = new FormData()
@@ -202,6 +200,7 @@ class SampleRequest extends Component {
       bodyFormData.append("address", this.state.fields.address)
       bodyFormData.append("suburb", this.state.fields.suburb)
       bodyFormData.append("state", this.state.fields.state)
+      bodyFormData.append("quantity_of_material", this.state.fields.quantity)
       bodyFormData.append("email", this.state.fields.email)
       bodyFormData.append("phone", this.state.fields.phone)
       bodyFormData.append("postcode", this.state.fields.postcode)
@@ -249,9 +248,9 @@ class SampleRequest extends Component {
                   phone: "",
                   company: "",
                   state: "",
+                  quantity: "",
                   suburb: "",
                   postcode: "",
-                  projectsize: "",
                   sample: "",
                   message: "",
                   interest: "Unsure",
@@ -546,24 +545,25 @@ class SampleRequest extends Component {
           </div>
 
           <div className="form_group">
-            <label htmlFor="projectsize">
-              Project Size M2{" "}
-              {this.props.pageID === 339 && (
-                <span className="info">
-                  (Proplank not recommended for projects under 30m<sup>2</sup>)
-                </span>
-              )}
-            </label>
+            <label htmlFor="quantity">Approx. quantity of material in m<sup>2</sup>  or lm? *</label>
             <div className="form_input">
-              <input
-                aria-label="Project Size"
-                type="text"
-                name="projectsize"
-                id="projectsize"
-                placeholder="Enter details here"
-                value={this.state.projectsize}
+            <select
+                name="quantity"
+                id="quantity"
+                value={this.state.fields.quantity || ""}
                 onChange={this.handleInputChange}
-              />
+            >
+                <option value="">- Select -</option>
+                <option value="Under 30m²">Under 30m²</option>
+                <option value="30m² to 80m²">30m² to 80m²</option>
+                <option value="More than 80m²">More than 80m²</option>
+            </select>
+            {this.state.errors.quantity !== "" && (
+                <span className="error">{this.state.errors.quantity}</span>
+            )}
+            {this.state.fields.quantity == "Under 30m²" && (
+                <span className="error">We don't typically accept projects under 30m² as our products are not normally a feasible option at smaller scales.</span>
+            )}
             </div>
           </div>
           <div className="form_group">

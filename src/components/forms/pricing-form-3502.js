@@ -16,6 +16,7 @@ class PricingForm extends Component {
         email: '',
         phone: '',
         state: '',
+        quantity: '',
         company: '',
         interest: 'Unsure',
         leadsource: 'Website',
@@ -41,6 +42,7 @@ class PricingForm extends Component {
         email: '',
         phone: '',
         state: '',
+        quantity: '',
         company: '',
 		external_referral_site: '',
 		landing_page: '',
@@ -203,6 +205,7 @@ class PricingForm extends Component {
         bodyFormData.append('company', this.state.fields.company)
       }
       bodyFormData.append('state', this.state.fields.state)
+      bodyFormData.append('quantity_of_material', this.state.fields.quantity)
       bodyFormData.append('email', this.state.fields.email)
       bodyFormData.append('phone', this.state.fields.phone)
       bodyFormData.append('products', checkedBoxes)
@@ -241,6 +244,7 @@ class PricingForm extends Component {
                 email: '',
                 phone: '',
                 state: '',
+                quantity: '',
                 interest: 'Unsure',
                 leadsource: 'Website',
                 pageURL: this.props.location,
@@ -407,6 +411,32 @@ class PricingForm extends Component {
               </div>
             </div>
           </div>
+          <div className="row">
+              <div className="col-sm-12">
+                <div className="form_group">
+                    <label htmlFor="quantity">Approx. quantity of material in m<sup>2</sup>  or lm? *</label>
+                    <div className="form_input">
+                    <select
+                        name="quantity"
+                        id="quantity"
+                        value={this.state.fields.quantity || ""}
+                        onChange={this.handleInputChange}
+                    >
+                        <option value="">- Select -</option>
+                        <option value="Under 30m²">Under 30m²</option>
+                        <option value="30m² to 80m²">30m² to 80m²</option>
+                        <option value="More than 80m²">More than 80m²</option>
+                    </select>
+                    {this.state.errors.quantity !== "" && (
+                        <span className="error">{this.state.errors.quantity}</span>
+                    )}
+                    {this.state.fields.quantity == "Under 30m²" && (
+                        <span className="error">We don't typically accept projects under 30m² as our products are not normally a feasible option at smaller scales.</span>
+                    )}
+                    </div>
+                </div>
+              </div>
+            </div>
           <div className="form_group">
             <span className="label">Select product of Interest</span>
             <ul className="check__list">

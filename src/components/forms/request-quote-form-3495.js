@@ -205,7 +205,7 @@ class RequestAQuote extends Component {
     }
 
     if(isFormValid) {
-      var leadInfo = '1) Message :-   ' + this.state.fields.message + '     2) Quantity of material?:-   ' + this.state.fields.quantity;
+      var leadInfo = '1) Message :-   ' + this.state.fields.message;
       var bodyFormData = new FormData();
       bodyFormData.append('firstname', this.state.fields.firstname)
       bodyFormData.append('lastname', this.state.fields.lastname)
@@ -217,6 +217,7 @@ class RequestAQuote extends Component {
       bodyFormData.append('address', this.state.fields.address)
       bodyFormData.append('suburb', this.state.fields.suburb)
       bodyFormData.append('state', this.state.fields.state)
+      bodyFormData.append('quantity_of_material', this.state.fields.quantity)
       bodyFormData.append('postcode', this.state.fields.postcode)
       bodyFormData.append('email', this.state.fields.email)
       bodyFormData.append('phone', this.state.fields.phone)
@@ -447,11 +448,26 @@ class RequestAQuote extends Component {
           </div>
           <div className="col-sm-6">
             <div className="form_group">
-              <label htmlFor="quantity">Approx. Quantity of material in m2 or lm?</label>
-              <div className="form_input">
-                <input aria-label="quantity" type="text" name="quantity" id="quantity" placeholder="Enter your quantity name" value={this.state.fields.quantity || ''} onChange={ this.handleInputChange } />
-                {this.state.errors.quantity !== '' && <span className='error'>{this.state.errors.quantity}</span>}
-              </div>
+                <label htmlFor="quantity">Approx. quantity of material in m<sup>2</sup>  or lm? *</label>
+                <div className="form_input">
+                <select
+                    name="quantity"
+                    id="quantity"
+                    value={this.state.fields.quantity || ""}
+                    onChange={this.handleInputChange}
+                >
+                    <option value="">- Select -</option>
+                    <option value="Under 30m²">Under 30m²</option>
+                    <option value="30m² to 80m²">30m² to 80m²</option>
+                    <option value="More than 80m²">More than 80m²</option>
+                </select>
+                {this.state.errors.quantity !== "" && (
+                    <span className="error">{this.state.errors.quantity}</span>
+                )}
+                {this.state.fields.quantity == "Under 30m²" && (
+                    <span className="error">We don't typically accept projects under 30m² as our products are not normally a feasible option at smaller scales.</span>
+                )}
+                </div>
             </div>
           </div>
         </div>

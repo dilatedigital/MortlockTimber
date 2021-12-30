@@ -16,13 +16,13 @@ class ProductPricingPopupForm extends Component {
         email: '',
         phone: '',
         state: '',
+        quantity: '',
         company: '',
         timberspecies: '',
         timberfinishes: '',
         battensize: '',
         battenspacing: '',
         backing: '',
-        projectsize: '',
         leadsource: 'Website',
         pageURL: this.props.location,
         interest: 'Proplank',
@@ -39,6 +39,7 @@ class ProductPricingPopupForm extends Component {
         lastname: '',
         email: '',
         state: '',
+        quantity: '',
         phone: '',
         company: '',
         timberspecies: '',
@@ -46,7 +47,6 @@ class ProductPricingPopupForm extends Component {
         battensize: '',
         battenspacing: '',
         backing: '',
-        projectsize: '',
 		external_referral_site: '',
 		landing_page: '',
 		pre_submission_page: '',
@@ -178,7 +178,7 @@ class ProductPricingPopupForm extends Component {
     }
 
     if(isFormValid) {
-      var leadInfo = '1) TIMBER SPECIES :-   ' + this.state.fields.timberspecies +  '     2) FINISH :-   ' + this.state.fields.timberfinishes + '     3) TIMBER BATTEN SIZE :-   ' + this.state.fields.battensize + '     4) SPACING BETWEEN BATTENS :-   ' + this.state.fields.battenspacing + '     5) ACOUSTIC BACKING :-   ' + this.state.fields.backing + '     6) PROJECT SIZE M2 :-   ' + this.state.fields.projectsize;
+      var leadInfo = '1) TIMBER SPECIES :-   ' + this.state.fields.timberspecies +  '     2) FINISH :-   ' + this.state.fields.timberfinishes + '     3) TIMBER BATTEN SIZE :-   ' + this.state.fields.battensize + '     4) SPACING BETWEEN BATTENS :-   ' + this.state.fields.battenspacing + '     5) ACOUSTIC BACKING :-   ' + this.state.fields.backing;
 
       var bodyFormData = new FormData();
 
@@ -190,6 +190,7 @@ class ProductPricingPopupForm extends Component {
         bodyFormData.append('company', this.state.fields.company)
       }
       bodyFormData.append('state', this.state.fields.state)
+      bodyFormData.append('quantity_of_material', this.state.fields.quantity)
       bodyFormData.append('email', this.state.fields.email)
       bodyFormData.append('phone', this.state.fields.phone)
       bodyFormData.append('message', leadInfo)
@@ -233,7 +234,7 @@ class ProductPricingPopupForm extends Component {
                 battensize: '',
                 battenspacing: '',
                 backing: '',
-                projectsize: '',
+                quantity: '',
 				submission_page: '',
 				utm_source: '',
 				utm_medium: '',
@@ -483,11 +484,26 @@ class ProductPricingPopupForm extends Component {
             </div>
             <div className="col-sm-6">
               <div className="form_group">
-                <label htmlFor="projectsize">Project Size M2 *</label>
-                <div className="form_input">
-                  <input aria-label="Project Size" type="text" name="projectsize" id="projectsize" placeholder="Enter details" value={this.state.fields.projectsize || ''} onChange={ this.handleInputChange } />
-                  <label><span className="info">(Proplank not recommended for projects under 30m<sup>2</sup>)</span></label>
-                </div>
+              <label htmlFor="quantity">Approx. quantity of material in m<sup>2</sup>  or lm? *</label>
+                    <div className="form_input">
+                    <select
+                        name="quantity"
+                        id="quantity"
+                        value={this.state.fields.quantity || ""}
+                        onChange={this.handleInputChange}
+                    >
+                        <option value="">- Select -</option>
+                        <option value="Under 30m²">Under 30m²</option>
+                        <option value="30m² to 80m²">30m² to 80m²</option>
+                        <option value="More than 80m²">More than 80m²</option>
+                    </select>
+                    {this.state.errors.quantity !== "" && (
+                        <span className="error">{this.state.errors.quantity}</span>
+                    )}
+                    {this.state.fields.quantity == "Under 30m²" && (
+                        <span className="error">We don't typically accept projects under 30m² as our products are not normally a feasible option at smaller scales.</span>
+                    )}
+                    </div>
               </div>
             </div>
           </div>
