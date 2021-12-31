@@ -2,11 +2,19 @@
 [[headers]]
   for = "*.jpg"
   [headers.values]
-    Cache-Control = "public, max-age=604800" # secs = 7 days
+    Cache-Control = "public, max-age=31536000" # secs = 365 days
+[[headers]]
+  for = "*.png"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000" # secs = 365 days
 [[headers]]
   for = "*.webp"
   [headers.values]
-    Cache-Control = "public, max-age=604800" # secs = 7 days
+    Cache-Control = "public, max-age=31536000" # 604800 secs = 7 days
+[[headers]]
+  for = "*.js"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000"
 
 ## Simple redirects -- fd
 [[redirects]]
