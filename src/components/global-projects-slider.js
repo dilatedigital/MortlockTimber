@@ -4,7 +4,7 @@ import Img from 'gatsby-image';
 import Slider from "react-slick";
 
 const GlobalProjectSlider = ({ ...props }) =>  {
-  const content = props.contentData;
+  const content = props.contentData; //fd: An array that contains 3 objects each containing one project info
   const customSlider = React.createRef();
 
   const sliderSettings = {
@@ -23,6 +23,10 @@ const GlobalProjectSlider = ({ ...props }) =>  {
     customSlider.current.slickPrev()
   }
 
+  /* fd - Code removed:
+   <div className="bg__image" style={{ backgroundImage: `url(${project.node.featured_media.link})` }}><Img fluid={project.node.featured_media.localFile.childImageSharp.fluid} alt="Mortlock Timber" /></div>
+   */
+  
   return (
     <div className="project__block">
       <div className="container" 
@@ -37,7 +41,7 @@ const GlobalProjectSlider = ({ ...props }) =>  {
                 <div className="project_image">
                 <Link to={project.node.path}>
                   {project.node.featured_media && 
-                    <div className="bg__image" style={{ backgroundImage: `url(${project.node.featured_media.link})` }}><Img fluid={project.node.featured_media.localFile.childImageSharp.fluid} alt="Mortlock Timber" /></div>
+                    <Img fluid={project.node.featured_media.localFile.childImageSharp.fluid} alt={project.node.title} />
                   }
                 </Link>
                 </div>
