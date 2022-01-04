@@ -7303,6 +7303,10 @@ span#mt-popup-close:hover {
 
 .readmore-nobg:after {content: '...';}
 
+label[for=quantity] {
+    margin-top: -4px;
+}
+
 .minHeightAuto{
   min-height:auto !important;
   
