@@ -20,7 +20,7 @@ document.addEventListener('copy', (event) => {
   event.preventDefault();
 });
     
-  	/* Christmas popup message 1/2 - starts */
+  	/* Christmas popup message 1/2 - starts *x/
   	if (!sessionStorage.getItem("mtServerdownPopup")) {
   		sessionStorage.setItem("mtServerdownPopup", "seen");
   		document.getElementById("mt-popup-overlay").style.display = 'block';
@@ -36,7 +36,7 @@ document.addEventListener('copy', (event) => {
   		document.getElementById("mt-popup-overlay").style.display = 'none';
   		document.getElementById("mt-popup-container").style.display = 'none';
 	})	
-	/* Christmas popup message 1/2 - ends */
+	/x* Christmas popup message 1/2 - ends */
   
   /*
    <!--	<p>If you submitted an enquiry with Mortlock Timber on the <strong>30th or 31st of January</strong>, your enquiry did not reach our Sales team despite the success message due to a technical malfunction.</p> -->
