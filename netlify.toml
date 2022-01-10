@@ -1,20 +1,20 @@
-## cache TTL inc -- fd
+## cache TTL -- fd
 [[headers]]
   for = "*.jpg"
   [headers.values]
-    Cache-Control = "public, max-age=31536000" # secs = 365 days
+    Cache-Control = "public, max-age=2592000" # 2592000 secs = 30 days; 31536000 secs = 365 days; 604800 secs = 7 days
 [[headers]]
   for = "*.png"
   [headers.values]
-    Cache-Control = "public, max-age=31536000" # secs = 365 days
+    Cache-Control = "public, max-age=2592000"
 [[headers]]
   for = "*.webp"
   [headers.values]
-    Cache-Control = "public, max-age=31536000" # 604800 secs = 7 days
+    Cache-Control = "public, max-age=2592000"
 [[headers]]
   for = "*.js"
   [headers.values]
-    Cache-Control = "public, max-age=31536000"
+    Cache-Control = "public, max-age=2592000"
 
 ## Simple redirects -- fd
 [[redirects]]
