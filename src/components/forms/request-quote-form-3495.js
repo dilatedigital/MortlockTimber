@@ -217,7 +217,7 @@ class RequestAQuote extends Component {
       bodyFormData.append('address', this.state.fields.address)
       bodyFormData.append('suburb', this.state.fields.suburb)
       bodyFormData.append('state', this.state.fields.state)
-      bodyFormData.append('quantity_of_material', this.state.fields.quantity)
+      bodyFormData.append('quantity', this.state.fields.quantity)
       bodyFormData.append('postcode', this.state.fields.postcode)
       bodyFormData.append('email', this.state.fields.email)
       bodyFormData.append('phone', this.state.fields.phone)

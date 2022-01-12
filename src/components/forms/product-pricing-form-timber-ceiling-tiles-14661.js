@@ -188,7 +188,7 @@ class ProductPricingFormCeilingTiles extends Component {
         bodyFormData.append("company", this.state.fields.company)
       }
       bodyFormData.append("state", this.state.fields.state)
-      bodyFormData.append("quantity_of_material", this.state.fields.quantity)
+      bodyFormData.append("quantity", this.state.fields.quantity)
       bodyFormData.append("email", this.state.fields.email)
       bodyFormData.append("phone", this.state.fields.phone)
       bodyFormData.append("leadsource", this.state.fields.leadsource)
