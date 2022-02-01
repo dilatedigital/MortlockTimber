@@ -501,7 +501,7 @@ class ProductPricingPopupForm extends Component {
                         <span className="error">{this.state.errors.quantity}</span>
                     )}
                     {this.state.fields.quantity == "Under 30m²" && (
-                        <span className="error">We don't typically accept projects under 30m² as our products are not normally a feasible option at smaller scales.</span>
+                        <span className="error">As we are a make-to-order manufacturer, we don't supply our products for projects under 30m². <a href="https://www.mortlock.com.au/news/mortlock-timber-is-a-make-to-order-manufacturer/">Click here to read more</a>.</span>
                     )}
                     </div>
               </div>
