@@ -1,20 +1,9 @@
 import React from 'react';
-import { Link, useStaticQuery } from 'gatsby';
+import { Link } from 'gatsby';
 import Img from 'gatsby-image';
 
 const GeneralText = ({ ...props }) =>  {
   const content = props.contentData;
-  
-  /*fd - code*/
-  const data = useStaticQuery(graphql`
-        query altTagInfo {
-          allWordpressWpMedia {
-            totalCount
-          }
-        }      
-    `)
-  const altTag = data.allWordpressWpMedia.totalCount
-  
 
   return (
     <div className={"generaltext " + (props.addClass ? props.addClass : '')}>
@@ -40,8 +29,7 @@ const GeneralText = ({ ...props }) =>  {
                 data-sal="slide-up" 
                 data-sal-easing="ease"
                 data-sal-delay="85">
-                  {/*<Img fluid={content.image.localFile.childImageSharp.fluid} alt={altTag} />*/}
-                  <Img fluid={content.image.localFile.childImageSharp.fluid} alt="Mortlock Timber" />
+              <Img fluid={content.image.localFile.childImageSharp.fluid} alt="Mortlock Timber" />
             </div>
           </div>
         </div>
