@@ -1,5 +1,6 @@
 $primary-color: #a2764f;
 $header-height: 130px;
+$small-screen: 480px;
 
 @import "vendors/slick.min.css";
 @import "vendors/flexboxgrid";
@@ -1217,6 +1218,21 @@ ul.main__nav {
   }
 
   .mobile__button {
+	.button {
+		width: 191.6px;
+		
+		@media screen and (max-width: $small-screen) {
+			display: block;
+		}
+		
+		&.whiteoutline{
+			@media screen and (max-width: $small-screen) {
+				margin-left: 0px !important;
+				margin-top: 10px;
+			}
+		}
+	}
+	
     @include breakpoint("big") {
       display: none;
     }
