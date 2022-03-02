@@ -91,8 +91,11 @@ const Header = ({ data, ...props }) => (
                 return (
                   <>
                   {slug.edges[num].node.items.map((menu) => (
-                    <li tabIndex={-1} onKeyDown={ () => removeActiveClass() } onClick={() => removeActiveClass() } key={menu.wordpress_id}><Link to={"https://www.mortlock.com.au/" + menu.slug + "/"}>{menu.title}</Link></li>
+                    <li tabIndex={-1} onKeyDown={ () => removeActiveClass() } onClick={() => removeActiveClass() } key={menu.wordpress_id}><Link to={menu.url.replace(/site\.(?=mortlock\.com\.au)/gi, '')}>{menu.title}</Link></li>
                   ))}
+                  {/*slug.edges[num].node.items.map((menu) => (
+                    <li tabIndex={-1} onKeyDown={ () => removeActiveClass() } onClick={() => removeActiveClass() } key={menu.wordpress_id}><Link to={"https://www.mortlock.com.au/" + menu.slug + "/"}>{menu.title}</Link></li>
+                  ))*/}
                   </>
                 )
               })()}
