@@ -4,7 +4,6 @@
  * See: https://www.gatsbyjs.org/docs/browser-apis/
  */
 
-// You can delete this file if you're not using it
 import React from "react"
 import ProjectsContext from "./src/context/ProjectsContext"
 import { Location } from "@reach/router"
@@ -15,4 +14,17 @@ export const wrapPageElement = ({ element, props }) => {
       {element}
     </ProjectsContext>
   )
+}
+
+export function onRenderBody(
+  { setHeadComponents }) {
+
+setHeadComponents([
+     <script
+        type="text/javascript"
+		async
+        src="https://www.clickcease.com/monitor/stat.js"
+      />,
+]);
+
 }
