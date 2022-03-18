@@ -8020,6 +8020,135 @@ form.newsletter__form {
     padding: 10px 20px 56px;
 }
 
+.search__wrap.new-search-box {
+    width: 100%;
+    display: block;
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+.search__wrap.filters-wrap {
+    display: block;
+    width: 95%;
+    text-align: center;
+    margin: 0 auto 20px auto;
+}
+
+form.form__search.new-search-form-wrap {
+    display: block;
+}
+
+.blog__heading.search-page-heading h1 {
+    width: 100%;
+    float: none;
+}
+
+.article__metas.new-article-metas {
+    float: none;
+}
+
+.search__wrap.new-search-box input[type="text"], .search__wrap.new-search-box input[type="search"] {
+    width: 100%;
+    max-width: 750px;
+    font-size: 16px;
+    font-weight: 600;
+    height: 55px;
+}
+
+.search__wrap.new-search-box input[type="text"]::placeholder, .search__wrap.new-search-box input[type="search"]::placeholder{
+letter-spacing:1.5px;
+}
+
+.search__wrap.filters-wrap select {
+    border: none;
+    width: 33.33%;
+    margin-right: 21px;
+    height: 50px;
+    font-size: 15px;
+    background: #312f30;
+    color: #fff;
+    letter-spacing: 1.5px;
+}
+
+.search__wrap.filters-wrap .title {
+    display: block;
+    width: 100%;
+    margin-bottom: 15px;
+    font-size: 18px;
+}
+
+.search__wrap.filters-wrap .inner-filters-wrap {
+    display: flex;
+}
+
+.search__wrap.filters-wrap .inner-filters-wrap select#filterBlogTopic {
+    margin-right: 0;
+}
+
+.blog__content.new-blog-content [class^="col-"], .blog__content.new-blog-content [class*=" col-"] {
+    padding: 0 20px;
+}
+
+span.selectedFilter {
+    font-size: 14px;
+    border: 1px solid #312f30;
+    padding: 5px 10px 3px 10px;
+    border-radius: 4px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-right: 10px;
+    cursor: pointer;
+}
+
+.search__wrap.selected-filters {
+    display: block;
+    width: 95%;
+    margin: 35px auto 20px auto;
+}
+
+.search__wrap.selected-filters .title {
+    margin-right: 20px;
+}
+
+span.selectedFilter:hover {
+    background: #312f30;
+    border: 1px solid #312f30;
+    color: #fff;
+}
+
+.blog__heading.search-page-heading {
+    border-bottom: none;
+}
+
+span.selectedFilter:after {
+    content: '✖';
+    text-transform: lowercase;
+    position: relative;
+    top: -2px;
+    margin-left: 6px;
+    font-size: 10px;
+    right: -2px;
+    font-weight: bold;
+}
+
+.search__wrap.filters-wrap .inner-filters-wrap label:after {content:'▼';color: #fff;left: -50px;position: relative;top: 14px;font-size: 10px;}
+
+.search__wrap.filters-wrap .inner-filters-wrap label[for="filterBlogTopic"]:after {
+    left: -29px;
+}
+
+.article__metas.new-article-metas {
+    display: block;
+}
+
+.blog__heading.search-page-heading {
+    margin-bottom: 50px;
+}
+
+.blog__content.new-blog-content .row {
+    margin: 0;
+}
+
 @media only screen and (min-width: 1500px){
 .pricing-related-articles .article .article__date {
     left: -12px;
@@ -8093,6 +8222,22 @@ ul.main__nav>li:hover .dropdown {
   
 .article {
     max-width: 275px;
+}
+  
+.blog__content.new-blog-content .blog_image {
+    height: 300px;
+}
+  
+.pagination.learning_hub {
+    margin-top: 0;
+}
+  
+.blog__wrapper.learning-hub-wrapper {
+    padding: 50px 0 70px 0;
+}
+  
+.blog__heading.search-page-heading {
+    margin-bottom: 70px;
 }
 }
 
@@ -8273,6 +8418,58 @@ font-size: 18px;
 
 form.newsletter__form {
     max-width: 100%;
+}
+  
+.article__metas.new-article-metas {
+    display: block;
+}
+
+.blog__wrapper.learning-hub-wrapper {
+    padding: 40px 0 40px 0;
+}
+
+.search__wrap.filters-wrap select {
+    width: 100%;
+    max-width: 500px;
+    margin-right: 0;
+    margin-bottom: 10px;
+}
+
+.search__wrap.filters-wrap .inner-filters-wrap {
+    display: block;
+}
+
+.search__wrap.filters-wrap .inner-filters-wrap label:after {
+    left: unset;
+    position: absolute;
+    right: 25px;
+    top: -42px;
+}
+
+.search__wrap.filters-wrap .inner-filters-wrap label {
+    width: 100%;
+    max-width: 500px;
+    margin: 0 auto;
+    position: relative;
+}
+
+.search__wrap.filters-wrap .inner-filters-wrap label[for="filterBlogTopic"]:after {
+    left: unset;
+}
+  
+span.selectedFilter {
+    display: inline-block;
+}
+
+.search__wrap.selected-filters .title {
+    display: block;
+    text-align: center;
+    margin-right: 0;
+    margin-bottom: 15px;
+}
+
+.search__wrap.selected-filters {
+    text-align: center;
 }
 }
 

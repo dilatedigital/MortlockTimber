@@ -117,6 +117,9 @@ exports.createPages = async ({ graphql, actions }) => {
   const blogParentTemplate = path.resolve(
     `./src/templates/template-blog-parent.js`
   )
+  const blogParentTemplateNew = path.resolve(
+    `./src/templates/template-blog-parent-new.js`
+  )
   const landingPageTemplate = path.resolve(
     `./src/templates/template-landing-page.js`
   )
@@ -281,6 +284,28 @@ exports.createPages = async ({ graphql, actions }) => {
               currentPage: index + 1,
               skip: index * postsPerPage,
               limit: postsPerPage,
+            },
+          })
+        })
+        break
+        case "template-blog-parent-new.php":
+        const posts_new = allWordpressPost.edges
+        const postsPerPage_new = 18
+        const numberOfPages_new = Math.ceil(posts_new.length / postsPerPage_new)
+
+        Array.from({ length: numberOfPages_new }).forEach((page, index) => {
+          createPage({
+            path:
+              index === 0 ? edge.node.path : `${edge.node.path}${index + 1}`,
+            component: slash(blogParentTemplateNew),
+            context: {
+              id: edge.node.id,
+              actualPath: edge.node.path,
+              posts_new: posts_new,
+              numberOfPages_new,
+              currentPage: index + 1,
+              skip: index * postsPerPage_new,
+              limit: postsPerPage_new,
             },
           })
         })
