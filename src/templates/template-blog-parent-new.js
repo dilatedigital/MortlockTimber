@@ -296,7 +296,7 @@ class Page extends Component {
               : null
           }
         />
-        <div className='inner__banner'>
+        <div className='inner__banner learning-hub-banner'>
           <div className="bg__image has-overlay">
             { bannerContent.banner_image ? <BackgroundImage fluid={bannerContent.banner_image.localFile.childImageSharp.fluid} /> : null }
           </div>
@@ -328,16 +328,6 @@ class Page extends Component {
                     <span className="title">filters</span>
                     <div className="inner-filters-wrap">
                       <select
-                        id="filterBlogResource"
-                        value={this.state.fitlerValueResource}
-                        onChange={this.handleOnChangeFilterResource}
-                      >
-                        <option value="None">FILTER BY RESOURCE TYPE...</option>
-                        <option value="Timber Cladding">TIMBER CLADDING</option>
-                        <option value="Jarrah">JARRAH</option>
-                      </select>
-                      <label for="filterBlogResource"></label>
-                      <select
                         id="filterBlogProduct"
                         value={this.state.fitlerValueProduct}
                         onChange={this.handleOnChangeFilterProduct}
@@ -355,17 +345,27 @@ class Page extends Component {
                         <option value="Information">INFORMATION</option>
                       </select>
                       <label for="filterBlogTopic"></label>
+                      <select
+                        id="filterBlogResource"
+                        value={this.state.fitlerValueResource}
+                        onChange={this.handleOnChangeFilterResource}
+                      >
+                        <option value="None">FILTER BY RESOURCE TYPE...</option>
+                        <option value="Timber Cladding">TIMBER CLADDING</option>
+                        <option value="Jarrah">JARRAH</option>
+                      </select>
+                      <label for="filterBlogResource"></label>
                     </div>
                   </div>
                   {this.state.fitlerValueResource !== 'None' || this.state.fitlerValueProduct !== 'None' || this.state.fitlerValueTopic !== 'None' ? (
                   <div className="search__wrap selected-filters">
                     <span className="title">Selected filters:</span>
-                    {this.state.fitlerValueResource !== 'None' ? (
-                    <span className="selectedFilter filterResource" onClick={this.handleOnClickFilterResource}>{this.state.fitlerValueResource}</span> ) : null }
                     {this.state.fitlerValueProduct !== 'None' ? (
                     <span className="selectedFilter filterProduct" onClick={this.handleOnClickFilterProduct}>{this.state.fitlerValueProduct}</span> ) : null }
                     {this.state.fitlerValueTopic !== 'None' ? (
                     <span className="selectedFilter filterTopic" onClick={this.handleOnClickFilterTopic}>{this.state.fitlerValueTopic}</span> ) : null }
+                    {this.state.fitlerValueResource !== 'None' ? (
+                    <span className="selectedFilter filterResource" onClick={this.handleOnClickFilterResource}>{this.state.fitlerValueResource}</span> ) : null }
                   </div>
                     ) : null }
                 </form>
@@ -419,7 +419,8 @@ class Page extends Component {
                       </div>
                       <div className="blog_text">
                         <h3>
-                          <Link to={(!this.state.searching && !this.state.filtering) ? `https://www.mortlock.com.au${data.pageContext.actualPath}${post.node.slug}` : `https://www.mortlock.com.au${post.node.path}` } dangerouslySetInnerHTML={{ __html: post.node.title }} />
+                          <Link className="lh-desktop-link" to={(!this.state.searching && !this.state.filtering) ? `https://www.mortlock.com.au${data.pageContext.actualPath}${post.node.slug}` : `https://www.mortlock.com.au${post.node.path}` } dangerouslySetInnerHTML={{ __html: `${post.node.title.substring(0, 27)}...` }} />
+<Link className="lh-mobile-link" to={(!this.state.searching && !this.state.filtering) ? `https://www.mortlock.com.au${data.pageContext.actualPath}${post.node.slug}` : `https://www.mortlock.com.au${post.node.path}` } dangerouslySetInnerHTML={{ __html: post.node.title }} />
                         </h3>
                         {(() => {
                           const regex = /(<([^>]+)>)/ig;
