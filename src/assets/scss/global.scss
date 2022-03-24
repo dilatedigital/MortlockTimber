@@ -8081,7 +8081,7 @@ letter-spacing:1.5px;
     display: flex;
 }
 
-.search__wrap.filters-wrap .inner-filters-wrap select#filterBlogTopic {
+.search__wrap.filters-wrap .inner-filters-wrap select#filterBlogResource {
     margin-right: 0;
 }
 
@@ -8133,7 +8133,7 @@ span.selectedFilter:after {
 
 .search__wrap.filters-wrap .inner-filters-wrap label:after {content:'▼';color: #fff;left: -50px;position: relative;top: 14px;font-size: 10px;}
 
-.search__wrap.filters-wrap .inner-filters-wrap label[for="filterBlogTopic"]:after {
+.search__wrap.filters-wrap .inner-filters-wrap label[for="filterBlogResource"]:after {
     left: -29px;
 }
 
