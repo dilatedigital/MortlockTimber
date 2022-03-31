@@ -333,7 +333,18 @@ class Page extends Component {
                         onChange={this.handleOnChangeFilterProduct}
                       >
                         <option value="None">FILTER BY PRODUCT...</option>
-                        <option value="News">NEWS</option>
+                        <option value="Proplank Timber Battens">PROPLANK TIMBER BATTENS</option>
+                        <option value="Trendplank">TRENDPLANK</option>
+                        <option value="Shou Sugi Ban">SHOU SUGI BAN</option>
+                        <option value="Vacoa">VACOA</option>
+                        <option value="Classicplank">CLASSICPLANK</option>
+                        <option value="Metroplank">METROPLANK</option>
+                        <option value="Marineplank">MARINEPLANK</option>
+                        <option value="Timber Ceiling Tiles">TIMBER CEILING TILES</option>
+                        <option value="Timber Walls">TIMBER WALLS</option>
+                        <option value="Timber Ceilings">TIMBER CEILINGS</option>
+                        <option value="Timber Cladding">TIMBER CLADDING</option>
+                        <option value="Timber Decking">TIMBER DECKING</option>
                       </select>
                       <label for="filterBlogProduct"></label>
                       <select
@@ -342,7 +353,11 @@ class Page extends Component {
                         onChange={this.handleOnChangeFilterTopic}
                       >
                         <option value="None">FILTER BY TOPIC...</option>
+                        <option value="Pricing">PRICING</option>
+                        <option value="Case Study">CASE STUDY</option>
+                        <option value="Projects">PROJECTS</option>
                         <option value="Information">INFORMATION</option>
+                        <option value="Onsite with Mortlock">ONSITE WITH MORTLOCK</option>
                       </select>
                       <label for="filterBlogTopic"></label>
                       <select
@@ -351,8 +366,8 @@ class Page extends Component {
                         onChange={this.handleOnChangeFilterResource}
                       >
                         <option value="None">FILTER BY RESOURCE TYPE...</option>
-                        <option value="Timber Cladding">TIMBER CLADDING</option>
-                        <option value="Jarrah">JARRAH</option>
+                        <option value="Article">ARTICLE</option>
+                        <option value="Video">VIDEO</option>
                       </select>
                       <label for="filterBlogResource"></label>
                     </div>
@@ -407,16 +422,6 @@ class Page extends Component {
                           </Link>
                         </div>
                       }
-                      <div className="blog_meta">
-                        {post.node.categories ? (
-                          <span className="post_category">
-                            {post.node.categories.map((category, index) => (
-                              <span key={index}>{category.name} </span>
-                            ))}
-                          </span>
-                        ) : null}
-                        <span className="date">{post.node.date}</span>
-                      </div>
                       <div className="blog_text">
                         <h3>
                           <Link className="lh-desktop-link" to={(!this.state.searching && !this.state.filtering) ? `https://www.mortlock.com.au${data.pageContext.actualPath}${post.node.slug}` : `https://www.mortlock.com.au${post.node.path}` } dangerouslySetInnerHTML={{ __html: `${post.node.title.substring(0, 27)}...` }} />
