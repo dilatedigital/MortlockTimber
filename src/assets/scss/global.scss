@@ -8029,7 +8029,7 @@ form.newsletter__form {
 
 .search__wrap.filters-wrap {
     display: block;
-    width: 95%;
+    width: 100%;
     text-align: center;
     margin: 0 auto 20px auto;
 }
@@ -8062,7 +8062,7 @@ letter-spacing:1.5px;
 .search__wrap.filters-wrap select {
     border: none;
     width: 33.33%;
-    margin-right: 21px;
+    margin: 0 20px 0  20px;
     height: 50px;
     font-size: 15px;
     background: #312f30;
@@ -8082,7 +8082,7 @@ letter-spacing:1.5px;
 }
 
 .search__wrap.filters-wrap .inner-filters-wrap select#filterBlogResource {
-    margin-right: 0;
+    margin-right: 20px;
 }
 
 .blog__content.new-blog-content [class^="col-"], .blog__content.new-blog-content [class*=" col-"] {
@@ -8131,11 +8131,13 @@ span.selectedFilter:after {
     font-weight: bold;
 }
 
-.search__wrap.filters-wrap .inner-filters-wrap label:after {content:'▼';color: #fff;left: -50px;position: relative;top: 14px;font-size: 10px;}
+.search__wrap.filters-wrap .inner-filters-wrap label:after {content:'▼';color: #fff;left: -40px;position: relative;top: 14px;font-size: 10px;}
 
 .search__wrap.filters-wrap .inner-filters-wrap label[for="filterBlogResource"]:after {
-    left: -29px;
+    left: -40px;
 }
+
+.search__wrap.filters-wrap .inner-filters-wrap label {margin-left: -11px;}
 
 .article__metas.new-article-metas {
     display: block;
@@ -8470,6 +8472,7 @@ form.newsletter__form {
     max-width: 500px;
     margin-right: 0;
     margin-bottom: 10px;
+  margin-left: 0;
 }
 
 .search__wrap.filters-wrap .inner-filters-wrap {
@@ -8479,7 +8482,7 @@ form.newsletter__form {
 .search__wrap.filters-wrap .inner-filters-wrap label:after {
     left: unset;
     position: absolute;
-    right: 25px;
+    right: 15px;
     top: -42px;
 }
 
@@ -8507,6 +8510,18 @@ span.selectedFilter {
 
 .search__wrap.selected-filters {
     text-align: center;
+}
+  
+.search__wrap.filters-wrap .inner-filters-wrap select#filterBlogResource {
+    margin-right: 0px;
+}
+  
+.search__wrap.filters-wrap .inner-filters-wrap label {
+    margin-left: auto;
+}
+  
+.search__wrap.filters-wrap .inner-filters-wrap label[for="filterBlogResource"]:after {
+    left: unset;
 }
 }
 
@@ -8974,6 +8989,16 @@ padding: 0 15px;
   
 .team-members .team-member.col-sm-3 {
     padding: 10px 30px;
+}
+}
+
+@media only screen and (max-width: 590px) {
+.search__wrap.filters-wrap select {
+    max-width: 100%;
+}
+  
+.blog__content.new-blog-content [class^="col-"], .blog__content.new-blog-content [class*=" col-"] {
+    padding: 0;
 }
 }
 
