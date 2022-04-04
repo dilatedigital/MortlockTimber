@@ -41,17 +41,15 @@ class Page extends Component {
       )
     })
   }
-
+  
   filterPosts = (posts, filteredValue) => {
-    var tempFilteredPosts = posts;
-      for (var i = 0, l = filteredValue.length; i < l; i++) {
-          tempFilteredPosts = tempFilteredPosts.filter(post => {
-            for (let categoryObj of post.node.categories) {
-              if (categoryObj.name === filteredValue[i]) return true
-            }
-          })
+    return posts.filter(post => {
+      for (let categoryObj of post.node.categories) {
+        for (var i = 0, l = filteredValue.length; i < l; i++) {
+          if (categoryObj.name === filteredValue[i]) return true
+        }
       }
-    return tempFilteredPosts
+    })
   }
 
   handleOnChangeSearch = e => {
