@@ -8064,7 +8064,7 @@ letter-spacing:1.5px;
     width: 33.33%;
     margin: 0 20px 0  20px;
     height: 50px;
-    font-size: 15px;
+    font-size: 17px;
     background: #312f30;
     color: #fff;
     letter-spacing: 1.5px;
@@ -8155,8 +8155,8 @@ span.selectedFilter:after {
 }
 
 .blog__content.new-blog-content .blog_text h3 a {
-    height: 70px;
     display: block;
+  font-size: 26px;
 }
 
 .learning-hub-banner .inner__bannerbox {
@@ -8287,9 +8287,6 @@ ul.main__nav>li:hover .dropdown {
 font-size: 18px;
     line-height: 1.5;
 }
-.blog__content.new-blog-content .blog_text h3 a.lh-mobile-link {
-    display: none;
-}
 }
 
 @media only screen and (min-width: 767px){
@@ -8321,10 +8318,6 @@ font-size: 18px;
 @media only screen and (max-width: 1250px) {
 .pricing-related-articles .slick-slider .slide{
     padding: 0;
-}
-  
-.blog__content.new-blog-content .blog_text h3 a.lh-desktop-link {
-    height: 95px;
 }
 }
 
@@ -8551,10 +8544,6 @@ min-width: auto;
 }
 
 .product-table-container .products-column:after {content: 'Scroll to view more';display: block;position: absolute;left: 50%;background: #312f30;bottom: 0;text-transform: uppercase;padding: 5px 10px;transform: translateX(-50%);font-size: 11px;color: #fff;letter-spacing: 1px;width: fit-content;}
-
-.blog__content.new-blog-content .blog_text h3 a.lh-desktop-link {
-    height: 110px;
-}
 
 }
 
@@ -8884,15 +8873,6 @@ body .new-category-template span.product_read_more, span.read-more-btn.button, .
 
 .product-category-pricing-block.ty-message-block {
     padding-top: 0;
-}
-  
-.blog__content.new-blog-content .blog_text h3 a.lh-mobile-link {
-    height: unset;
-    display: unset;
-}
-
-.blog__content.new-blog-content .blog_text h3 a.lh-desktop-link {
-    display: none;
 }
 }
 
