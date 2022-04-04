@@ -8068,6 +8068,7 @@ letter-spacing:1.5px;
     background: #312f30;
     color: #fff;
     letter-spacing: 1.5px;
+  text-transform: uppercase;
 }
 
 .search__wrap.filters-wrap .title {
@@ -8098,6 +8099,7 @@ span.selectedFilter {
     letter-spacing: 1px;
     margin-right: 10px;
     cursor: pointer;
+  display: inline-block;
 }
 
 .search__wrap.selected-filters {

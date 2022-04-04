@@ -20,9 +20,9 @@ class Page extends Component {
       posts: posts,
       filtered: posts,
       searchCount: 0,
-      fitlerValueResource: "None",
-      fitlerValueProduct: "None",
-      fitlerValueTopic: "None",
+      filterValueResource: ["None"],
+      filterValueProduct: ["None"],
+      filterValueTopic: ["None"],
       searching: false,
       filtering: false,
       categories: categoriesArray,
@@ -43,11 +43,15 @@ class Page extends Component {
   }
 
   filterPosts = (posts, filteredValue) => {
-    return posts.filter(post => {
-      for (let categoryObj of post.node.categories) {
-        if (categoryObj.name === filteredValue) return true
+    var tempFilteredPosts = posts;
+      for (var i = 0, l = filteredValue.length; i < l; i++) {
+          tempFilteredPosts = tempFilteredPosts.filter(post => {
+            for (let categoryObj of post.node.categories) {
+              if (categoryObj.name === filteredValue[i]) return true
+            }
+          })
       }
-    })
+    return tempFilteredPosts
   }
 
   handleOnChangeSearch = e => {
@@ -63,39 +67,39 @@ class Page extends Component {
       searching = false
     } else {
       if (this.state.filtering) {
-          if (this.state.fitlerValueResource !== "None" && this.state.fitlerValueProduct === "None" && this.state.fitlerValueTopic === "None") {
+          if (this.state.filterValueResource.find(v => v === 'None') === undefined && this.state.filterValueProduct.find(v => v === 'None') !== undefined && this.state.filterValueTopic.find(v => v === 'None') !== undefined) {
             filteredPosts = this.searchPosts(
-              this.filterPosts(posts, this.state.fitlerValueResource),
+              this.filterPosts(posts, this.state.filterValueResource),
               e.target.value
             )
-          } else if (this.state.fitlerValueResource === "None" && this.state.fitlerValueProduct !== "None" && this.state.fitlerValueTopic === "None") {
+          } else if (this.state.filterValueResource.find(v => v === 'None') !== undefined && this.state.filterValueProduct.find(v => v === 'None') === undefined && this.state.filterValueTopic.find(v => v === 'None') !== undefined) {
             filteredPosts = this.searchPosts(
-              this.filterPosts(posts, this.state.fitlerValueProduct),
+              this.filterPosts(posts, this.state.filterValueProduct),
               e.target.value
             )
-          } else if (this.state.fitlerValueResource === "None" && this.state.fitlerValueProduct === "None" && this.state.fitlerValueTopic !== "None") {
+          } else if (this.state.filterValueResource.find(v => v === 'None') !== undefined && this.state.filterValueProduct.find(v => v === 'None') !== undefined && this.state.filterValueTopic.find(v => v === 'None') === undefined) {
             filteredPosts = this.searchPosts(
-              this.filterPosts(posts, this.state.fitlerValueTopic),
+              this.filterPosts(posts, this.state.filterValueTopic),
               e.target.value
             )
-          } else if (this.state.fitlerValueResource !== "None" && this.state.fitlerValueProduct !== "None" && this.state.fitlerValueTopic === "None") {
+          } else if (this.state.filterValueResource.find(v => v === 'None') === undefined && this.state.filterValueProduct.find(v => v === 'None') === undefined && this.state.filterValueTopic.find(v => v === 'None') !== undefined) {
             filteredPosts = this.searchPosts(
-              this.filterPosts(this.filterPosts(posts, this.state.fitlerValueResource), this.state.fitlerValueProduct),
+              this.filterPosts(this.filterPosts(posts, this.state.filterValueResource), this.state.filterValueProduct),
               e.target.value
             )
-          } else if (this.state.fitlerValueResource !== "None" && this.state.fitlerValueProduct === "None" && this.state.fitlerValueTopic !== "None") {
+          } else if (this.state.filterValueResource.find(v => v === 'None') === undefined && this.state.filterValueProduct.find(v => v === 'None') !== undefined && this.state.filterValueTopic.find(v => v === 'None') === undefined) {
             filteredPosts = this.searchPosts(
-              this.filterPosts(this.filterPosts(posts, this.state.fitlerValueResource), this.state.fitlerValueTopic),
+              this.filterPosts(this.filterPosts(posts, this.state.filterValueResource), this.state.filterValueTopic),
               e.target.value
             )
-          } else if (this.state.fitlerValueResource === "None" && this.state.fitlerValueProduct !== "None" && this.state.fitlerValueTopic !== "None") {
+          } else if (this.state.filterValueResource.find(v => v === 'None') !== undefined && this.state.filterValueProduct.find(v => v === 'None') === undefined && this.state.filterValueTopic.find(v => v === 'None') === undefined) {
             filteredPosts = this.searchPosts(
-              this.filterPosts(this.filterPosts(posts, this.state.fitlerValueProduct), this.state.fitlerValueTopic),
+              this.filterPosts(this.filterPosts(posts, this.state.filterValueProduct), this.state.filterValueTopic),
               e.target.value
             )
           } else {
             filteredPosts = this.searchPosts(
-              this.filterPosts(this.filterPosts(this.filterPosts(posts, this.state.fitlerValueResource), this.state.fitlerValueProduct), this.state.fitlerValueTopic),
+              this.filterPosts(this.filterPosts(this.filterPosts(posts, this.state.filterValueResource), this.state.filterValueProduct), this.state.filterValueTopic),
               e.target.value
             )
           }
@@ -119,33 +123,59 @@ class Page extends Component {
   }
 
   handleOnChangeFilterResource = e => {
+    var topicValues = this.state.filterValueTopic;
+    var resourceValues = this.state.filterValueResource;
+    var productValues = this.state.filterValueProduct;
+      
+    if(resourceValues.find(v => v === document.querySelector('#filterBlogResource').value) === undefined){
+     
+    if(resourceValues.length > 0){
+      resourceValues.push(document.querySelector('#filterBlogResource').value);
+    }
+      
+    if(resourceValues.find(v => v === 'None') !== undefined){
+      
+        for( var i = 0; i < resourceValues.length; i++){ 
+
+            if ( resourceValues[i] === 'None') { 
+
+                resourceValues.splice(i, 1); 
+            }
+
+        }
+    }
+    
+    if(resourceValues.length < 1){
+      resourceValues.push('None');
+    }
+      
     const posts = this.state.posts
     let filtering = true
     let filteredPosts
     let filteredPostsA
     let filteredPostsB
-    if (document.querySelector('#filterBlogResource').value === "None" && document.querySelector('#filterBlogProduct').value === "None" && document.querySelector('#filterBlogTopic').value === "None") {
+    if (resourceValues.find(v => v === 'None') !== undefined && productValues.find(v => v === 'None') !== undefined && topicValues.find(v => v === 'None') !== undefined) {
       filteredPosts = posts
       filtering = false
-    } else if (document.querySelector('#filterBlogResource').value !== "None" && document.querySelector('#filterBlogProduct').value === "None" && document.querySelector('#filterBlogTopic').value === "None") {
-      filteredPosts = this.filterPosts(posts, document.querySelector('#filterBlogResource').value)
-    } else if (document.querySelector('#filterBlogResource').value === "None" && document.querySelector('#filterBlogProduct').value !== "None" && document.querySelector('#filterBlogTopic').value === "None") {
-      filteredPosts = this.filterPosts(posts, document.querySelector('#filterBlogProduct').value)
-    } else if (document.querySelector('#filterBlogResource').value === "None" && document.querySelector('#filterBlogProduct').value === "None" && document.querySelector('#filterBlogTopic').value !== "None") {
-      filteredPosts = this.filterPosts(posts, document.querySelector('#filterBlogTopic').value)
-    } else if (document.querySelector('#filterBlogResource').value !== "None" && document.querySelector('#filterBlogProduct').value !== "None" && document.querySelector('#filterBlogTopic').value === "None") {
-      filteredPostsA = this.filterPosts(posts, document.querySelector('#filterBlogResource').value)
-      filteredPosts = this.filterPosts(filteredPostsA, document.querySelector('#filterBlogProduct').value)
-    } else if (document.querySelector('#filterBlogResource').value !== "None" && document.querySelector('#filterBlogProduct').value === "None" && document.querySelector('#filterBlogTopic').value !== "None") {
-      filteredPostsA = this.filterPosts(posts, document.querySelector('#filterBlogResource').value)
-      filteredPosts = this.filterPosts(filteredPostsA, document.querySelector('#filterBlogTopic').value)
-    } else if (document.querySelector('#filterBlogResource').value === "None" && document.querySelector('#filterBlogProduct').value !== "None" && document.querySelector('#filterBlogTopic').value !== "None") {
-      filteredPostsA = this.filterPosts(posts, document.querySelector('#filterBlogProduct').value)
-      filteredPosts = this.filterPosts(filteredPostsA, document.querySelector('#filterBlogTopic').value)
+    } else if (resourceValues.find(v => v === 'None') === undefined && productValues.find(v => v === 'None') !== undefined && topicValues.find(v => v === 'None') !== undefined) {
+      filteredPosts = this.filterPosts(posts, resourceValues)
+    } else if (resourceValues.find(v => v === 'None') !== undefined && productValues.find(v => v === 'None') === undefined && topicValues.find(v => v === 'None') !== undefined) {
+      filteredPosts = this.filterPosts(posts, productValues)
+    } else if (resourceValues.find(v => v === 'None') !== undefined && productValues.find(v => v === 'None') !== undefined && topicValues.find(v => v === 'None') === undefined) {
+      filteredPosts = this.filterPosts(posts, topicValues)
+    } else if (resourceValues.find(v => v === 'None') === undefined && productValues.find(v => v === 'None') === undefined && topicValues.find(v => v === 'None') !== undefined) {
+      filteredPostsA = this.filterPosts(posts, resourceValues)
+      filteredPosts = this.filterPosts(filteredPostsA, productValues)
+    } else if (resourceValues.find(v => v === 'None') === undefined && productValues.find(v => v === 'None') !== undefined && topicValues.find(v => v === 'None') === undefined) {
+      filteredPostsA = this.filterPosts(posts, resourceValues)
+      filteredPosts = this.filterPosts(filteredPostsA, topicValues)
+    } else if (resourceValues.find(v => v === 'None') !== undefined && productValues.find(v => v === 'None') === undefined && topicValues.find(v => v === 'None') === undefined) {
+      filteredPostsA = this.filterPosts(posts, productValues)
+      filteredPosts = this.filterPosts(filteredPostsA, topicValues)
     } else {
-      filteredPostsA = this.filterPosts(posts, document.querySelector('#filterBlogResource').value)
-      filteredPostsB = this.filterPosts(filteredPostsA, document.querySelector('#filterBlogProduct').value)
-      filteredPosts = this.filterPosts(filteredPostsB, document.querySelector('#filterBlogTopic').value)
+      filteredPostsA = this.filterPosts(posts, resourceValues)
+      filteredPostsB = this.filterPosts(filteredPostsA, productValues)
+      filteredPosts = this.filterPosts(filteredPostsB, topicValues)
     }
 
     if (this.state.searching) {
@@ -155,39 +185,69 @@ class Page extends Component {
     this.setState({
       filtered: filteredPosts,
       filtering,
-      fitlerValueResource: document.querySelector('#filterBlogResource').value,
+      filterValueResource: resourceValues,
       searchCount: filteredPosts.length,
     })
+      
+    document.querySelector('#filterBlogResource').value = 'None'
+    document.querySelector('#filterBlogResource').text = "FILTER BY RESOURCE TYPE..."
+    }
   }
   
   handleOnChangeFilterProduct = e => {
+    var topicValues = this.state.filterValueTopic;
+    var resourceValues = this.state.filterValueResource;
+    var productValues = this.state.filterValueProduct;
+    
+    if(productValues.find(v => v === document.querySelector('#filterBlogProduct').value) === undefined){
+
+    if(productValues.length > 0){
+      productValues.push(document.querySelector('#filterBlogProduct').value);
+    }
+      
+    if(productValues.find(v => v === 'None') !== undefined){
+      
+        for( var i = 0; i < productValues.length; i++){ 
+
+            if ( productValues[i] === 'None') { 
+
+                productValues.splice(i, 1); 
+            }
+
+        }
+    }
+      
+    if(productValues.length < 1){
+      productValues.push('None');
+    }
+    
     const posts = this.state.posts
     let filtering = true
     let filteredPosts
     let filteredPostsA
     let filteredPostsB
-    if (document.querySelector('#filterBlogResource').value === "None" && document.querySelector('#filterBlogProduct').value === "None" && document.querySelector('#filterBlogTopic').value === "None") {
+    if (resourceValues.find(v => v === 'None') !== undefined && productValues.find(v => v === 'None') !== undefined && topicValues.find(v => v === 'None') !== undefined) {
       filteredPosts = posts
       filtering = false
-    } else if (document.querySelector('#filterBlogResource').value !== "None" && document.querySelector('#filterBlogProduct').value === "None" && document.querySelector('#filterBlogTopic').value === "None") {
-      filteredPosts = this.filterPosts(posts, document.querySelector('#filterBlogResource').value)
-    } else if (document.querySelector('#filterBlogResource').value === "None" && document.querySelector('#filterBlogProduct').value !== "None" && document.querySelector('#filterBlogTopic').value === "None") {
-      filteredPosts = this.filterPosts(posts, document.querySelector('#filterBlogProduct').value)
-    } else if (document.querySelector('#filterBlogResource').value === "None" && document.querySelector('#filterBlogProduct').value === "None" && document.querySelector('#filterBlogTopic').value !== "None") {
-      filteredPosts = this.filterPosts(posts, document.querySelector('#filterBlogTopic').value)
-    } else if (document.querySelector('#filterBlogResource').value !== "None" && document.querySelector('#filterBlogProduct').value !== "None" && document.querySelector('#filterBlogTopic').value === "None") {
-      filteredPostsA = this.filterPosts(posts, document.querySelector('#filterBlogResource').value)
-      filteredPosts = this.filterPosts(filteredPostsA, document.querySelector('#filterBlogProduct').value)
-    } else if (document.querySelector('#filterBlogResource').value !== "None" && document.querySelector('#filterBlogProduct').value === "None" && document.querySelector('#filterBlogTopic').value !== "None") {
-      filteredPostsA = this.filterPosts(posts, document.querySelector('#filterBlogResource').value)
-      filteredPosts = this.filterPosts(filteredPostsA, document.querySelector('#filterBlogTopic').value)
-    } else if (document.querySelector('#filterBlogResource').value === "None" && document.querySelector('#filterBlogProduct').value !== "None" && document.querySelector('#filterBlogTopic').value !== "None") {
-      filteredPostsA = this.filterPosts(posts, document.querySelector('#filterBlogProduct').value)
-      filteredPosts = this.filterPosts(filteredPostsA, document.querySelector('#filterBlogTopic').value)
+    } else if (resourceValues.find(v => v === 'None') === undefined && productValues.find(v => v === 'None') !== undefined && topicValues.find(v => v === 'None') !== undefined) {
+      filteredPosts = this.filterPosts(posts, resourceValues)
+    } else if (resourceValues.find(v => v === 'None') !== undefined && productValues.find(v => v === 'None') === undefined && topicValues.find(v => v === 'None') !== undefined) {
+      filteredPosts = this.filterPosts(posts, productValues)
+    } else if (resourceValues.find(v => v === 'None') !== undefined && productValues.find(v => v === 'None') !== undefined && topicValues.find(v => v === 'None') === undefined) {
+      filteredPosts = this.filterPosts(posts, topicValues)
+    } else if (resourceValues.find(v => v === 'None') === undefined && productValues.find(v => v === 'None') === undefined && topicValues.find(v => v === 'None') !== undefined) {
+      filteredPostsA = this.filterPosts(posts, resourceValues)
+      filteredPosts = this.filterPosts(filteredPostsA, productValues)
+    } else if (resourceValues.find(v => v === 'None') === undefined && productValues.find(v => v === 'None') !== undefined && topicValues.find(v => v === 'None') === undefined) {
+      filteredPostsA = this.filterPosts(posts, resourceValues)
+      filteredPosts = this.filterPosts(filteredPostsA, topicValues)
+    } else if (resourceValues.find(v => v === 'None') !== undefined && productValues.find(v => v === 'None') === undefined && topicValues.find(v => v === 'None') === undefined) {
+      filteredPostsA = this.filterPosts(posts, productValues)
+      filteredPosts = this.filterPosts(filteredPostsA, topicValues)
     } else {
-      filteredPostsA = this.filterPosts(posts, document.querySelector('#filterBlogResource').value)
-      filteredPostsB = this.filterPosts(filteredPostsA, document.querySelector('#filterBlogProduct').value)
-      filteredPosts = this.filterPosts(filteredPostsB, document.querySelector('#filterBlogTopic').value)
+      filteredPostsA = this.filterPosts(posts, resourceValues)
+      filteredPostsB = this.filterPosts(filteredPostsA, productValues)
+      filteredPosts = this.filterPosts(filteredPostsB, topicValues)
     }
 
     if (this.state.searching) {
@@ -197,39 +257,69 @@ class Page extends Component {
     this.setState({
       filtered: filteredPosts,
       filtering,
-      fitlerValueProduct: document.querySelector('#filterBlogProduct').value,
+      filterValueProduct: productValues,
       searchCount: filteredPosts.length,
     })
+      
+    document.querySelector('#filterBlogProduct').value = 'None'
+    document.querySelector('#filterBlogProduct').text = "FILTER BY PRODUCT..."
+    }
   }
   
   handleOnChangeFilterTopic = e => {
+    var topicValues = this.state.filterValueTopic;
+    var resourceValues = this.state.filterValueResource;
+    var productValues = this.state.filterValueProduct;
+      
+    if(topicValues.find(v => v === document.querySelector('#filterBlogTopic').value) === undefined){
+     
+    if(topicValues.length > 0){
+      topicValues.push(document.querySelector('#filterBlogTopic').value);
+    }
+      
+    if(topicValues.find(v => v === 'None') !== undefined){
+      
+        for( var i = 0; i < topicValues.length; i++){ 
+
+            if ( topicValues[i] === 'None') { 
+
+                topicValues.splice(i, 1); 
+            }
+
+        }
+    }
+      
+    if(topicValues.length < 1){
+      topicValues.push('None');
+    }
+      
     const posts = this.state.posts
     let filtering = true
     let filteredPosts
     let filteredPostsA
     let filteredPostsB
-    if (document.querySelector('#filterBlogResource').value === "None" && document.querySelector('#filterBlogProduct').value === "None" && document.querySelector('#filterBlogTopic').value === "None") {
+    if (resourceValues.find(v => v === 'None') !== undefined && productValues.find(v => v === 'None') !== undefined && topicValues.find(v => v === 'None') !== undefined) {
       filteredPosts = posts
       filtering = false
-    } else if (document.querySelector('#filterBlogResource').value !== "None" && document.querySelector('#filterBlogProduct').value === "None" && document.querySelector('#filterBlogTopic').value === "None") {
-      filteredPosts = this.filterPosts(posts, document.querySelector('#filterBlogResource').value)
-    } else if (document.querySelector('#filterBlogResource').value === "None" && document.querySelector('#filterBlogProduct').value !== "None" && document.querySelector('#filterBlogTopic').value === "None") {
-      filteredPosts = this.filterPosts(posts, document.querySelector('#filterBlogProduct').value)
-    } else if (document.querySelector('#filterBlogResource').value === "None" && document.querySelector('#filterBlogProduct').value === "None" && document.querySelector('#filterBlogTopic').value !== "None") {
-      filteredPosts = this.filterPosts(posts, document.querySelector('#filterBlogTopic').value)
-    } else if (document.querySelector('#filterBlogResource').value !== "None" && document.querySelector('#filterBlogProduct').value !== "None" && document.querySelector('#filterBlogTopic').value === "None") {
-      filteredPostsA = this.filterPosts(posts, document.querySelector('#filterBlogResource').value)
-      filteredPosts = this.filterPosts(filteredPostsA, document.querySelector('#filterBlogProduct').value)
-    } else if (document.querySelector('#filterBlogResource').value !== "None" && document.querySelector('#filterBlogProduct').value === "None" && document.querySelector('#filterBlogTopic').value !== "None") {
-      filteredPostsA = this.filterPosts(posts, document.querySelector('#filterBlogResource').value)
-      filteredPosts = this.filterPosts(filteredPostsA, document.querySelector('#filterBlogTopic').value)
-    } else if (document.querySelector('#filterBlogResource').value === "None" && document.querySelector('#filterBlogProduct').value !== "None" && document.querySelector('#filterBlogTopic').value !== "None") {
-      filteredPostsA = this.filterPosts(posts, document.querySelector('#filterBlogProduct').value)
-      filteredPosts = this.filterPosts(filteredPostsA, document.querySelector('#filterBlogTopic').value)
+    } else if (resourceValues.find(v => v === 'None') === undefined && productValues.find(v => v === 'None') !== undefined && topicValues.find(v => v === 'None') !== undefined) {
+      filteredPosts = this.filterPosts(posts, resourceValues)
+    } else if (resourceValues.find(v => v === 'None') !== undefined && productValues.find(v => v === 'None') === undefined && topicValues.find(v => v === 'None') !== undefined) {
+      filteredPosts = this.filterPosts(posts, productValues)
+    } else if (resourceValues.find(v => v === 'None') !== undefined && productValues.find(v => v === 'None') !== undefined && topicValues.find(v => v === 'None') === undefined) {
+      filteredPosts = this.filterPosts(posts, topicValues)
+    } else if (resourceValues.find(v => v === 'None') === undefined && productValues.find(v => v === 'None') === undefined && topicValues.find(v => v === 'None') !== undefined) {
+      filteredPostsA = this.filterPosts(posts, resourceValues)
+      filteredPosts = this.filterPosts(filteredPostsA, productValues)
+    } else if (resourceValues.find(v => v === 'None') === undefined && productValues.find(v => v === 'None') !== undefined && topicValues.find(v => v === 'None') === undefined) {
+      filteredPostsA = this.filterPosts(posts, resourceValues)
+      filteredPosts = this.filterPosts(filteredPostsA, topicValues)
+    } else if (resourceValues.find(v => v === 'None') !== undefined && productValues.find(v => v === 'None') === undefined && topicValues.find(v => v === 'None') === undefined) {
+      filteredPostsA = this.filterPosts(posts, productValues)
+      filteredPosts = this.filterPosts(filteredPostsA, topicValues)
     } else {
-      filteredPostsA = this.filterPosts(posts, document.querySelector('#filterBlogResource').value)
-      filteredPostsB = this.filterPosts(filteredPostsA, document.querySelector('#filterBlogProduct').value)
-      filteredPosts = this.filterPosts(filteredPostsB, document.querySelector('#filterBlogTopic').value)
+      filteredPostsA = this.filterPosts(posts, resourceValues)
+      filteredPostsB = this.filterPosts(filteredPostsA, productValues)
+      filteredPosts = this.filterPosts(filteredPostsB, topicValues)
     }
 
     if (this.state.searching) {
@@ -239,33 +329,125 @@ class Page extends Component {
     this.setState({
       filtered: filteredPosts,
       filtering,
-      fitlerValueTopic: document.querySelector('#filterBlogTopic').value,
+      filterValueTopic: topicValues,
       searchCount: filteredPosts.length,
     })
+
+    document.querySelector('#filterBlogTopic').value = 'None'
+    document.querySelector('#filterBlogTopic').text = "FILTER BY TOPIC..."
+    }
   }
   
   
   handleOnClickFilterResource = e => {
+    var resourceValues = this.state.filterValueResource;
+    var toRemoveValue = e.target.innerText;
+    var words = toRemoveValue.toLowerCase().split(" ");
+
+    for (let i = 0; i < words.length; i++) {
+        words[i] = words[i][0].toUpperCase() + words[i].substr(1);
+    }
+
+    words.join(" ");
+    
+    toRemoveValue = words.toString().replace(/,/g, ' ');
+    
+    if(resourceValues.find(v => v === toRemoveValue) !== undefined){
+      
+        for( var i = 0; i < resourceValues.length; i++){ 
+
+            if ( resourceValues[i] === toRemoveValue ) { 
+
+                resourceValues.splice(i, 1); 
+            }
+
+        }
+    }
+    
     document.querySelector('#filterBlogResource').value = 'None'
     document.querySelector('#filterBlogResource').text = "FILTER BY RESOURCE TYPE..."
+    
+    this.setState({
+      filterValueResource: resourceValues,
+    })
+
     this.handleOnChangeFilterResource()
   }
   
   handleOnClickFilterProduct = e => {
+    var productValues = this.state.filterValueProduct;
+    var toRemoveValue = e.target.innerText;
+    var words = toRemoveValue.toLowerCase().split(" ");
+
+    for (let i = 0; i < words.length; i++) {
+        words[i] = words[i][0].toUpperCase() + words[i].substr(1);
+    }
+
+    words.join(" ");
+    
+    toRemoveValue = words.toString().replace(/,/g, ' ');
+    
+    if(productValues.find(v => v === toRemoveValue) !== undefined){
+      
+        for( var i = 0; i < productValues.length; i++){ 
+
+            if ( productValues[i] === toRemoveValue ) { 
+
+                productValues.splice(i, 1); 
+            }
+
+        }
+    }
+    
     document.querySelector('#filterBlogProduct').value = 'None'
     document.querySelector('#filterBlogProduct').text = "FILTER BY PRODUCT..."
+    
+    this.setState({
+      filterValueProduct: productValues,
+    })
+
     this.handleOnChangeFilterProduct()
   }
   
   handleOnClickFilterTopic = e => {
+    var topicValues = this.state.filterValueTopic;
+    var toRemoveValue = e.target.innerText;
+    var words = toRemoveValue.toLowerCase().split(" ");
+
+    for (let i = 0; i < words.length; i++) {
+        words[i] = words[i][0].toUpperCase() + words[i].substr(1);
+    }
+
+    words.join(" ");
+    
+    toRemoveValue = words.toString().replace(/,/g, ' ');;
+    
+    if(topicValues.find(v => v === toRemoveValue) !== undefined){
+      
+        for( var i = 0; i < topicValues.length; i++){ 
+
+            if ( topicValues[i] === toRemoveValue ) { 
+
+                topicValues.splice(i, 1); 
+            }
+
+        }
+    }
+    
     document.querySelector('#filterBlogTopic').value = 'None'
     document.querySelector('#filterBlogTopic').text = "FILTER BY TOPIC..."
+    
+    
+    this.setState({
+      filterValueTopic: topicValues,
+    })
+
     this.handleOnChangeFilterTopic()
   }
 
   render() {
     const data = this.props
-    //fitler search
+    //filter search
     let displayedPosts =
       this.state.searching || this.state.filtering
         ? this.state.filtered
@@ -281,7 +463,7 @@ class Page extends Component {
       banner_heading: this.props.data.wordpressPage.acf.learning_hub_banner_heading,
       banner_description: this.props.data.wordpressPage.acf.learning_hub_banner_sub_heading
     }
-
+    
     return (
       <Layout>
         <SEO
@@ -329,7 +511,7 @@ class Page extends Component {
                     <div className="inner-filters-wrap">
                       <select
                         id="filterBlogProduct"
-                        value={this.state.fitlerValueProduct}
+                        value={this.state.filterValueProduct}
                         onChange={this.handleOnChangeFilterProduct}
                       >
                         <option value="None">FILTER BY PRODUCT...</option>
@@ -349,7 +531,7 @@ class Page extends Component {
                       <label for="filterBlogProduct"></label>
                       <select
                         id="filterBlogTopic"
-                        value={this.state.fitlerValueTopic}
+                        value={this.state.filterValueTopic}
                         onChange={this.handleOnChangeFilterTopic}
                       >
                         <option value="None">FILTER BY TOPIC...</option>
@@ -357,12 +539,12 @@ class Page extends Component {
                         <option value="Case Study">CASE STUDY</option>
                         <option value="Projects">PROJECTS</option>
                         <option value="Information">INFORMATION</option>
-                        <option value="Onsite with Mortlock">ONSITE WITH MORTLOCK</option>
+                        <option value="Onsite With Mortlock">ONSITE WITH MORTLOCK</option>
                       </select>
                       <label for="filterBlogTopic"></label>
                       <select
                         id="filterBlogResource"
-                        value={this.state.fitlerValueResource}
+                        value={this.state.filterValueResource}
                         onChange={this.handleOnChangeFilterResource}
                       >
                         <option value="None">FILTER BY RESOURCE TYPE...</option>
@@ -372,15 +554,12 @@ class Page extends Component {
                       <label for="filterBlogResource"></label>
                     </div>
                   </div>
-                  {this.state.fitlerValueResource !== 'None' || this.state.fitlerValueProduct !== 'None' || this.state.fitlerValueTopic !== 'None' ? (
+                  {this.state.filterValueResource.find(v => v === 'None') === undefined || this.state.filterValueProduct.find(v => v === 'None') === undefined || this.state.filterValueTopic.find(v => v === 'None') === undefined ? (
                   <div className="search__wrap selected-filters">
                     <span className="title">Selected filters:</span>
-                    {this.state.fitlerValueProduct !== 'None' ? (
-                    <span className="selectedFilter filterProduct" onClick={this.handleOnClickFilterProduct}>{this.state.fitlerValueProduct}</span> ) : null }
-                    {this.state.fitlerValueTopic !== 'None' ? (
-                    <span className="selectedFilter filterTopic" onClick={this.handleOnClickFilterTopic}>{this.state.fitlerValueTopic}</span> ) : null }
-                    {this.state.fitlerValueResource !== 'None' ? (
-                    <span className="selectedFilter filterResource" onClick={this.handleOnClickFilterResource}>{this.state.fitlerValueResource}</span> ) : null }
+      {this.state.filterValueProduct.map(x => x !== 'None' ? (<span className="selectedFilter filterProduct" onClick={this.handleOnClickFilterProduct}>{x}</span>) : null)}
+      {this.state.filterValueTopic.map(x => x !== 'None' ? (<span className="selectedFilter filterTopic" onClick={this.handleOnClickFilterTopic}>{x}</span>) : null)}
+      {this.state.filterValueResource.map(x => x !== 'None' ? (<span className="selectedFilter filterResource" onClick={this.handleOnClickFilterResource}>{x}</span>) : null)}
                   </div>
                     ) : null }
                 </form>
