@@ -726,7 +726,8 @@ class Page extends Component {
                       }
                       <div className="blog_text">
                         <h3>
-                          <Link className="lh-desktop-link" to={(!this.state.searching && !this.state.filtering) ? `https://www.mortlock.com.au/news/${post.node.slug}` : `https://www.mortlock.com.au${post.node.path}` } dangerouslySetInnerHTML={{ __html: post.node.title }} />
+                          {post.node.title.length > 80 ? (<Link className="lh-desktop-link" to={(!this.state.searching && !this.state.filtering) ? `https://www.mortlock.com.au/news/${post.node.slug}` : `https://www.mortlock.com.au${post.node.path}` } dangerouslySetInnerHTML={{ __html: post.node.title.substring(0, 80) + "..." }} />) : (<Link className="lh-desktop-link" to={(!this.state.searching && !this.state.filtering) ? `https://www.mortlock.com.au/news/${post.node.slug}` : `https://www.mortlock.com.au${post.node.path}` } dangerouslySetInnerHTML={{ __html: post.node.title }} />)}
+                          <Link className="lh-mobile-link" to={(!this.state.searching && !this.state.filtering) ? `https://www.mortlock.com.au/news/${post.node.slug}` : `https://www.mortlock.com.au${post.node.path}` } dangerouslySetInnerHTML={{ __html: post.node.title }} />
                         </h3>
                         {(() => {
                           const regex = /(<([^>]+)>)/ig;
