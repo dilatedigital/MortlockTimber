@@ -703,7 +703,7 @@ class Page extends Component {
                       {(!this.state.searching && !this.state.filtering) ?
                         <div className="blog_image">
                           <Link
-                            to={`https://www.mortlock.com.au/news/${post.node.slug}`}
+                            to={`https://www.mortlock.com.au${data.pageContext.actualPath}${post.node.slug}`}
                           >
                             {post.node.featured_media ? (
                               <BackgroundImage
@@ -726,8 +726,8 @@ class Page extends Component {
                       }
                       <div className="blog_text">
                         <h3>
-                          {post.node.title.length > 80 ? (<Link className="lh-desktop-link" to={(!this.state.searching && !this.state.filtering) ? `https://www.mortlock.com.au/news/${post.node.slug}` : `https://www.mortlock.com.au${post.node.path}` } dangerouslySetInnerHTML={{ __html: post.node.title.substring(0, 80) + "..." }} />) : (<Link className="lh-desktop-link" to={(!this.state.searching && !this.state.filtering) ? `https://www.mortlock.com.au/news/${post.node.slug}` : `https://www.mortlock.com.au${post.node.path}` } dangerouslySetInnerHTML={{ __html: post.node.title }} />)}
-                          <Link className="lh-mobile-link" to={(!this.state.searching && !this.state.filtering) ? `https://www.mortlock.com.au/news/${post.node.slug}` : `https://www.mortlock.com.au${post.node.path}` } dangerouslySetInnerHTML={{ __html: post.node.title }} />
+                          {post.node.title.length > 80 ? (<Link className="lh-desktop-link" to={(!this.state.searching && !this.state.filtering) ? `https://www.mortlock.com.au${data.pageContext.actualPath}${post.node.slug}` : `https://www.mortlock.com.au${post.node.path}` } dangerouslySetInnerHTML={{ __html: post.node.title.substring(0, 80) + "..." }} />) : (<Link className="lh-desktop-link" to={(!this.state.searching && !this.state.filtering) ? `https://www.mortlock.com.au${data.pageContext.actualPath}${post.node.slug}` : `https://www.mortlock.com.au${post.node.path}` } dangerouslySetInnerHTML={{ __html: post.node.title }} />)}
+                          <Link className="lh-mobile-link" to={(!this.state.searching && !this.state.filtering) ? `https://www.mortlock.com.au${data.pageContext.actualPath}${post.node.slug}` : `https://www.mortlock.com.au${post.node.path}` } dangerouslySetInnerHTML={{ __html: post.node.title }} />
                         </h3>
                         {(() => {
                           const regex = /(<([^>]+)>)/ig;
@@ -736,7 +736,7 @@ class Page extends Component {
                             <p dangerouslySetInnerHTML={{ __html: removeHTMLtags }} />
                           )
                         })()}
-                        <Link className="link" to={(!this.state.searching && !this.state.filtering) ? `https://www.mortlock.com.au/news/${post.node.slug}` : `https://www.mortlock.com.au${post.node.path}` }>Read more</Link>
+                        <Link className="link" to={(!this.state.searching && !this.state.filtering) ? `https://www.mortlock.com.au${data.pageContext.actualPath}${post.node.slug}` : `https://www.mortlock.com.au${post.node.path}` }>Read more</Link>
                       </div>
                     </div>
                   </div>
