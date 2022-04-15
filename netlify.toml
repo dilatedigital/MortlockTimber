@@ -42,3 +42,18 @@
   to = "/news/what-is-shou-sugi-ban/"
   status = 301
   force = true
+[[redirects]]
+  from = "/project/kewdale-toyota/kewdale-toyota-vic-ash-proplank-timber-battens-13/"
+  to = "/project/kewdale-toyota/"
+  status = 301
+  force = true
+[[redirects]]
+  from = "/2018/09/"
+  to = "/"
+  status = 301
+  force = true
+[[redirects]]
+  from = "/staging/project/aria-luxury-apartments/img_6447/"
+  to = "/project/aria-luxury-apartments/"
+  status = 301
+  force = true
