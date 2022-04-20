@@ -6,7 +6,7 @@ module.exports = {
   siteMetadata: {
     title: `Architectural Timber | Hardwood Suppliers | Mortlock Timber`,
     description: `Mortlock Timber is Australia's leading designer, manufacturer and hardwood supplier of architectural timber products.`,
-    author: `@bipu`,
+    author: ``,
     siteUrl: `https://www.mortlock.com.au`,
   },
   plugins: [
@@ -29,7 +29,12 @@ module.exports = {
         extensions: ["js"],
       },
     },
-    `gatsby-plugin-sitemap`,
+  	{
+    	resolve: `gatsby-plugin-sitemap`,
+    	options: {
+        	exclude:['*thank-you*',],
+        },
+  	},
     `gatsby-plugin-smoothscroll`,
     `gatsby-plugin-scroll-reveal`,
     `gatsby-background-image`,
