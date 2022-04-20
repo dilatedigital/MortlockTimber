@@ -32,7 +32,7 @@ module.exports = {
   	{
     	resolve: `gatsby-plugin-sitemap`,
     	options: {
-        	exclude:['*thank-you*',],
+        	excludes: ['*thank-you*']
         },
   	},
     `gatsby-plugin-smoothscroll`,
