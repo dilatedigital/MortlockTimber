@@ -100,6 +100,9 @@ exports.createPages = async ({ graphql, actions }) => {
   const productSingleTemplate = path.resolve(
     `./src/templates/template-product-single.js`
   )
+  const specieSingleTemplate = path.resolve(
+    `./src/templates/template-product-specie.js`
+  )
   const productParentTemplate = path.resolve(
     `./src/templates/template-product-parent.js`
   )
@@ -202,6 +205,16 @@ exports.createPages = async ({ graphql, actions }) => {
         createPage({
           path: edge.node.path,
           component: slash(productSingleTemplate),
+          context: {
+            id: edge.node.id,
+            slug: edge.node.slug,
+          },
+        })
+        break
+      case "template-product-specie.php":
+        createPage({
+          path: edge.node.path,
+          component: slash(specieSingleTemplate),
           context: {
             id: edge.node.id,
             slug: edge.node.slug,

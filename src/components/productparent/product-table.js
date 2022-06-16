@@ -36,30 +36,30 @@ const ProductTable = ({ ...props }) =>  {
 		  </div>
 		  <div className="products-column col-sm-9">
 			  {content.products_table_items ? content.products_table_items.map((products_table_item,index) => (
-			  <div className="product-stick">
-				  <div className="product-block title-block">
-					<span className="title-text" dangerouslySetInnerHTML={{ __html: products_table_item.product_item_title }} />
-				  </div>
-				  {products_table_item.product_item_checkbox ? products_table_item.product_item_checkbox.map((product_item_checkbox,index) => (
-				  <div className={"product-block checbox-block" + (product_item_checkbox.product_item_text.length ? ' text-block' : '')}>
-				  {product_item_checkbox.product_item_tick == true ? ( <span className="checkbox-icon tick-icon">
-				  <svg class="icon" viewBox="0 0 64 64">
-							<path d="M24 54L3 32.491l5.28-5.04L24 43l31.773-32L61 17 24 54z"></path>
-						</svg>
-						</span> ) : ( <span className="checkbox-icon cross-icon">
-				  <svg class="icon" viewBox="0 0 64 64">
-							<path d="M51 17.25L46.75 13 32 27.75 17.25 13 13 17.25 27.75 32 13 46.75 17.25 51 32 36.25 46.75 51 51 46.75 36.25 32 51 17.25z"></path>
-						</svg></span> )}
-					<span className="checkbox-text" dangerouslySetInnerHTML={{ __html: product_item_checkbox.product_item_text }} />
-				  </div>
-				  )) : null }
-				  <div className="product-block button-block">
-					<a class="button white" href={products_table_item.product_item_button_link}>{products_table_item.product_item_button_text}</a><br/>
-				  </div> 
- <div className="product-block button-block minHeightAuto">
-   <a href="/request-a-quote" class="button primary">request a quote</a>
-				  </div> 
-			  </div>
+          <div className="product-stick">
+            <div className="product-block title-block">
+              <span className="title-text" dangerouslySetInnerHTML={{ __html: products_table_item.product_item_title }} />
+            </div>
+            {products_table_item.product_item_checkbox ? products_table_item.product_item_checkbox.map((product_item_checkbox,index) => (
+              <div className={"product-block checbox-block" + (product_item_checkbox.product_item_text.length ? ' text-block' : '')}>
+                {product_item_checkbox.product_item_tick == true ? ( <span className="checkbox-icon tick-icon">
+                <svg class="icon" viewBox="0 0 64 64">
+                    <path d="M24 54L3 32.491l5.28-5.04L24 43l31.773-32L61 17 24 54z"></path>
+                  </svg>
+                  </span> ) : ( <span className="checkbox-icon cross-icon">
+                <svg class="icon" viewBox="0 0 64 64">
+                    <path d="M51 17.25L46.75 13 32 27.75 17.25 13 13 17.25 27.75 32 13 46.75 17.25 51 32 36.25 46.75 51 51 46.75 36.25 32 51 17.25z"></path>
+                  </svg></span> )}
+                <span className="checkbox-text" dangerouslySetInnerHTML={{ __html: product_item_checkbox.product_item_text }} />
+              </div>
+            )) : null }
+            <div className="product-block button-block">
+              <a class="button white" href={products_table_item.product_item_button_link}>{products_table_item.product_item_button_text}</a><br/>
+            </div> 
+            <div className="product-block button-block minHeightAuto">
+              <a href="/request-a-quote" class="button primary">request a quote</a>
+            </div> 
+          </div>
 			  )) : null }
 		  </div>	  
 	  </div>
