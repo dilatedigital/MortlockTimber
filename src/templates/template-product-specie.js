@@ -19,7 +19,7 @@ import SpecieNaturalFeature from "../components/speciesingle/specie-natural-feat
 import SpecieProperties from "../components/speciesingle/specie-properties"
 import SpecieLatestProjects from "../components/speciesingle/specie-latest-projects"
 
-import RequestSample from "../components/global/global-request-sample"
+import RequestSpecieSample from "../components/global/global-request-specie-sample"
 
 class Page extends Component {
   render() {
@@ -274,7 +274,7 @@ class Page extends Component {
             <ProductFaq data={productFAQ} />
           </div>
         </div>
-        <RequestSample
+        <RequestSpecieSample
           wpPageId={postID}
           data={requestSample}
           location={this.props.location.href}
