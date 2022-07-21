@@ -346,7 +346,7 @@ class SpecieSampleRequest extends Component {
       return (
         <form
           className={submitActive ? "sample__form loading" : "sample__form"}
-          id="sample__form"
+          id="specie__sample__form"
           type="POST"
           onSubmit={this.handleSubmit}
           noValidate
