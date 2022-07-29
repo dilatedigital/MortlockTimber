@@ -8594,6 +8594,57 @@ max-width: 650px;
     width: 100%;
 }
 
+.product-species.specie-finishes .species-box span.description { 
+    display: none; 
+}
+
+.product-species.specie-products.specie-colour-variation .species-box { 
+    margin-bottom: 10px; 
+}
+
+.product-species.specie-products.specie-latest-projects .general-heading h2 { 
+    text-align: left; 
+}
+
+a.button-learn.specie-view-projects { 
+    text-decoration: none; margin-top: 30px; 
+}
+
+.product-species.specie-products.specie-colour-variation .specie-products__textbox:after,
+.product-species.specie-products.specie-natural-feature .specie-products__textbox:after{
+    display: none;
+}
+
+.product-species.specie-products.specie-colour-variation .specie-products__textbox,
+.product-species.specie-products.specie-natural-feature .specie-products__textbox{
+    padding-bottom: 50px;
+    margin-bottom: 0px;
+}
+
+.product-species.specie-products.specie-colour-variation{
+    position:relative;
+}
+
+.product-species.specie-products.specie-colour-variation:after
+{
+    content: "";
+    position: absolute;
+    right: 50%;
+    left: -9999px;
+    bottom: 0;
+    height: 2px;
+    background: #a2764f;
+}
+
+.product-species.specie-products.specie-colour-variation .species-boxes {
+    margin-bottom: 30px;
+    padding-bottom: 100px;
+}
+
+.product__description.specie-description.specie_natural_feature {
+    padding-bottom: 20px;
+}
+
 @media only screen and (min-width: 1500px){
 .pricing-related-articles .article .article__date {
     left: -12px;
