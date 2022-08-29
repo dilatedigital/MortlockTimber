@@ -624,16 +624,12 @@ class Page extends Component {
                             <label for="option-09">TIMBER WALLS</label>
                           </div>
                           <div class="checkbox-wrap">
-                            <input type="checkbox" id="option-10" value="Timber Ceilings" onChange={this.handleOnChangeFilterProduct} />
-                            <label for="option-10">TIMBER CEILINGS</label>
-                          </div>
-                          <div class="checkbox-wrap">
                             <input type="checkbox" id="option-11" value="Timber Cladding" onChange={this.handleOnChangeFilterProduct} />
-                            <label for="option-11">TIMBER CLADDING</label>
+                            <label for="option-10">TIMBER CLADDING</label>
                           </div>
                           <div class="checkbox-wrap">
                             <input type="checkbox" id="option-12" value="Timber Decking" onChange={this.handleOnChangeFilterProduct} />
-                            <label for="option-12">TIMBER DECKING</label>
+                            <label for="option-11">TIMBER DECKING</label>
                           </div>
                         </div>
                       </div>
