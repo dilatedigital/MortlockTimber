@@ -8645,6 +8645,65 @@ a.button-learn.specie-view-projects {
     padding-bottom: 20px;
 }
 
+.timber-items .container .row.timber-item .timber-content ul {
+    padding: 0;
+    text-transform: uppercase;
+}
+
+.timber-items .container .row.timber-item .timber-content ul li {
+    display: inline-block;
+    padding-right: 20px;
+    font-weight: 600;
+    color: #a2764f;
+}
+
+.timber-items .container .row.timber-item .timber-content .main-heading {
+    text-transform: uppercase;
+}
+
+.timber-items {
+    background: #fff;
+}
+
+.timber-intro-heading .main-heading {
+    font-size: 30px;
+}
+
+.timbers-intro .application__wrapper {
+    padding: 80px 0 50px;
+}
+
+.timber-items .application__wrapper {
+    padding-top: 80px;
+}
+
+.timber-items .container .row.timber-item .timber-content a.button.white {
+    color: #fff;
+    margin-right: 15px;
+}
+
+.timber-items .container .row.timber-item .timber-image {
+    max-height: 290px;
+}
+
+.timber-items .container .row.timber-item .timber-image img {
+    width: auto!important;
+  left: 50%!important;
+    transform: translateX(-50%);
+}
+
+.timber-items .container .row.timber-item .timber-image .gatsby-image-wrapper {
+    height: 100%;
+}
+
+.timber-guide-image {
+    display: none;
+}
+
+form#timberguide__form .btn_wrap .button {
+    width: 100%;
+}
+
 @media only screen and (min-width: 1500px){
 .pricing-related-articles .article .article__date {
     left: -12px;
