@@ -8963,6 +8963,10 @@ font-size: 18px;
     margin-right: 0px;
   margin-bottom:10px
 }
+  
+.product-parent-intro {
+    padding: 0;
+}
 }
 
 @media only screen and (max-width: 1023px) {
@@ -9378,6 +9382,11 @@ min-width: auto;
     padding-bottom: 0px;
     padding-top: 50px;
 }
+  
+.timbers-intro .timber-intro-heading {
+    order: 0;
+    margin-top: 0;
+}
 }
 
 @media only screen and (max-width: 767px) {
@@ -9581,6 +9590,29 @@ body .new-category-template span.product_read_more, span.read-more-btn.button, .
   
 .blog__content.new-blog-content .blog_text h3 a.lh-desktop-link {
     display: none;
+}
+  
+.timber-items .container .row.timber-item .timber-content {
+    text-align: center;
+}
+
+.timber-items .container .row.timber-item .timber-content span.product_read_more {
+    text-align: center;
+    width: auto;
+}
+
+.timber-items .container .row.timber-item {
+    margin-bottom: 80px;
+}
+
+.timber-items .container .row.timber-item .timber-content ul li {
+    display: list-item;
+    list-style: none;
+    padding: 0;
+}
+
+.timber-items .container .row.timber-item .timber-content ul {
+    margin-top: 0;
 }
 }
 
