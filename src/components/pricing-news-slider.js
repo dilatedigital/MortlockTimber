@@ -59,13 +59,7 @@ const PricingNewsSlider = ({ ...props }) => {
                 <span className="article__date">{article.node.date}</span>
                 <div className="news_image">
                   <Link to={article.node.path}>
-                    <BackgroundImage
-                      className="bg__image"
-                      fluid={
-                        article.node.featured_media.localFile.childImageSharp
-                          .fluid
-                      }
-                    />
+                    {article.node.featured_media ? <BackgroundImage className="bg__image" fluid={ article.node.featured_media.localFile.childImageSharp.fluid } />  : null}
                   </Link>
                 </div>
                 <div className="article_text">

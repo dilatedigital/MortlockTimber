@@ -104,14 +104,13 @@ class Post extends Component {
       return false;
     }
 
-  	var blogPostingSchema;
-	blogPostingSchema = <script type="application/ld+json" dangerouslySetInnerHTML={{__html: '{ "@context": "https://schema.org", "@type": "BlogPosting", "mainEntityOfPage": { "@type": "WebPage", "@id": "'+ postURL +'" }, "headline": "'+ pageData.yoast.title +'", "description": "'+ pageData.yoast.metadesc +'", "image": "https://www.mortlock.com.au'+ pageData.featured_media.localFile.childImageSharp.fluid.src +'",   "author": { "@type": "Organization", "name": "Mortlock Timber" }, "publisher": { "@type": "Organization", "name": "Mortlock Timber", "logo": { "@type": "ImageObject", "url": "https://site.mortlock.com.au/wp-content/uploads/2020/07/mortlock-logo.png" } }, "datePublished": "'+ pageData.date +'", "dateModified": "'+ pageData.date +'" }'}}></script>;
+  	
 	
     return (
     <Layout headerColor="dark">
       <SEO description={pageData.yoast.metadesc} title={pageData.yoast.title}/> 
         <div className="single__wrapper">
-		{blogPostingSchema}
+		<script type="application/ld+json" dangerouslySetInnerHTML={{__html: '{ "@context": "https://schema.org", "@type": "BlogPosting", "mainEntityOfPage": { "@type": "WebPage", "@id": "'+ postURL +'" }, "headline": "'+ pageData.yoast.title +'", "description": "'+ pageData.yoast.metadesc +'", "image": "https://www.mortlock.com.au/",   "author": { "@type": "Organization", "name": "Mortlock Timber" }, "publisher": { "@type": "Organization", "name": "Mortlock Timber", "logo": { "@type": "ImageObject", "url": "https://site.mortlock.com.au/wp-content/uploads/2020/07/mortlock-logo.png" } }, "datePublished": "'+ pageData.date +'", "dateModified": "'+ pageData.date +'" }'}}></script>
           <div className="container">
           <div className="post__heading">
             <div className="post_category"> {
