@@ -65,6 +65,7 @@ class ProductApplication extends Component {
               </div>
             
                 <div className="application__iconbox">
+                  {console.log(this.props.data.application_gallery)}
                   <Slider className="app__list" ref={slider => (this.slider2 = slider)} focusOnSelect={true} asNavFor={this.state.nav1} {...navSliderSettings}>
                     {this.props.data.application_gallery.map((list, index) => (
                       <div className="app_list" key={index}>
