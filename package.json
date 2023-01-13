@@ -20,6 +20,7 @@
     "gatsby-plugin-manifest": "^2.4.22",
     "gatsby-plugin-meta-redirect": "^1.1.1",
     "gatsby-plugin-netlify": "^2.10.0",
+    "gatsby-plugin-netlify-cache": "^2.0.0",
     "gatsby-plugin-offline": "^3.2.9",
     "gatsby-plugin-react-helmet": "^3.3.4",
     "gatsby-plugin-robots-txt": "^1.5.5",
